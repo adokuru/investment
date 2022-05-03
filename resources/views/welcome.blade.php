@@ -11,7 +11,7 @@
                         <div class="container">
                             <div class="banner-content">
                                 <h1>Most Trusted Company For Your Business</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer</p>
+                                <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the best financial experts.</p>
                                 <a class="common-btn" href="#">
                                     Let's Start Now
                                     <span></span>
@@ -29,7 +29,7 @@
                         <div class="container">
                             <div class="banner-content">
                                 <h1>Your Success Is Our Ultimate Duty</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer</p>
+                                <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the best financial experts.</p>
                                 <a class="common-btn" href="#">
                                     Let's Start Now
                                     <span></span>
@@ -47,7 +47,7 @@
                         <div class="container">
                             <div class="banner-content">
                                 <h1>No.1 Investment Company With Experience</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer</p>
+                                <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the best financial experts.</p>
                                 <a class="common-btn" href="#">
                                     Let's Start Now
                                     <span></span>
@@ -73,22 +73,19 @@
             <div class="col-lg-9">
                 <div class="logo-slider owl-theme owl-carousel">
                     <div class="logo-item">
-                        <img src="assets/img/logo/logo1.png" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo/logo1.png') }}" alt="Logo">
                     </div>
                     <div class="logo-item">
-                        <img src="assets/img/logo/logo2.png" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo/logo2.png') }}" alt="Logo">
                     </div>
                     <div class="logo-item">
-                        <img src="assets/img/logo/logo3.png" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo/logo3.png') }}" alt="Logo">
                     </div>
                     <div class="logo-item">
-                        <img src="assets/img/logo/logo4.png" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo/logo4.png') }}" alt="Logo">
                     </div>
                     <div class="logo-item">
-                        <img src="assets/img/logo/logo5.png" alt="Logo">
-                    </div>
-                    <div class="logo-item">
-                        <img src="assets/img/logo/logo1.png" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo/logo5.png') }}" alt="Logo">
                     </div>
                 </div>
             </div>
@@ -105,9 +102,10 @@
                     <div class="section-title">
                         <span class="sub-title">About</span>
                         <h2>We Are A Trusted Company With <span>25+</span> Years Of Experience</h2>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                        <p>Allianz is a UK registered legal international investment company. 
+                        The company was created by a group of qualified experts, professional bankers, traders and analysts who specialized in the stock, bond, futures, currencies, forex and binary trading and arbitrage.</p>
                     </div>
-                    <p class="about-p">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+                    <p class="about-p">With having more than ten years of extensive practical experiences of combined personal skills, knowledge, talents and collective ambitions for success.</p>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6">
                             <ul>
@@ -116,7 +114,7 @@
                                 </li>
                                 <li>
                                     <h3>25+ Years Experience</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+                                    <p>we are a registered and licensed company authorized to operate in any part of the world.</p>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +125,7 @@
                                 </li>
                                 <li>
                                     <h3>Growing Success</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+                                    <p>Once you have enrolled in any trading plan, your funds are traded instantly yielding you profits.</p>
                                 </li>
                             </ul>
                         </div>
@@ -138,7 +136,7 @@
                                 </li>
                                 <li>
                                     <h3>100% Trusted Company</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+                                    <p>All fees are transparent and are paid through your client area.</p>
                                 </li>
                             </ul>
                         </div>
@@ -149,7 +147,7 @@
                                 </li>
                                 <li>
                                     <h3>Finance Management</h3>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+                                    <p>We use one of the most experienced, professional and trusted DDos protection and mitigation provider.</p>
                                 </li>
                             </ul>
                         </div>
@@ -164,13 +162,13 @@
                 <div class="about-img">
                     <div class="row align-items-end">
                         <div class="col-sm-6 col-lg-6">
-                            <img src="assets/img/about/about1.jpg" alt="About">
+                            <img src="{{ asset('frontend-assets/img/about/about1.jpg') }}" alt="About">
                         </div>
                         <div class="col-sm-6 col-lg-6">
-                            <img src="assets/img/about/about2.jpg" alt="About">
+                            <img src="{{ asset('frontend-assets/img/about/about2.jpg') }}" alt="About">
                         </div>
                         <div class="col-lg-12">
-                            <img src="assets/img/about/about3.jpg" alt="About">
+                            <img src="{{ asset('frontend-assets/img/about/about3.jpg') }}" alt="About">
                         </div>
                     </div>
                     <div class="years">
@@ -192,7 +190,7 @@
                     <h2>The <span>Services</span> That We Provide For Our Ultimate Clients</h2>
                 </div>
                 <div class="col-lg-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero facilis consequatur deleniti, ipsa provident? Culpa tenetur incidunt reprehenderit qui a voluptas perferendis officiis</p>
+                    <p>This is why we have an edge over other trading platforms and why you should choose Allianz to grow and manage your investments.</p>
                 </div>
             </div>
         </div>
@@ -201,60 +199,54 @@
                 <div class="services-item card-overlay active">
                     <i class="flaticon-marketing-strategy"></i>
                     <h3>
-                        <a href="service-details.html">Business Strategy</a>
+                        <a href="service-details.html">World Coverage</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>We have been able to operate in major countries and cities worldwide helping people create wealth and archieving their financial goals.</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="services-item card-overlay">
                     <i class="flaticon-dollars-money-bag-with-a-clock"></i>
                     <h3>
-                        <a href="service-details.html">Investment Planning</a>
+                        <a href="service-details.html">Payment Options</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>We have integrated a few payment gateways while using bitcoin as our major payment gateway because of its general acceptability.</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="services-item card-overlay active">
                     <i class="flaticon-strategy-in-a-labyrinth"></i>
                     <h3>
-                        <a href="service-details.html">Project Management</a>
+                        <a href="service-details.html">Cross-Platform Trading</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>We support and provide cross platform trading giving you the right tools to trade through the use of advanced charting technology.</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="services-item card-overlay">
                     <i class="flaticon-trend"></i>
                     <h3>
-                        <a href="service-details.html">Financial Analysis</a>
+                        <a href="service-details.html">Margin Trading</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>We offer margin trading, thereby allowing our clients enter into positions larger than their account balance.</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="services-item card-overlay active">
                     <i class="flaticon-evaluate"></i>
                     <h3>
-                        <a href="service-details.html">Audit & Evaluation</a>
+                        <a href="service-details.html">Legal Compliance</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>We conform and abide by the rules,policies,regulations and standards of our regulatory bodies.</p>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="services-item card-overlay">
                     <i class="flaticon-insurance"></i>
                     <h3>
-                        <a href="service-details.html">Support & Maintain</a>
+                        <a href="service-details.html">Active Support</a>
                     </h3>
-                    <p>Lorem ipsum dolor sit amet, conse tetur sadipscing elitr, sed diam nonumy eirm od tempor invidunt ut labore et dolore magna</p>
-                    <a class="services-btn" href="service-details.html">Read More</a>
+                    <p>Our support team is always available 24/7 to help you out whenever you require assistance or have questions about the platform.</p>
                 </div>
             </div>
         </div>
@@ -271,7 +263,7 @@
                     <h2>See How We Manage A Wide Range Of Work</h2>
                 </div>
                 <div class="col-lg-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero facilis consequatur deleniti, ipsa provident? Culpa tenetur incidunt reprehenderit qui a voluptas perferendis officiis</p>
+                    <p>You can make a passive income in forex and crypto trading by letting us manage and grow your investments with the help of our experienced and high profile traders in the financial market.</p>
                 </div>
             </div>
         </div>
@@ -294,7 +286,7 @@
                         </li>
                         <li>
                             <h3>Great Efficiency</h3>
-                            <p>Lorem ipsum dolor sit ame etyt, consetetur sadips</p>
+                            <p>The exchange market is efficient in a sense that the expected rate to speculation in the forward exchange rate market is zero</p>
                         </li>
                     </ul>
                 </div>
@@ -305,7 +297,7 @@
                         </li>
                         <li>
                             <h3>Project Analysis & Budget</h3>
-                            <p>Lorem ipsum dolor sit ame etyt, consetetur sadips</p>
+                            <p>We manage & determine the total funds that are allocated for a specific project. </p>
                         </li>
                     </ul>
                 </div>
@@ -316,11 +308,11 @@
                         </li>
                         <li>
                             <h3>Finance Planning</h3>
-                            <p>Lorem ipsum dolor sit ame etyt, consetetur sadips</p>
+                            <p>We help you be in control of your income, expenses and investments such that you can manage your money and achieve your goals.</p>
                         </li>
                     </ul>
                 </div>
-                <div class="work-item">
+                {{-- <div class="work-item">
                     <ul class="align-items-center">
                         <li>
                             <i class="flaticon-trend"></i>
@@ -330,14 +322,14 @@
                             <p>Lorem ipsum dolor sit ame etyt, consetetur sadips</p>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 </section>
 
 
-<section class="projects-area section-overlay pt-100 pb-70">
+{{-- <section class="projects-area section-overlay pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <div class="row align-items-center">
@@ -419,7 +411,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 <div class="counter-area pt-100 pb-70">
@@ -475,7 +467,7 @@
                     <h2>Meet Our Awesome <span>Team</span> To Whom We Are Dependent</h2>
                 </div>
                 <div class="col-lg-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero facilis consequatur deleniti, ipsa provident? Culpa tenetur incidunt reprehenderit qui a voluptas perferendis officiis</p>
+                    <p>To a prospect seeking out a new service provider, the process can be a little overwhelming. It's easy to wonder: Who are the real people behind all the smoke and mirrors?</p>
                 </div>
             </div>
         </div>
@@ -483,7 +475,7 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="team-item">
                     <div class="top card-overlay">
-                        <img src="assets/img/team/team1.jpg" alt="Team">
+                        <img src="{{ asset('frontend-assets/img/team/team1.jpg') }}" alt="Team">
                     </div>
                     <div class="bottom">
                         <ul>
@@ -513,7 +505,7 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="team-item">
                     <div class="top card-overlay">
-                        <img src="assets/img/team/team2.jpg" alt="Team">
+                        <img src="{{ asset('frontend-assets/img/team/team2.jpg') }}" alt="Team">
                     </div>
                     <div class="bottom">
                         <ul>
@@ -543,7 +535,7 @@
             <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
                 <div class="team-item">
                     <div class="top card-overlay">
-                        <img src="assets/img/team/team3.jpg" alt="Team">
+                        <img src="{{ asset('frontend-assets/img/team/team3.jpg') }}" alt="Team">
                     </div>
                     <div class="bottom">
                         <ul>
@@ -590,17 +582,17 @@
                     <h2>See What Our Client's <span>Say</span> About Our Work</h2>
                 </div>
                 <div class="col-lg-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero facilis consequatur deleniti, ipsa provident? Culpa tenetur incidunt reprehenderit qui a voluptas perferendis officiis</p>
+                    <p>These are some testimonials from our happy and dedicated investors on Allianz.The management is thanking you for your trust and dedication towards this platform.</p>
                 </div>
             </div>
         </div>
         <div class="testimonials-slider owl-theme owl-carousel">
             <div class="testimonials-item">
                 <i class='bx bxs-quote-right icon'></i>
-                <p>Inva is excellent in their work and I really amazed to see how they managed everything throughout the year without any problem. They has an excellent sense of finance & economy.</p>
-                <img src="assets/img/testimonials1.jpg" alt="Testimonials">
+                <p>My family and me want to thank you for helping us find a great opportunity to make money trading . Very happy with how things are going!.</p>
+                <img src="{{ asset('frontend-assets/img/founder-main1.jpg') }}" alt="Testimonials">
                 <h3>Tom Henry</h3>
-                <span>CEO of Company</span>
+                <span>Investor</span>
                 <ul>
                     <li>
                         <i class='bx bxs-star checked'></i>
@@ -621,10 +613,10 @@
             </div>
             <div class="testimonials-item">
                 <i class='bx bxs-quote-right icon'></i>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.</p>
-                <img src="assets/img/testimonials2.jpg" alt="Testimonials">
+                <p>This is a realistic program for anyone looking for a reliable platform to invest their funds. Paid to me regularly, keep up good work!.</p>
+                <img src="{{ asset('frontend-assets/img/testimonials2.jpg') }}" alt="Testimonials">
                 <h3>Jac Jacson</h3>
-                <span>Director</span>
+                <span>Investor</span>
                 <ul>
                     <li>
                         <i class='bx bxs-star checked'></i>
@@ -643,10 +635,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="testimonials-item">
+            {{-- <div class="testimonials-item">
                 <i class='bx bxs-quote-right icon'></i>
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                <img src="assets/img/testimonials3.jpg" alt="Testimonials">
+                <img src="{{ asset('frontend-assets/img/testimonials3.jpg') }}" alt="Testimonials">
                 <h3>Micheal Shon</h3>
                 <span>Manager</span>
                 <ul>
@@ -666,7 +658,7 @@
                         <i class='bx bxs-star'></i>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>
@@ -689,7 +681,7 @@
             <div class="col-lg-6">
                 <div class="blog-item">
                     <a href="blog-details.html">
-                        <img src="assets/img/blog/blog1.jpg" alt="Blog">
+                        <img src="{{ asset('frontend-assets/img/blog/blog1.jpg') }}" alt="Blog">
                     </a>
                     <ul>
                         <li>
@@ -718,7 +710,7 @@
                     <ul class="align-items-center">
                         <li>
                             <a href="blog-details.html">
-                                <img src="assets/img/blog/blog-side1.jpg" alt="Blog">
+                                <img src="{{ asset('frontend-assets/img/blog/blog2.jpg') }}" alt="Blog">
                             </a>
                         </li>
                         <li>
@@ -735,7 +727,7 @@
                     <ul class="align-items-center">
                         <li>
                             <a href="blog-details.html">
-                                <img src="assets/img/blog/blog-side2.jpg" alt="Blog">
+                                <img src="{{ asset('frontend-assets/img/blog/blog3.jpg') }}" alt="Blog">
                             </a>
                         </li>
                         <li>
@@ -752,7 +744,7 @@
                     <ul class="align-items-center">
                         <li>
                             <a href="blog-details.html">
-                                <img src="assets/img/blog/blog-side3.jpg" alt="Blog">
+                                <img src="{{ asset('frontend-assets/img/blog/blog4.jpg') }}" alt="Blog">
                             </a>
                         </li>
                         <li>
