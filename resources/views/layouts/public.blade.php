@@ -108,7 +108,7 @@
     <div class="navbar-area sticky-top">
 
         <div class="mobile-nav">
-            <a href="index-2.html" class="logo">
+            <a href="/" class="logo">
                 <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
             </a>
         </div>
@@ -116,44 +116,44 @@
         <div class="main-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index-2.html">
+                    <a class="navbar-brand" href="/">
                         <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="about.html" class="nav-link">Home</a>
+                                <a href="/" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/about" class="nav-link dropdown-toggle">About <i class='bx bx-chevron-down'></i></a>
+                                <a href="/about" class="nav-lilcomenk dropdown-toggle">About <i class='bx bx-chevron-down'></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
+                                        <a href="/sign-in" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="sign-in.html" class="nav-link">Sign In</a>
+                                                <a href="/sign-in" class="nav-link">Sign In</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="sign-up.html" class="nav-link">Sign Up</a>
+                                                <a href="/sign-up" class="nav-link">Sign Up</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="team.html" class="nav-link">Team</a>
+                                        <a href="/team" class="nav-link">Team</a>
                                         {{-- <ul class="dropdown-menu">
                                             <li class="nav-item">
                                                 
                                             </li>
                                         </ul> --}}
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="Pricing.html" class="nav-link">Pricing</a>
+                                    </li> --}}
+                                    <li class="nav-item">
+                                        <a href="/testimonial" class="nav-link">Testimonials</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="testimonials.html" class="nav-link">Testimonials</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="faq.html" class="nav-link">FAQ</a>
+                                        <a href="/faq" class="nav-link">FAQ</a>
                                     </li>
                                     {{-- <li class="nav-item">
                                         <a href="404.html" class="nav-link">404 Error Page</a>
@@ -174,7 +174,7 @@
                             </li> --}}
                             <li class="nav-item">
                             
-                                <a href="about.html" class="nav-link">Services</a>
+                                <a href="/service" class="nav-link">Services</a>
                             
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -186,7 +186,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="about.html" class="nav-link">Blog</a>
+                                <a href="about.html" class="nav-link">Trading</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="projects.html" class="nav-link">Projects</a>
@@ -197,7 +197,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="about.html" class="nav-link">Contact</a>
+                                <a href="/contact" class="nav-link">Contact</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="blog.html" class="nav-link">Blog</a>
@@ -263,7 +263,7 @@
                             <a class="footer-inva" href="index-2.html">
                                 <img src="{{ asset('frontend-assets/img/logo1.png') }}" alt="Logo">
                             </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat quo unde</p>
+                            <p>Open account for free and start trading now!</p>
                             <ul>
                                 <li>
                                     <a href="#" target="_blank">
@@ -307,13 +307,13 @@
                                     <i class='bx bx-chevron-right'></i>
                                     <a href="services.html">Services</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <i class='bx bx-chevron-right'></i>
                                     <a href="projects.html">Projects</a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="blog.html">Blog</a>
+                                    <a href="blog.html">Trading</a>
                                 </li>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
@@ -353,8 +353,7 @@
                                 </li>
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>
-                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#5d35383131321d34332b3c733e3230"><span class="__cf_email__" data-cfemail="177f727b7b78577e7961763974787a">[email&#160;protected]</span></a>
-                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#2b42454d446b42455d4a05484446"><span class="__cf_email__" data-cfemail="cfa6a1a9a08fa6a1b9aee1aca0a2">[email&#160;protected]</span></a>
+                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email&#160;Protected</span></a>
                                 </li>
                             </ul>
                         </div>

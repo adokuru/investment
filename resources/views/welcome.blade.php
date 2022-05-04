@@ -664,7 +664,7 @@
 </section>
 
 
-<section class="blog-area section-overlay pt-100 pb-70">
+{{-- <section class="blog-area section-overlay pt-100 pb-70">
     <div class="container">
         <div class="section-title">
             <div class="row align-items-center">
@@ -766,7 +766,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 @endsection
