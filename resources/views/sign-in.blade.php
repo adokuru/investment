@@ -58,7 +58,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p>Didn't have an account? <a href="sign-up.html">Sign Up</a></p>
+                            <p>Didn't have an account? <a href="/sign-up">Sign Up</a></p>
                         </form>
                     </div>
                 </div>

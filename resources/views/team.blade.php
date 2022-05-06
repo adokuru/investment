@@ -45,7 +45,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">David Seek</a>
+                                David Seek
                             </h3>
                             <span>Cheif Executive</span>
                         </div>
@@ -75,7 +75,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Angela Carter</a>
+                                Angela Carter
                             </h3>
                             <span>Cheif Marketing Researcher</span>
                         </div>
@@ -105,7 +105,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Moris James</a>
+                                Moris James
                             </h3>
                             <span>Cheif Finance Consultant</span>
                         </div>
@@ -135,7 +135,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Victor James</a>
+                                Victor James
                             </h3>
                             <span>Member</span>
                         </div>
@@ -165,7 +165,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Jeninifer Karhan</a>
+                                Jeninifer Karhan
                             </h3>
                             <span>Member</span>
                         </div>
@@ -195,7 +195,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Jonny Erton</a>
+                                Jonny Erton
                             </h3>
                             <span>Member</span>
                         </div>
@@ -225,7 +225,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Camellia Orhan</a>
+                                Camellia Orhan
                             </h3>
                             <span>Member</span>
                         </div>
@@ -255,7 +255,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Lopage Warhan</a>
+                                Lopage Warhan
                             </h3>
                             <span>Member</span>
                         </div>
@@ -285,7 +285,7 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="team-details.html">Tom Penny</a>
+                                Tom Penny
                             </h3>
                             <span>Member</span>
                         </div>

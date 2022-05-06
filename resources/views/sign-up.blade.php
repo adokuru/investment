@@ -50,7 +50,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p>Already created an account? <a href="sign-in.html">Sign In</a></p>
+                            <p>Already created an account? <a href="/sign-in">Sign In</a></p>
                         </form>
                     </div>
                 </div>

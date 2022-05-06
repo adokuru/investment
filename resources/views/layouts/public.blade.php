@@ -149,9 +149,9 @@
                                     {{-- <li class="nav-item">
                                         <a href="Pricing.html" class="nav-link">Pricing</a>
                                     </li> --}}
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="/testimonial" class="nav-link">Testimonials</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="/faq" class="nav-link">FAQ</a>
                                     </li>
@@ -174,7 +174,7 @@
                             </li> --}}
                             <li class="nav-item">
                             
-                                <a href="/service" class="nav-link">Services</a>
+                                <a href="/trading" class="nav-link">Trading</a>
                             
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -186,7 +186,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="about.html" class="nav-link">Trading</a>
+                                <a href="/contact" class="nav-link">Contact</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="projects.html" class="nav-link">Projects</a>
@@ -197,7 +197,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="/contact" class="nav-link">Contact</a>
+                                <a href="/service" class="nav-link">Term of Service</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="blog.html" class="nav-link">Blog</a>
@@ -301,11 +301,11 @@
                             <ul>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="about.html">About</a>
+                                    <a href="/about">About</a>
                                 </li>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="services.html">Services</a>
+                                    <a href="/service">Services</a>
                                 </li>
                                 {{-- <li>
                                     <i class='bx bx-chevron-right'></i>
@@ -313,11 +313,11 @@
                                 </li> --}}
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="blog.html">Trading</a>
+                                    <a href="/trading">Trading</a>
                                 </li>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="/faq">FAQ</a>
                                 </li>
                             </ul>
                         </div>
