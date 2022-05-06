@@ -35,6 +35,7 @@ This files table contents are outlined below>>>>>
 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap");
+@import url("https://cdn.tailgrids.com/tailgrids-fallback.css");
 /*----- Default CSS -----*/
 body {
     font-family: "Open Sans", sans-serif;
@@ -2567,6 +2568,10 @@ ul {
     visibility: visible;
 }
 
+.container-1 {
+    
+}
+
 .projects-area.two .projects-item.card-overlay-two {
     overflow: visible;
 }
@@ -5012,6 +5017,8 @@ ul {
     top: 16px;
     right: 30px;
 }
+
+
 
 .widget-area .search .btn:hover {
     color: #003781;

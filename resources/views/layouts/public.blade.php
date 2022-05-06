@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/animate.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/owl.carousel.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/owl.theme.default.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/fonts/flaticon.css') }}">
@@ -55,7 +56,7 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">[email&#160;protected]</span></a>
+                                <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email&#160;Protected</span></a>
                             </li>
                             <li>
                                 <i class='bx bx-phone-call'></i>
@@ -107,72 +108,57 @@
     <div class="navbar-area sticky-top">
 
         <div class="mobile-nav">
-            <a href="index-2.html" class="logo">
-                <img src="assets/img/logo-two.png" alt="Logo">
+            <a href="/" class="logo">
+                <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
             </a>
         </div>
 
         <div class="main-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index-2.html">
-                        <img src="assets/img/logo.png" class="logo-one" alt="Logo">
-                        <img src="assets/img/logo-two.png" class="logo-two" alt="Logo">
+                    <a class="navbar-brand" href="/">
+                        <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle active">Home <i class='bx bx-chevron-down'></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="index-2.html" class="nav-link active">Home Demo One</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-3.html" class="nav-link">Home Demo Two</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="index-4.html" class="nav-link">Home Demo Three</a>
-                                    </li>
-                                </ul>
+                                <a href="/" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Pages <i class='bx bx-chevron-down'></i></a>
+                                <a href="/about" class="nav-lilcomenk dropdown-toggle">About <i class='bx bx-chevron-down'></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
+                                        <a href="/sign-in" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="sign-in.html" class="nav-link">Sign In</a>
+                                                <a href="/sign-in" class="nav-link">Sign In</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="sign-up.html" class="nav-link">Sign Up</a>
+                                                <a href="/sign-up" class="nav-link">Sign Up</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link dropdown-toggle">Team <i class='bx bx-chevron-down'></i></a>
-                                        <ul class="dropdown-menu">
+                                        <a href="/team" class="nav-link">Team</a>
+                                        {{-- <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="team.html" class="nav-link">Team</a>
+                                                
                                             </li>
-                                            <li class="nav-item">
-                                                <a href="team-details.html" class="nav-link">Team Details</a>
-                                            </li>
-                                        </ul>
+                                        </ul> --}}
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="Pricing.html" class="nav-link">Pricing</a>
-                                    </li>
+                                    </li> --}}
+                                    {{-- <li class="nav-item">
+                                        <a href="/testimonial" class="nav-link">Testimonials</a>
+                                    </li> --}}
                                     <li class="nav-item">
-                                        <a href="testimonials.html" class="nav-link">Testimonials</a>
+                                        <a href="/faq" class="nav-link">FAQ</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="faq.html" class="nav-link">FAQ</a>
-                                    </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="404.html" class="nav-link">404 Error Page</a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li> --}}
+                                    {{-- <li class="nav-item">
                                         <a href="coming-soon.html" class="nav-link">Coming Soon</a>
                                     </li>
                                     <li class="nav-item">
@@ -180,48 +166,48 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="about.html" class="nav-link">About</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Services <i class='bx bx-chevron-down'></i></a>
-                                <ul class="dropdown-menu">
+                            
+                                <a href="/trading" class="nav-link">Trading</a>
+                            
+                                {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="services.html" class="nav-link">Services</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="service-details.html" class="nav-link">Service Details</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Projects <i class='bx bx-chevron-down'></i></a>
-                                <ul class="dropdown-menu">
+                                <a href="/contact" class="nav-link">Contact</a>
+                                {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="projects.html" class="nav-link">Projects</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="project-details.html" class="nav-link">Project Details</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link dropdown-toggle">Blog <i class='bx bx-chevron-down'></i></a>
-                                <ul class="dropdown-menu">
+                                <a href="/service" class="nav-link">Term of Service</a>
+                                {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="blog.html" class="nav-link">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li> --}}
+                                    {{-- <li class="nav-item">
                                         <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a href="contact.html" class="nav-link">Contact</a>
-                            </li>
+                            
                         </ul>
                         <div class="side-nav">
                             <div class="nav-search">
@@ -240,21 +226,21 @@
                             </div>
                             <div class="dropdown nav-flag-dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="assets/img/flag1.jpg" alt="Flag">
+                                    <img src="{{ asset('frontend-assets/img/flag1.jpg') }}" alt="Flag">
                                     Eng
                                     <i class='bx bx-chevron-down'></i>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">
-                                        <img src="assets/img/flag2.jpg" alt="Flag">
+                                        <img src="{{ asset('frontend-assets/img/flag2.jpg') }}" alt="Flag">
                                         Ger
                                     </a>
                                     <a class="dropdown-item" href="#">
-                                        <img src="assets/img/flag3.jpg" alt="Flag">
+                                        <img src="{{ asset('frontend-assets/img/flag3.jpg') }}" alt="Flag">
                                         Isr
                                     </a>
                                     <a class="dropdown-item" href="#">
-                                        <img src="assets/img/flag4.jpg" alt="Flag">
+                                        <img src="{{ asset('frontend-assets/img/flag4.jpg') }}" alt="Flag">
                                         USA
                                     </a>
                                 </div>
@@ -275,9 +261,9 @@
                     <div class="footer-item">
                         <div class="footer-logo">
                             <a class="footer-inva" href="index-2.html">
-                                <img src="assets/img/logo-two.png" alt="Logo">
+                                <img src="{{ asset('frontend-assets/img/logo1.png') }}" alt="Logo">
                             </a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quaerat quo unde</p>
+                            <p>Open account for free and start trading now!</p>
                             <ul>
                                 <li>
                                     <a href="#" target="_blank">
@@ -315,23 +301,23 @@
                             <ul>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="about.html">About</a>
+                                    <a href="/about">About</a>
                                 </li>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="services.html">Services</a>
+                                    <a href="/service">Services</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <i class='bx bx-chevron-right'></i>
                                     <a href="projects.html">Projects</a>
+                                </li> --}}
+                                <li>
+                                    <i class='bx bx-chevron-right'></i>
+                                    <a href="/trading">Trading</a>
                                 </li>
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
-                                    <a href="blog.html">Blog</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="/faq">FAQ</a>
                                 </li>
                             </ul>
                         </div>
@@ -367,8 +353,7 @@
                                 </li>
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>
-                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#5d35383131321d34332b3c733e3230"><span class="__cf_email__" data-cfemail="177f727b7b78577e7961763974787a">[email&#160;protected]</span></a>
-                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#2b42454d446b42455d4a05484446"><span class="__cf_email__" data-cfemail="cfa6a1a9a08fa6a1b9aee1aca0a2">[email&#160;protected]</span></a>
+                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email&#160;Protected</span></a>
                                 </li>
                             </ul>
                         </div>
