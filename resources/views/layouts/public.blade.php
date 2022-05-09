@@ -109,7 +109,7 @@
 
         <div class="mobile-nav">
             <a href="/" class="logo">
-                <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
+                <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo">
             </a>
         </div>
 
@@ -117,64 +117,21 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Home</a>
+                                <a href="/" class="nav-link">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/about" class="nav-lilcomenk dropdown-toggle">About <i class='bx bx-chevron-down'></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="/sign-in" class="nav-link dropdown-toggle">Users <i class='bx bx-chevron-down'></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="/sign-in" class="nav-link">Sign In</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="/sign-up" class="nav-link">Sign Up</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="/team" class="nav-link">Team</a>
-                                        {{-- <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                
-                                            </li>
-                                        </ul> --}}
-                                    </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="Pricing.html" class="nav-link">Pricing</a>
-                                    </li> --}}
-                                    {{-- <li class="nav-item">
-                                        <a href="/testimonial" class="nav-link">Testimonials</a>
-                                    </li> --}}
-                                    <li class="nav-item">
-                                        <a href="/faq" class="nav-link">FAQ</a>
-                                    </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="404.html" class="nav-link">404 Error Page</a>
-                                    </li> --}}
-                                    {{-- <li class="nav-item">
-                                        <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
-                                    </li> --}}
-                                </ul>
+                                <a href="/about" class="nav-link">ABOUT</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a href="about.html" class="nav-link">About</a>
-                            </li> --}}
                             <li class="nav-item">
-                            
-                                <a href="/trading" class="nav-link">Trading</a>
+                                <a href="/faq" class="nav-link">FAQS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/trading" class="nav-link">TRADING</a>
                             
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
@@ -186,7 +143,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="/contact" class="nav-link">Contact</a>
+                                <a href="/contact" class="nav-link">CONTACT</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="projects.html" class="nav-link">Projects</a>
@@ -197,7 +154,7 @@
                                 </ul> --}}
                             </li>
                             <li class="nav-item">
-                                <a href="/service" class="nav-link">Term of Service</a>
+                                <a href="/service" class="nav-link">TERM OF SERVICE</a>
                                 {{-- <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a href="blog.html" class="nav-link">Blog</a>
@@ -210,42 +167,29 @@
                             
                         </ul>
                         <div class="side-nav">
-                            <div class="nav-search">
-                                <i id="search-btn" class="bx bx-search-alt"></i>
                                 <div id="search-overlay" class="block">
                                     <div class="centered">
-                                        <div id="search-box">
-                                            <i id="close-btn" class="bx bx-x"></i>
-                                            <form>
-                                                <input type="text" class="form-control" placeholder="Search..." />
-                                                <button type="submit" class="btn">Search</button>
-                                            </form>
+                                        <div class="text-center">
+                                            <a href="/sign-in" class="common-btn">
+                                                LOG IN
+                                                <span></span>
+                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="dropdown nav-flag-dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="{{ asset('frontend-assets/img/flag1.jpg') }}" alt="Flag">
-                                    Eng
-                                    <i class='bx bx-chevron-down'></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">
-                                        <img src="{{ asset('frontend-assets/img/flag2.jpg') }}" alt="Flag">
-                                        Ger
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="{{ asset('frontend-assets/img/flag3.jpg') }}" alt="Flag">
-                                        Isr
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <img src="{{ asset('frontend-assets/img/flag4.jpg') }}" alt="Flag">
-                                        USA
-                                    </a>
-                                </div>
-                            </div>
+                                </div>    
                         </div>
+                        <div class="side-nav">
+                            <div id="search-overlay" class="block">
+                                <div class="centered">
+                                    <div class="text-center">
+                                        <a href="/sign-up" class="common-btn">
+                                            REGISTER
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>    
+                    </div>
                     </div>
                 </nav>
             </div>
@@ -261,7 +205,7 @@
                     <div class="footer-item">
                         <div class="footer-logo">
                             <a class="footer-inva" href="index-2.html">
-                                <img src="{{ asset('frontend-assets/img/logo1.png') }}" alt="Logo">
+                                <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo">
                             </a>
                             <p>Open account for free and start trading now!</p>
                             <ul>
@@ -406,5 +350,4 @@
 
     <script src="{{ asset('frontend-assets/js/custom.js') }}"></script>
 </body>
-
 </html>

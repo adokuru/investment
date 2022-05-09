@@ -102,30 +102,18 @@
                 <div class="col-lg-4">
                     <div class="contact-info">
                         <h3>Contact Info</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, maxime at. Ipsa veniam
-                            eveniet</p>
-                        <ul>
-                            <li>
-                                <i class='bx bx-current-location'></i>
-                                <a href="#">113 Inva, White House, New Jersey, USA</a>
-                            </li>
-                            <li>
-                                <i class='bx bx-phone-call'></i>
-                                <a href="tel:+0015481592491">+001-548-159-2491</a>
-                                <a href="tel:+5468792355698">+546-879-235-5698</a>
-                            </li>
-                            <li>
-                                <i class='bx bx-paper-plane'></i>
-                                <a
-                                    href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#d4bcb1b8b8bb94bdbaa2b5fab7bbb9"><span
-                                        class="__cf_email__"
-                                        data-cfemail="b8d0ddd4d4d7f8d1d6ced996dbd7d5">[email&#160;protected]</span></a>
-                                <a
-                                    href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#ddb4b3bbb29db4b3abbcf3beb2b0"><span
-                                        class="__cf_email__"
-                                        data-cfemail="1871767e775871766e79367b7775">[email&#160;protected]</span></a>
-                            </li>
-                        </ul>
+                        
+                                <p><b>Allianz</b></p>
+                                <p>16a invercauld ballater
+                                    Scotland, AL 34246</p>
+                            
+                               <p><b>Contact Number</b></p>
+                               <p>Phone: (+44) 7508 669535</p>
+                            
+                                <p><b>Office Hours</b></p>
+                               <p>Monday - Friday</p>
+                               <p>8:30am - 5:00pm</p>
+                           
                     </div>
                 </div>
             </div>

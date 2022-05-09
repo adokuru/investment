@@ -102,8 +102,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="about-content">
-                        <div class="section-title">
-                            <span class="sub-title">About</span>
+                        <div class="section-title1">
+                            <span class="sub-title1">About</span>
                             <h2>We Are A Trusted Company With <span>25+</span> Years Of Experience</h2>
                             <p>Allianz is a UK registered legal international investment company.
                                 The company was created by a group of qualified experts, professional bankers, traders and
@@ -272,53 +272,85 @@
             </div>
         </section>
 
-        <div class="counter-area pt-100 pb-70">
+        <section class="pricing-area section-overlay-two pt-100 pb-25">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-3 card-overlay">
-                        <div class="counter-item">
-                            <h3>
-                                <span class="odometer" data-count="25">00</span>
-                                <span class="target">+</span>
-                            </h3>
-                            <p>Years Of Experience</p>
+                <div class="section-title two">
+                    <h3>TRADING PLANS</h3>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="pricing-item">
+                            <h3>LOW YIELD PLAN (Low Profile Investors)</h3>
+                            <h4>
+                                <span class="one">$</span> 58,000
+                                <span class="two">/Month</span>
+                            </h4>
+                            <ul>
+                                <li>Crypto Investment</li>
+                                <li>Crypto Insurance</li>
+                                <li>10% Referral Bonus</li>
+                                <li>Low Maintenance fee</li>
+                                <li>2.00% daily</li>
+                                <li>40% ROI</li>
+                                <li>20 days contract</li>
+                                <li>Automatic payout in BTC</li>
+                            </ul>
+                            <a class="common-btn" href="#">
+                                Purchase Now
+                                <span></span>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 card-overlay">
-                        <div class="counter-item">
-                            <h3>
-                                <span class="odometer" data-count="150">00</span>
-                                <span class="target">+</span>
-                            </h3>
-                            <p>Happy Clients</p>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="pricing-item active">
+
+                            <h3>HIGH-YIELD PLAN (High Profile Investors)</h3>
+                            <h4>
+                                <span class="one">$</span> 178,000
+                                <span class="two">/Month</span>
+                            </h4>
+                            <ul>
+                                <li>Crypto Investment</li>
+                                <li>Crypto Insurance</li>
+                                <li>10% Referral Bonus</li>
+                                <li>Low Maintenance fee</li>
+                                <li>4.00% daily</li>
+                                <li>60% ROI</li>
+                                <li>15 days contract</li>
+                                <li>Automatic payout in BTC</li>
+                            </ul>
+                            <a class="common-btn two" href="#">
+                                Purchase Now
+                                <span></span>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 card-overlay">
-                        <div class="counter-item">
-                            <h3>
-                                <span class="odometer" data-count="300">00</span>
-                                <span class="target">+</span>
-                            </h3>
-                            <p>Projects Done</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 card-overlay">
-                        <div class="counter-item">
-                            <h3>
-                                <span class="odometer" data-count="30">00</span>
-                                <span class="target">+</span>
-                            </h3>
-                            <p>Opened Location</p>
+                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                        <div class="pricing-item">
+                            <h3>Gold Profile</h3>
+                            <h4>
+                                <span class="one">$</span> 500,000
+                                <span class="two">/Month</span>
+                            </h4>
+                            <ul>
+                                <li>Crypto Investment</li>
+                                <li>Crypto Insurance</li>
+                                <li>10% Referral Bonus</li>
+                                <li>Low Maintenance fee</li>
+                                <li>5.00% daily</li>
+                                <li>150% ROI</li>
+                                <li>30 days contract</li>
+                                <li>Automatic payout in BTC</li>
+                            </ul>
+                            <a class="common-btn" href="#">
+                                Purchase Now
+                                <span></span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-
+        </section>
 
         <section class="team-area ptb-100">
             <div class="container">
@@ -434,205 +466,5 @@
                 </div>
             </div>
         </section>
-
-
-        <section class="testimonials-area ptb-100">
-            <div class="container">
-                <div class="section-title">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <span class="sub-title">Testimonials</span>
-                            <h2>See What Our Client's <span>Say</span> About Our Work</h2>
-                        </div>
-                        <div class="col-lg-6">
-                            <p>These are some testimonials from our happy and dedicated investors on Allianz.The management
-                                is thanking you for your trust and dedication towards this platform.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonials-slider owl-theme owl-carousel">
-                    <div class="testimonials-item">
-                        <i class='bx bxs-quote-right icon'></i>
-                        <p>My family and me want to thank you for helping us find a great opportunity to make money trading
-                            . Very happy with how things are going!.</p>
-                        <img src="{{ asset('frontend-assets/img/founder-main1.jpg') }}" alt="Testimonials">
-                        <h3>Tom Henry</h3>
-                        <span>Investor</span>
-                        <ul>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="testimonials-item">
-                        <i class='bx bxs-quote-right icon'></i>
-                        <p>This is a realistic program for anyone looking for a reliable platform to invest their funds.
-                            Paid to me regularly, keep up good work!.</p>
-                        <img src="{{ asset('frontend-assets/img/testimonials2.jpg') }}" alt="Testimonials">
-                        <h3>Jac Jacson</h3>
-                        <span>Investor</span>
-                        <ul>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star checked'></i>
-                            </li>
-                            <li>
-                                <i class='bx bxs-star'></i>
-                            </li>
-                        </ul>
-                    </div>
-                    {{-- <div class="testimonials-item">
-                <i class='bx bxs-quote-right icon'></i>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                <img src="{{ asset('frontend-assets/img/testimonials3.jpg') }}" alt="Testimonials">
-                <h3>Micheal Shon</h3>
-                <span>Manager</span>
-                <ul>
-                    <li>
-                        <i class='bx bxs-star checked'></i>
-                    </li>
-                    <li>
-                        <i class='bx bxs-star checked'></i>
-                    </li>
-                    <li>
-                        <i class='bx bxs-star checked'></i>
-                    </li>
-                    <li>
-                        <i class='bx bxs-star checked'></i>
-                    </li>
-                    <li>
-                        <i class='bx bxs-star'></i>
-                    </li>
-                </ul>
-            </div> --}}
-                </div>
-            </div>
-        </section>
-
-
-        {{-- <section class="blog-area section-overlay pt-100 pb-70">
-    <div class="container">
-        <div class="section-title">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <span class="sub-title">Blog</span>
-                    <h2>Read Our Latest <span>Blog</span> To Solve Your Business Problem</h2>
-                </div>
-                <div class="col-lg-6">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero facilis consequatur deleniti, ipsa provident? Culpa tenetur incidunt reprehenderit qui a voluptas perferendis officiis</p>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="blog-item">
-                    <a href="blog-details.html">
-                        <img src="{{ asset('frontend-assets/img/blog/blog1.jpg') }}" alt="Blog">
-                    </a>
-                    <ul>
-                        <li>
-                            <i class='bx bxs-calendar'></i>
-                            <span>12 Oct, 2020</span>
-                        </li>
-                        <li>
-                            <i class='bx bxs-user'></i>
-                            <span>By:</span>
-                            <a href="#">Angeela</a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-comment-detail'></i>
-                            <a href="#">2 Comments</a>
-                        </li>
-                    </ul>
-                    <h3>
-                        <a href="blog-details.html">How To Increase Financial Investment & Skill In Your Business Without Money</a>
-                    </h3>
-                    <p>Lorem ipsum dolor sit amet, consete tur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. dolore magna aliquyam erat, seddiam</p>
-                    <a class="blog-btn" href="#">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="blog-side-item">
-                    <ul class="align-items-center">
-                        <li>
-                            <a href="blog-details.html">
-                                <img src="{{ asset('frontend-assets/img/blog/blog2.jpg') }}" alt="Blog">
-                            </a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-calendar'></i>
-                            <span>13 Oct, 2020</span>
-                            <h4>
-                                <a href="blog-details.html">How To Do Financial Work And Increase Your Skills</a>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consete tur sadipsci ng elitr, sed diam nonumy eirmod </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-side-item">
-                    <ul class="align-items-center">
-                        <li>
-                            <a href="blog-details.html">
-                                <img src="{{ asset('frontend-assets/img/blog/blog3.jpg') }}" alt="Blog">
-                            </a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-calendar'></i>
-                            <span>14 Oct, 2020</span>
-                            <h4>
-                                <a href="blog-details.html">How Technology Helps In Business With Extra Profit</a>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consete tur sadipsci ng elitr, sed diam nonumy eirmod </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="blog-side-item">
-                    <ul class="align-items-center">
-                        <li>
-                            <a href="blog-details.html">
-                                <img src="{{ asset('frontend-assets/img/blog/blog4.jpg') }}" alt="Blog">
-                            </a>
-                        </li>
-                        <li>
-                            <i class='bx bxs-calendar'></i>
-                            <span>15 Oct, 2020</span>
-                            <h4>
-                                <a href="blog-details.html">Customers Are The Ultimate End Chain Of The Success</a>
-                            </h4>
-                            <p>Lorem ipsum dolor sit amet, consete tur sadipsci ng elitr, sed diam nonumy eirmod </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="visit-blog">
-                    <a class="common-btn" href="blog.html">
-                        Visit Our Blog
-                        <span></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
 
     @endsection
