@@ -34,7 +34,6 @@
 </head>
 
 <body>
-
     <div class="loader">
         <div class="d-table">
             <div class="d-table-cell">
@@ -189,7 +188,7 @@
                                     </div>
                                 </div>
                             </div>    
-                    </div>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -205,7 +204,7 @@
                     <div class="footer-item">
                         <div class="footer-logo">
                             <a class="footer-inva" href="index-2.html">
-                                <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo">
+                                <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
                             </a>
                             <p>Open account for free and start trading now!</p>
                             <ul>
@@ -251,10 +250,6 @@
                                     <i class='bx bx-chevron-right'></i>
                                     <a href="/service">Services</a>
                                 </li>
-                                {{-- <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="projects.html">Projects</a>
-                                </li> --}}
                                 <li>
                                     <i class='bx bx-chevron-right'></i>
                                     <a href="/trading">Trading</a>
@@ -288,12 +283,11 @@
                             <ul>
                                 <li>
                                     <i class='bx bxs-location-plus'></i>
-                                    <span>113 Inva, White House, New Jercy, USA</span>
+                                    <span>16a invercauld ballater Scotland, AL 34246</span>
                                 </li>
                                 <li>
                                     <i class='bx bxs-phone-call'></i>
-                                    <a href="tel:+0015481592491">+001-548-159-2491</a>
-                                    <a href="tel:+0017581458652">+001-758-145-8652</a>
+                                    <a href="tel:+0015481592491">(+44) 7508 669535<a>
                                 </li>
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>

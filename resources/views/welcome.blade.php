@@ -51,7 +51,7 @@
                                     <h1>No.1 Investment Company With Experience</h1>
                                     <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the
                                         best financial experts.</p>
-                                    <a class="common-btn" href="#">
+                                    <a class="common-btn" href="/sign-up">
                                         Let's Start Now
                                         <span></span>
                                     </a>
@@ -63,7 +63,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="logo-area">
         <div class="container">
@@ -95,7 +94,6 @@
             </div>
         </div>
     </div>
-
 
     <section class="about-area section-overlay pt-100 pb-70">
         <div class="container-fluid">
@@ -161,7 +159,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <a class="common-btn" href="#">
+                        <a class="common-btn" href="/service">
                             Explore About Us
                             <span></span>
                         </a>
@@ -184,7 +182,6 @@
                             <h3>25+ <br> <span>Years</span></h3>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -459,7 +456,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <a class="common-btn" href="team.html">
+                    <a class="common-btn" href="/team">
                         All Members
                         <span></span>
                     </a>

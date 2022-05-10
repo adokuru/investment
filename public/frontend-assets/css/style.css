@@ -169,7 +169,7 @@ ul {
 }
 
 .common-btn.three {
-    background-color: #ea5455;
+    background-color: #1a3c8b;
 }
 
 .common-btn.three span {
@@ -185,7 +185,7 @@ ul {
 
 .section-title .sub-title {
     display: inline-block;
-    color: #fff;
+    color: #1a3c8b;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -197,7 +197,7 @@ ul {
 }
 
 .section-title h2 span {
-    color: #fff;
+    color: #1a3c8b;
 }
 
 .section-title p {
@@ -209,7 +209,7 @@ ul {
 }
 
 .section-title.two .sub-title {
-    color: #fff;
+    color: #1a3c8b;
 }
 
 .section-title.two h2 {
@@ -217,7 +217,7 @@ ul {
 }
 
 .section-title.two h2 span {
-    color: #fff;
+    color: #1a3c8b;
 }
 
 .section-title.two p {
@@ -525,13 +525,13 @@ ul {
 }
 
 .main-nav nav .navbar-nav .nav-item .dropdown-menu {
-    background: #1a3c8b;
+    background: #fff;
     padding: 0;
     border: 0;
     border-radius: 0%;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    border-top: 3px solid #1a3c8b;
+    border-top: 3px solid #fff;
 }
 
 .main-nav nav .navbar-nav .nav-item .dropdown-menu li {
@@ -1068,7 +1068,7 @@ ul {
 .about-area .about-img .years h3 {
     margin-bottom: 0;
     font-size: 40px;
-    color: #1a3c8b;
+    color: #fff;
     margin-top: 50px;
 }
 
@@ -2059,7 +2059,7 @@ ul {
 }
 
 .footer-area .footer-item .footer-link ul li a:hover {
-    color: #1a3c8b;
+    color: #0a0a0a;
 }
 
 .footer-area .footer-item .footer-hours ul li {
@@ -2207,7 +2207,7 @@ ul {
 }
 
 .main-nav.two.menu-shrink {
-    background-color: #1a3c8b;
+    background-color: #fff;
 }
 
 .main-nav.two nav .navbar-nav {
@@ -2230,7 +2230,7 @@ ul {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: #1a3c8b;
+    background-color: #fff;
     -webkit-transition: 0.5s all ease;
     transition: 0.5s all ease;
     z-index: -1;
@@ -2892,7 +2892,7 @@ ul {
 }
 
 .pricing-item ul {
-    max-width: 200px;
+    max-width: 150px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;

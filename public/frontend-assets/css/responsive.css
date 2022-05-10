@@ -1186,7 +1186,7 @@
 
 @media only screen and (max-width: 991px) {
   .mean-container .mean-bar {
-    background-color: #022E6B;
+    background-color: #fff;
     z-index: unset;
   }
   .mean-container a.meanmenu-reveal span {
@@ -1205,7 +1205,7 @@
     color: #FF6A40;
   }
   .navbar-nav {
-    height: 375px;
+    height: 500px;
     overflow-y: scroll;
   }
   .page-title-area:before {

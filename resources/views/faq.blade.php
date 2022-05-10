@@ -6,7 +6,7 @@
         <div class="title-shape">
             <img src="assets/img/title/title-bg-shape.png" alt="Shape">
         </div>
-        <div class="d-table">
+        {{-- <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
                     <div class="title-content">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 

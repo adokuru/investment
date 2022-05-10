@@ -51,33 +51,34 @@
                             services.
                             The reliable image of the trademark and reputation for using unique investment solutions with
                             exceptional outcomes has been the cornerstone of our success.</p>
-                            <div class="rules-area">
-                                <div class="container-1">
-                                    <div class="rules-item">
-                                        <p>
-                                        <ul>
-                                        <li>We trade on forex, cryptocurrencies, stocks futures, bonds, and various commodities.</li>
+                        <div class="rules-area">
+                            <div class="container-1">
+                                <div class="rules-item">
+                                    <p>
+                                    <ul>
+                                        <li>We trade on forex, cryptocurrencies, stocks futures, bonds, and various
+                                            commodities.</li>
                                         <li>We are available 24/7 to handle your support requests.</li>
                                         <li>We take a big missoin for the growth of your investments.</li>
-                                        <li>We have top level and experienced forex and crypto experts.</li>   
-                                        </ul>
-                                        </p>
-                                    </div>
+                                        <li>We have top level and experienced forex and crypto experts.</li>
+                                    </ul>
+                                    </p>
                                 </div>
                             </div>
-                            <a class="common-btn" href="/faq">
-                                FAQS
-                                <span></span>
-                            </a> 
                         </div>
-
+                        <a class="common-btn" href="/faq">
+                            FAQS
+                            <span></span>
+                        </a>
                     </div>
-                    
+
                 </div>
+
             </div>
         </div>
+        </div>
 
-        
+
     </section>
 
     <section class="services-area pt-100 pb-70">
@@ -99,7 +100,7 @@
                     <div class="services-item card-overlay active">
                         <i class="flaticon-marketing-strategy"></i>
                         <h3>
-                            <a href="service-details.html">World Coverage</a>
+                            <p>World Coverage</p>
                         </h3>
                         <p>We have been able to operate in major countries and cities worldwide helping people create wealth
                             and archieving their financial goals.</p>
@@ -109,7 +110,7 @@
                     <div class="services-item card-overlay">
                         <i class="flaticon-dollars-money-bag-with-a-clock"></i>
                         <h3>
-                            <a href="service-details.html">Payment Options</a>
+                            <p>Payment Options</p>
                         </h3>
                         <p>We have integrated a few payment gateways while using bitcoin as our major payment gateway
                             because of its general acceptability.</p>
@@ -119,7 +120,7 @@
                     <div class="services-item card-overlay active">
                         <i class="flaticon-strategy-in-a-labyrinth"></i>
                         <h3>
-                            <a href="service-details.html">Cross-Platform Trading</a>
+                            <p>Cross-Platform Trading</p>
                         </h3>
                         <p>We support and provide cross platform trading giving you the right tools to trade through the use
                             of advanced charting technology.</p>
@@ -129,7 +130,7 @@
                     <div class="services-item card-overlay">
                         <i class="flaticon-trend"></i>
                         <h3>
-                            <a href="service-details.html">Margin Trading</a>
+                            <p>Margin Trading</p>
                         </h3>
                         <p>We offer margin trading, thereby allowing our clients enter into positions larger than their
                             account balance.</p>
@@ -139,7 +140,7 @@
                     <div class="services-item card-overlay active">
                         <i class="flaticon-evaluate"></i>
                         <h3>
-                            <a href="service-details.html">Legal Compliance</a>
+                            <p>Legal Compliance</p>
                         </h3>
                         <p>We conform and abide by the rules,policies,regulations and standards of our regulatory bodies.
                         </p>
@@ -149,7 +150,7 @@
                     <div class="services-item card-overlay">
                         <i class="flaticon-insurance"></i>
                         <h3>
-                            <a href="service-details.html">Active Support</a>
+                            <p>Active Support</p>
                         </h3>
                         <p>Our support team is always available 24/7 to help you out whenever you require assistance or have
                             questions about the platform.</p>
