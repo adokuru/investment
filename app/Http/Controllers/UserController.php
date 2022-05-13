@@ -10,6 +10,11 @@ class UserController extends Controller
     {
         $users = User::paginate();
 
-        return view('users.index', compact('users'));
+        return view('admin.users.index', compact('users'));
+    }
+    public function dashboard()
+    {
+        $user = auth()->user();
+        return view('users.dashboard', compact('user'));
     }
 }

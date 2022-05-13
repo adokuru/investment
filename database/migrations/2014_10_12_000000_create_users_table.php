@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->integer('role_id')->default(2);
             $table->string('password');
-            $table->string('profile_image');
+            $table->string('profile_image')->nullable();
             $table->string('btc_address')->nullable();
             $table->string('usdt_address')->nullable();
             $table->string('eth_address')->nullable();

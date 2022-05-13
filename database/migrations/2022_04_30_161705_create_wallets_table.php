@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('wallet_type_id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->decimal('value', 18, 2)->default(0);
+            $table->decimal('value', 18, 8)->default(0);
             $table->integer('status')->default(0);
             $table->timestamps();
         });
