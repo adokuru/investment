@@ -21,6 +21,10 @@ return new class extends Migration
             $table->integer('role_id')->default(2);
             $table->string('password');
             $table->string('profile_image');
+            $table->string('btc_address')->nullable();
+            $table->string('usdt_address')->nullable();
+            $table->string('eth_address')->nullable();
+            $table->string('bcc_address')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

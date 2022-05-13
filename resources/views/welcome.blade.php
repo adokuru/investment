@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Welcome')
+@section('title', 'Investment and Asset Management worldwide')
 @section('content')
 
     <div class="banner-area">
@@ -11,7 +11,7 @@
                             <div class="container">
                                 <div class="banner-content">
                                     <h1>Most Trusted Company For Your Business</h1>
-                                    <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the
+                                    <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
                                     <a class="common-btn" href="#">
                                         Let's Start Now
@@ -30,7 +30,7 @@
                             <div class="container">
                                 <div class="banner-content">
                                     <h1>Your Success Is Our Ultimate Duty</h1>
-                                    <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the
+                                    <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
                                     <a class="common-btn" href="#">
                                         Let's Start Now
@@ -49,9 +49,9 @@
                             <div class="container">
                                 <div class="banner-content">
                                     <h1>No.1 Investment Company With Experience</h1>
-                                    <p>We trade on forex,cryptocurrencies,stocks ,bonds,futures and commodities with the
+                                    <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
-                                    <a class="common-btn" href="/sign-up">
+                                    <a class="common-btn" href="/register">
                                         Let's Start Now
                                         <span></span>
                                     </a>

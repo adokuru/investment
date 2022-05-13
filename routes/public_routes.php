@@ -15,13 +15,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/sign-in', function () {
-    return view('sign-in');
-});
-
-Route::get('/sign-up', function () {
-    return view('sign-up');
-});
 
 Route::get('/team', function () {
     return view('team');

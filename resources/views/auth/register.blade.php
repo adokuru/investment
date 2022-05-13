@@ -1,65 +1,74 @@
-<x-guest-layout>
-    <a href="/" class="flex justify-center items-center">
-        <x-application-logo class="w-20 h-20 text-gray-500 fill-current"/>
-    </a>
 
-    <!-- Validation Errors -->
-    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
+@extends('layouts.public')
+@section('title', 'Welcome')
+@section('content')
 
-    <form method="POST" action="{{ route('register') }}">
-    @csrf
 
-        <!-- Name -->
-        <div>
-            <x-label for="name" :value="__('Name')"/>
-            <x-input type="text"
-                     name="name"
-                     id="name"
-                     value="{{ old('name') }}"
-                     required
-                     autofocus
-            />
+    <div class="user-form-area pt-100">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="user-form-item">
+                        <a class="logo" href="index-2.html">
+                            <img src="frontend-assets/img/logo2.png" alt="Logo">
+                        </a>
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="form-group">
+                                <input name="name" id="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <input name="email" id="email" value="{{ old('email') }}" required class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" id="password_confirmation" required type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                            <div class="form-group">
+                                <input name="password_confirmation" id="password_confirmation" required type="password" class="form-control" placeholder="Enter your password again">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="common-btn">
+                                    Sign Up
+                                    <span></span>
+                                </button>
+                            </div>
+                            <h4>Or</h4>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-instagram'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p>Already created an account? <a href="/login">Sign In</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-3">
-            <x-label for="email" :value="__('Email')"/>
-            <x-input type="email"
-                     name="email"
-                     id="email"
-                     value="{{ old('email') }}"
-                     required/>
-        </div>
 
-        <!-- Password -->
-        <div class="mt-3">
-            <x-label for="password" :value="__('Password')"/>
-            <x-input type="password"
-                     name="password"
-                     id="password"
-                     required
-                     autocomplete="current-password"
-            />
-        </div>
+    <div class="go-top">
+        <i class="bx bxs-up-arrow-alt"></i>
+        <i class="bx bxs-up-arrow-alt"></i>
+    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-3">
-            <x-label for="password_confirmation" :value="__('Confirm Password')"/>
-            <x-input type="password"
-                     name="password_confirmation"
-                     id="password_confirmation"
-                     required
-            />
-        </div>
 
-        <div class="flex flex-col items-end mt-4">
-            <x-button class="w-full">
-                {{ __('Register') }}
-            </x-button>
 
-            <a class="mt-4 text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-        </div>
-    </form>
-</x-guest-layout>
+@endsection

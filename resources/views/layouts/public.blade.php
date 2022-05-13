@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/theme-dark.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | Allianz Assets Hub</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 
 <body>
@@ -116,7 +116,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo">
+                        <img src="{{ asset('frontend-assets/img/logo.png') }}" alt="Logo" style="width:130px">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
@@ -127,49 +127,17 @@
                                 <a href="/about" class="nav-link">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/faq" class="nav-link">FAQS</a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="/trading" class="nav-link">TRADING</a>
-                            
-                                {{-- <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="services.html" class="nav-link">Services</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="service-details.html" class="nav-link">Service Details</a>
-                                    </li>
-                                </ul> --}}
                             </li>
                             <li class="nav-item">
                                 <a href="/contact" class="nav-link">CONTACT</a>
-                                {{-- <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="projects.html" class="nav-link">Projects</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="project-details.html" class="nav-link">Project Details</a>
-                                    </li>
-                                </ul> --}}
                             </li>
-                            <li class="nav-item">
-                                <a href="/service" class="nav-link">TERM OF SERVICE</a>
-                                {{-- <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="blog.html" class="nav-link">Blog</a>
-                                    </li> --}}
-                                    {{-- <li class="nav-item">
-                                        <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                    </li> --}}
-                                </ul>
-                            </li>
-                            
                         </ul>
                         <div class="side-nav">
                                 <div id="search-overlay" class="block">
                                     <div class="centered">
                                         <div class="text-center">
-                                            <a href="/sign-in" class="common-btn">
+                                            <a href="/login" class="common-btn">
                                                 LOG IN
                                                 <span></span>
                                             </a>
@@ -181,7 +149,7 @@
                             <div id="search-overlay" class="block">
                                 <div class="centered">
                                     <div class="text-center">
-                                        <a href="/sign-up" class="common-btn">
+                                        <a href="/register" class="common-btn">
                                             REGISTER
                                             <span></span>
                                         </a>
