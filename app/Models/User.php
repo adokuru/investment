@@ -42,4 +42,34 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function wallet()
+    {
+        return $this->hasMany(Wallet::class);
+    }
+
+    public function getBalanceAttribute()
+    {
+        return $this->wallet()->sum('usd_balance');
+    }
+
+    public function bitconwallet()
+    {
+        return $this->wallet()->where('wallet_type_id', 1)->first();
+    }
+
+    public function ethwallet()
+    {
+        return $this->wallet()->where('wallet_type_id', 2)->first();
+    }
+
+    public function btccashwallet()
+    {
+        return $this->wallet()->where('wallet_type_id', 3)->first();
+    }
+
+    public function usdtwallet()
+    {
+        return $this->wallet()->where('wallet_type_id', 4)->first();
+    }
 }

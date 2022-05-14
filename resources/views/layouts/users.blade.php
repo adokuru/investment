@@ -112,68 +112,13 @@
                             <div class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
                                 <ul class="support-area">
                                     <li>
-                                        <a href="Mailto:info@hyipland.com"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance</span> </a>
+                                        <a href="#"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{auth()->user()->balance}}</span> </a>
                                     </li>
                                 </ul>
                                 <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
-                                    <form class="dashboard-header-search mr-sm-4">
-                                        <label for="search"><i class="flaticon-magnifying-glass"></i></label>
-                                        <input type="text" placeholder="Search...">
-                                    </form>
+                                    
                                     <ul class="dashboard-right-menus">
-                                        <li>
-                                            <a href="#0">
-                                                <i class="flaticon-email-1"></i>
-                                                <span class="number bg-theme-2">4</span>
-                                            </a>
-                                            <div class="notification-area">
-                                                <div class="notifacation-header d-flex flex-wrap justify-content-between">
-                                                    <span>4 New Notifications</span>
-                                                    <a href="#0">Clear</a>
-                                                </div>
-                                                <ul class="notification-body">
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="title">Robinhood Pandey</span>
-                                                                <div class="message">Electus rem placeat perspiciatis saepe</div>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="title">Robinhood Pandey</span>
-                                                                <div class="message">Electus rem placeat perspiciatis saepe</div>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="title">Robinhood Pandey</span>
-                                                                <div class="message">Electus rem placeat perspiciatis saepe</div>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <div class="notifacation-footer text-center">
-                                                    <a href="#0" class="view-all">View All</a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                         <li>
                                             <a href="#0">
                                                 <i class="flaticon-notification"></i>
@@ -244,8 +189,8 @@
                                                     </span>
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title">John Doe</h6>
-                                                    <span class="country">Indonesia</span>
+                                                    <h6 class="title">{{auth()->user()->name}}</h6>
+                                                    <span class="country">Online</span>
                                                 </div>
                                             </a>
                                             <div class="notification-area">
@@ -283,7 +228,8 @@
                     <div class="dashboard-footer">
                         <div class="d-flex flex-wrap justify-content-between m-0-15-none">
                             <div class="left">
-                                &copy; 2020 <a href="#0">Allianz Assets Hub</a> | All right reserved.
+                                &copy; <script>document.write(new Date().getFullYear())</script>
+                                <a href="#0">Allianz Assets Hub</a> | All right reserved.
                             </div>
                             <div class="right">
                                 <ul>

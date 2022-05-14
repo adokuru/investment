@@ -22,7 +22,7 @@ class WalletTypeSeeder extends Seeder
             'symbol' => 'BTC',
             'getSymbol' => 'bitcoin',
             'value' => Cryptocap::getSingleAsset('bitcoin')->data->priceUsd,
-            'image' => 'backend/assets/images/dashboard/dashboard2.png',
+            'icon' => 'backend/assets/images/dashboard/dashboard2.png',
         ]);
         WalletType::create([
             'name' => 'ethereum',
@@ -30,7 +30,7 @@ class WalletTypeSeeder extends Seeder
             'symbol' => 'ETH',
             'getSymbol' => 'ethereum',
             'value' => Cryptocap::getSingleAsset('ethereum')->data->priceUsd,
-            'image' => 'backend/assets/images/dashboard/dashboard3.png',
+            'icon' => 'backend/assets/images/dashboard/dashboard3.png',
         ]);
         WalletType::create([
             'name' => 'USDT',
@@ -38,7 +38,7 @@ class WalletTypeSeeder extends Seeder
             'symbol' => 'USDT',
             'getSymbol' => 'tether',
             'value' => Cryptocap::getSingleAsset('tether')->data->priceUsd,
-            'image' => 'backend/assets/images/dashboard/dashboard4.png',
+            'icon' => 'backend/assets/images/dashboard/dashboard4.png',
         ]);
         WalletType::create([
             'name' => 'Bitcoin Cash',
@@ -46,7 +46,7 @@ class WalletTypeSeeder extends Seeder
             'symbol' => 'BCH',
             'getSymbol' => 'bitcoin-cash',
             'value' => Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd,
-            'image' => 'backend/assets/images/dashboard/dashboard4.png',
+            'icon' => 'backend/assets/images/dashboard/dashboard4.png',
         ]);
 
     }

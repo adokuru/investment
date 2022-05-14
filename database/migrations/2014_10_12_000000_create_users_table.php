@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('usdt_address')->nullable();
             $table->string('eth_address')->nullable();
             $table->string('bcc_address')->nullable();
+            $table->decimal('earnings', 18, 2)->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wallet_types', function (Blueprint $table) {
+        Schema::create('user_ivestments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->string('symbol')->nullable();
-            $table->string('getSymbol')->nullable();
-            $table->decimal('value', 18, 2)->default(0);
-            $table->integer('status')->default(1);
-            $table->string('icon')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('investment_plan_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wallet_types');
+        Schema::dropIfExists('user_ivestments');
     }
 };

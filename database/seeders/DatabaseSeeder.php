@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         Role::create(['name' => 'Admin']);
         Role::create(['name' => 'User']);
         $admin = User::create([
-            'name' => 'Admin ',
+            'name' => 'Admin User',
             'email' => 'admin@allianzassetshub.com',
             'password' => Hash::make('investment2022$'),
             'email_verified_at' => now(),
@@ -28,12 +28,14 @@ class DatabaseSeeder extends Seeder
         ]);
         $admin->assignRole('Admin');
         $user = User::create([
-            'name' => 'User',
+            'name' => 'Normal User',
             'email' => 'user@allianzassetshub.com',
             'email_verified_at' => now(),
             'password' => Hash::make('investment2022$'),
         ]);
         $user->assignRole('User');
         $this->call(WalletTypeSeeder::class);
+        
+        $this->call(InvestmentPlanSeeder::class);
     }
 }
