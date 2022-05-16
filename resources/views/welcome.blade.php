@@ -189,7 +189,7 @@
 
         <div class="page-title-area title-bg-five">
             <div class="title-shape">
-                ]
+                
             </div>
             <div class="d-table">
                 <div class="d-table-cell">
