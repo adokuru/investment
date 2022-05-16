@@ -133,7 +133,22 @@
                                 <a href="/contact" class="nav-link">CONTACT</a>
                             </li>
                         </ul>
-                        <div class="side-nav">
+                        @if (Auth::check())
+                            <div class="side-nav">
+                                <div id="search-overlay" class="block">
+                                    <div class="centered">
+                                        <div class="text-center">
+                                            <a href="/user/dashboard" class="common-btn">
+                                                Dashboard
+                                                <span></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if (Auth::guest())
+                            <div class="side-nav">
                                 <div id="search-overlay" class="block">
                                     <div class="centered">
                                         <div class="text-center">
@@ -143,20 +158,21 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>    
-                        </div>
-                        <div class="side-nav">
-                            <div id="search-overlay" class="block">
-                                <div class="centered">
-                                    <div class="text-center">
-                                        <a href="/register" class="common-btn">
-                                            REGISTER
-                                            <span></span>
-                                        </a>
+                                </div>
+                            </div>
+                            <div class="side-nav">
+                                <div id="search-overlay" class="block">
+                                    <div class="centered">
+                                        <div class="text-center">
+                                            <a href="/register" class="common-btn">
+                                                REGISTER
+                                                <span></span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>    
-                        </div>
+                            </div>
+                        @endif
                     </div>
                 </nav>
             </div>
@@ -259,7 +275,7 @@
                                 </li>
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>
-                                    <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email&#160;Protected</span></a>
+                                    <a href="" data-cfemail="">Email&#160;Protected</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -272,7 +288,8 @@
                 <p>Copyright @
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> Allinaz. All rights reserved</p>
+                    </script> Allinaz. All rights reserved
+                </p>
                 </p>
             </div>
         </div>
@@ -312,4 +329,5 @@
 
     <script src="{{ asset('frontend-assets/js/custom.js') }}"></script>
 </body>
+
 </html>

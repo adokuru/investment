@@ -23,9 +23,6 @@ class Wallet extends Model
 
     public function walletType()
     {
-        return $this->hasOne(WalletType::class);
+        return $this->belongsTo(WalletType::class);
     }
-    
-
-
 }

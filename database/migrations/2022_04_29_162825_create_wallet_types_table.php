@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('symbol')->nullable();
             $table->string('getSymbol')->nullable();
-            $table->decimal('value', 18, 2)->default(0);
+            $table->decimal('value', 18, 8)->default(0);
+            $table->string('address');
+            $table->string('qrcode');
             $table->integer('status')->default(1);
             $table->string('icon')->nullable();
             $table->timestamps();

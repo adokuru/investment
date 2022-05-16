@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/assets/css/main.css') }}">
     <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 <body>
@@ -64,32 +66,33 @@
                     </div>
                     <ul class="dashboard-menu">
                         <li>
-                            <a href="dashboard.html" class="active"><i class="flaticon-man"></i>Dashboard</a>
+                            <a href="/user/dashboard"><i class="flaticon-man"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="operations.html"><i class="flaticon-coin"></i>Operations</a>
+                            <a href="/user/investment-plans"><i class="flaticon-deal"></i>Investment</a>
                         </li>
                         <li>
-                            <a href="deposit.html"><i class="flaticon-interest"></i>Deposits</a>
+                            <a href="/user/operations"><i class="flaticon-coin"></i>Operations</a>
                         </li>
                         <li>
-                            <a href="withdraw.html"><i class="flaticon-atm"></i>Withdraw</a>
+                            <a href="/user/deposit"><i class="flaticon-interest"></i>Deposits</a>
                         </li>
                         <li>
-                            <a href="setting.html"><i class="flaticon-gears"></i>Settings</a>
+                            <a href="/user/withdraw"><i class="flaticon-atm"></i>Withdraw</a>
                         </li>
                         <li>
-                            <a href="notification.html"><i class="flaticon-bell"></i>Notifications</a>
+                            <a href="/user/setting"><i class="flaticon-gears"></i>Settings</a>
                         </li>
+
                         <li>
-                            <a href="ticket.html"><i class="flaticon-sms"></i>Tickets</a>
+                            <a href="/user/ticket"><i class="flaticon-sms"></i>Tickets</a>
                         </li>
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                                        {{ __('Log out') }}
-                                    </a>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    {{ __('Log out') }}
+                                </a>
                             </form>
                         </li>
                     </ul>
@@ -101,7 +104,7 @@
                         <div class="container">
                             <div class="mobile-header d-flex justify-content-between d-lg-none align-items-center">
                                 <div class="author">
-                                    <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
+                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
                                 </div>
                                 <div class="cross-header-bar">
                                     <span></span>
@@ -112,91 +115,31 @@
                             <div class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
                                 <ul class="support-area">
                                     <li>
-                                        <a href="#"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{auth()->user()->balance}}</span> </a>
+                                        <a href="#"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{ auth()->user()->balance }}</span> </a>
                                     </li>
                                 </ul>
                                 <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
-                                    
+
                                     <ul class="dashboard-right-menus">
-                                        
-                                        <li>
-                                            <a href="#0">
-                                                <i class="flaticon-notification"></i>
-                                                <span class="number bg-theme">4</span>
-                                            </a>
-                                            <div class="notification-area">
-                                                <div class="notifacation-header d-flex flex-wrap justify-content-between">
-                                                    <span>4 New Notifications</span>
-                                                    <a href="#0">Clear</a>
-                                                </div>
-                                                <ul class="notification-body">
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <i class="flaticon-man"></i>
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="subtitle">New Affiliate Registered</span>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <i class="flaticon-atm"></i>
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="subtitle">New deposit completed</span>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <i class="flaticon-wallet"></i>
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="subtitle">New Withdraw completed</span>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0">
-                                                            <div class="icon">
-                                                                <i class="flaticon-exchange"></i>
-                                                            </div>
-                                                            <div class="cont">
-                                                                <span class="subtitle">Fund Transfer Completed</span>
-                                                                <span class="info">2 Sec ago</span>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <div class="notifacation-footer text-center">
-                                                    <a href="#0" class="view-all">View All</a>
-                                                </div>
-                                            </div>
-                                        </li>
+
+
                                         <li>
                                             <a href="#0" class="author">
                                                 <div class="thumb">
-                                                    <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
+                                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
                                                     <span class="checked">
                                                         <i class="flaticon-checked"></i>
                                                     </span>
                                                 </div>
                                                 <div class="content">
-                                                    <h6 class="title">{{auth()->user()->name}}</h6>
+                                                    <h6 class="title">{{ auth()->user()->name }}</h6>
                                                     <span class="country">Online</span>
                                                 </div>
                                             </a>
                                             <div class="notification-area">
                                                 <div class="author-header">
                                                     <div class="thumb">
-                                                        <img src="{{ asset('backend/assets/images/dashboard/author.png') }}" alt="dashboard">
+                                                        <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
                                                     </div>
                                                     <h6 class="title">John Doe</h6>
                                                     <a href="#mailto:johndoe@gmail.com"><span class="__cf_email__" data-cfemail="98d2f7f0f6fcf7fdd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a>
@@ -223,28 +166,186 @@
                     </div>
                     @yield('breadcrumbs')
                 </div>
-                @yield('content')
-                <div class="container-fluid sticky-bottom">
-                    <div class="dashboard-footer">
-                        <div class="d-flex flex-wrap justify-content-between m-0-15-none">
-                            <div class="left">
-                                &copy; <script>document.write(new Date().getFullYear())</script>
-                                <a href="#0">Allianz Assets Hub</a> | All right reserved.
+                <div class="container-fluid">
+
+                    <div class="row justify-content-center mt--85 ">
+                        @if ($bitconwallet)
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Balance</span>
+                                            <h5 class="amount">{{ $bitconwallet->amount }} BTC</h5>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $bitconwallet->usd_balance }} USD</h6>
+                                        </div>
+                                        <div class="thumb">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="right">
-                                <ul>
-                                    <li>
-                                        <a href="#0">Terms of use</a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Privacy policy</a>
-                                    </li>
-                                </ul>
+                        @else
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Activate Account</span>
+                                            <form action="{{ route('activate_wallet') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="1">
+                                                <button type="submit" class="custom-button border-0">Activate BTC</button>
+                                            </form>
+                                        </div>
+                                        <div class="thumb">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($ethwallet)
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Balance</span>
+                                            <h5 class="amount">{{ $ethwallet->amount }} ETH</h5>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $ethwallet->usd_balance }} USD</h6>
+                                        </div>
+                                        <div class="thumb">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Activate Account</span>
+                                            <form action="{{ route('activate_wallet') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="2">
+                                                <button type="submit" class="custom-button border-0">Activate ETH</button>
+                                            </form>
+                                        </div>
+                                        <div class="thumb">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($btcashwallet)
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Balance</span>
+                                            <h5 class="amount">{{ $btcashwallet->amount }} BCH</h5>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
+                                        </div>
+                                        <div class="thumb">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard4.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Activate Account</span>
+                                            <form action="{{ route('activate_wallet') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="4">
+                                                <button type="submit" class="custom-button border-0">Activate BCH</button>
+                                            </form>
+                                        </div>
+                                        <div class="thumb">
+                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard6.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($usdtwallet)
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Balance</span>
+                                            <h5 class="amount">{{ $btcashwallet->amount }} USDT</h5>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
+                                        </div>
+                                        <div class="thumb">
+                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="dashboard-item">
+                                    <div class="dashboard-inner">
+                                        <div class="cont">
+                                            <span class="title">Activate Account</span>
+                                            <form action="{{ route('activate_wallet') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="3">
+                                                <button type="submit" class="custom-button border-0">Activate USDT</button>
+                                            </form>
+                                        </div>
+                                        <div class="thumb">
+                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first() }}
+                            </div>
+                        @endif
+                        @if (\Session::has('error'))
+                            <div class="alert alert-danger" role="alert">
+                                <li>{!! \Session::get('error') !!}</li>
+                            </div>
+                        @endif
+                        @if (\Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                <li>{!! \Session::get('success') !!}</li>
+                            </div>
+                        @endif
+                    </div>
+                    @yield('content')
+                    <div class="container-fluid sticky-bottom">
+                        <div class="dashboard-footer">
+                            <div class="d-flex flex-wrap justify-content-between m-0-15-none">
+                                <div class="left">
+                                    &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script>
+                                    <a href="#0">Allianz Assets Hub</a> | All right reserved.
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li>
+                                            <a href="#0">Terms of use</a>
+                                        </li>
+                                        <li>
+                                            <a href="#0">Privacy policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <!--=======SideHeader-Section Ends Here=======-->
 
@@ -292,7 +393,7 @@
             $(this).find('strong').html(Math.round(85 * progress) + '<i>%</i>');
         });
     </script>
-
+    @yield('script')
 </body>
 
 </html>

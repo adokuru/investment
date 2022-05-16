@@ -50,7 +50,8 @@ class User extends Authenticatable
 
     public function getBalanceAttribute()
     {
-        return $this->wallet()->sum('usd_balance');
+        $balance = $this->wallet()->sum('usd_balance') ? 0 : $this->earnings;
+        return $balance;
     }
 
     public function bitconwallet()

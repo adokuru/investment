@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('investment_plan_id');
+            $table->decimal('amount', 18, 4);
+            $table->string('status')->default(1);
+
             $table->timestamps();
         });
     }

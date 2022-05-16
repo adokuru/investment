@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deposit;
+use App\Models\InvestmentPlan;
+use App\Models\Transaction;
 use App\Models\User;
+use App\Models\UserIvestment;
 use App\Models\Wallet;
+use App\Models\WalletType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -24,6 +30,134 @@ class UserController extends Controller
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
     }
 
+    public function deposit()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.deposit', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+    }
+
+    public function operations()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        $transaction = Transaction::where('user_id', $user->id)->paginate(10);
+        return view('users.operations', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'transaction'));
+    }
+
+    public function withdraw()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.withdraw', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+    }
+    public function investment()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        $investmentPlans = InvestmentPlan::all();
+        return view('users.investment', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investmentPlans'));
+    }
+
+    public function setting()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.setting', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+    }
+    public function ticket()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.ticket', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+    }
+    public function investmentPlan($id)
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        $investment = InvestmentPlan::where('id', $id)->first();
+        $wallet = $user->wallet;
+        if ($wallet === null) {
+            return redirect()->back()->with('error', 'Please add your wallet first');
+        }
+        return view('users.singleInvestment', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment', 'wallet'));
+    }
+    public function investmentPlanSubmit(Request $request)
+    {
+        $wallet = auth()->user()->wallet->where('id', $request->wallet)->first();
+
+        if ($wallet->usd_balance < $request->amount) {
+            return redirect()->back()->with('error', 'Insufficient Balance');
+        }
+        $transaction = InvestmentPlan::where('id', $request->investment)->first();
+
+        if ($request->amount < $transaction->minimum_price) {
+            return redirect()->back()->with('error', 'Amount lower than Minimum amount');
+        }
+        DB::transaction(function () use ($request) {
+            $user = auth()->user();
+            $wallet = $user->wallet->where('id', $request->wallet)->where('status', 1)->first();
+            $investment = InvestmentPlan::where('id', $request->investment)->first();
+            $transaction = new Transaction();
+            $transaction->user_id = $user->id;
+            $transaction->wallet_id = $wallet->id;
+            $transaction->amount = $request->amount;
+            $transaction->transaction_type = 'Investment';
+            $transaction->investment_plan_id = $request->investment;
+            $transaction->currency = $wallet->walletType->symbol;
+            $transaction->status = 1;
+            $transaction->save();
+
+            $user_investment = new UserIvestment();
+            $user_investment->user_id = $user->id;
+            $user_investment->investment_plan_id = $investment->id;
+            $user_investment->amount = $request->amount;
+            $user_investment->save();
+        });
+        return redirect()->route('users.dashboard')->with('success', 'Investment Successfully');
+    }
+    public function addDeposit(Request $request)
+    {
+
+        $deposit = new Deposit();
+        $deposit->user_id = auth()->user()->id;
+        $deposit->value = $request->amount;
+        $deposit->wallet_id = $request->type;
+        $deposit->save();
+
+        $transaction = new Transaction();
+        $transaction->user_id = auth()->user()->id;
+        $transaction->deposit_id = $deposit->id;
+        $transaction->transaction_type = 'deposit';
+        $transaction->currency = $request->currency;
+        $transaction->amount = $request->amount;
+        $transaction->status = 0;
+        $transaction->save();
+
+
+        return redirect()->route('users.dashboard')->with('success', 'Deposit pending authorization');
+    }
     public function createWallet(Request $request)
     {
         $user = auth()->user();
@@ -34,6 +168,27 @@ class UserController extends Controller
             'amount' => 0,
             'status' => 1,
         ]);
-        return redirect()->route('users.dashboard');
+        return redirect()->back()->with('success', 'Wallet created successfully');
+    }
+
+    public function depositMake(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required',
+            'type' => 'required',
+        ]);
+        $amount = $request->amount;
+        $type = $request->type;
+        $walletType = WalletType::find($request->type);
+        $wallet = auth()->user()->wallet->where('wallet_type_id', $request->type)->where('status', 1)->first();
+        if ($wallet == null) {
+            return redirect()->route('users.deposit')->with('error', 'Please activate your ' . $walletType->name . ' wallet');
+        }
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.payDeposit', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'walletType', 'wallet', 'amount'));
     }
 }

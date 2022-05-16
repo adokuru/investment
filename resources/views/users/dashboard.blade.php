@@ -7,7 +7,7 @@
         <h3 class="title">Dashboard</h3>
         <ul class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a href="/user/dashboard">Home</a>
             </li>
             <li>
                 Dashboard
@@ -16,147 +16,6 @@
     </div>
 @endsection
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center mt--85 ">
-            @if ($bitconwallet)
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Balance</span>
-                                <h5 class="amount">{{ $bitconwallet->amount }} BTC</h5>
-                                <h6 class="amount" style="color:#c2c2c2">{{ $bitconwallet->usd_balance }} USD</h6>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @else
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Activate Account</span>
-                                <form action="{{ route('activate_wallet') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="wallet_type_id" id="wallettype" value="1">
-                                    <button type="submit" class="custom-button border-0">Activate BTC</button>
-                                </form>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            @if ($ethwallet)
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Balance</span>
-                                <h5 class="amount">{{ $ethwallet->amount }} ETH</h5>
-                                <h6 class="amount" style="color:#c2c2c2">{{ $ethwallet->usd_balance }} USD</h6>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @else
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Activate Account</span>
-                                <form action="{{ route('activate_wallet') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="wallet_type_id" id="wallettype" value="2">
-                                    <button type="submit" class="custom-button border-0">Activate ETH</button>
-                                </form>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            @if ($btcashwallet)
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Balance</span>
-                                <h5 class="amount">{{ $btcashwallet->amount }} BCH</h5>
-                                <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard4.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @else
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Activate Account</span>
-                                <form action="{{ route('activate_wallet') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="wallet_type_id" id="wallettype" value="4">
-                                    <button type="submit" class="custom-button border-0">Activate BCH</button>
-                                </form>
-                            </div>
-                            <div class="thumb">
-                                <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard6.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            @if ($usdtwallet)
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Balance</span>
-                                <h5 class="amount">{{ $btcashwallet->amount }} USDT</h5>
-                                <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
-                            </div>
-                            <div class="thumb">
-                                <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @else
-                <div class="col-sm-6 col-lg-3">
-                    <div class="dashboard-item">
-                        <div class="dashboard-inner">
-                            <div class="cont">
-                                <span class="title">Activate Account</span>
-                                <form action="{{ route('activate_wallet') }}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="wallet_type_id" id="wallettype" value="3">
-                                    <button type="submit" class="custom-button border-0">Activate USDT</button>
-                                </form>
-                            </div>
-                            <div class="thumb">
-                                <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-
-        </div>
         <div class="row pb-30">
             <div class="col-lg-6">
                 <div class="total-earning-item">
@@ -192,27 +51,6 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="earn-item small-thumbs mb-30">
-                    <div class="earn-thumb">
-                        <img src="{{ asset('backend/assets/images/dashboard/earn/07.png') }}" alt="dashboard-earn">
-                    </div>
-                    <div class="earn-content">
-                        <h6 class="title">The last Referral Calculation</h6>
-                        <ul class="mb--5">
-                            <li>
-                                <div class="icon">
-                                    <img src="{{ asset('backend/assets/images/dashboard/earn/usd.png') }}" alt="dashboard-earn">
-                                </div>
-                                <div class="cont">
-                                    <span class="cl-1">0.00</span>
-                                    <span class="cl-4">USD</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
                 <div class="progress-wrapper mb-30">
                     <h5 class="title cl-white">Progress</h5>
                     <div class="d-flex flex-wrap m-0-15-20-none">
@@ -237,6 +75,28 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="earn-item small-thumbs mb-30">
+                    <div class="earn-thumb">
+                        <img src="{{ asset('backend/assets/images/dashboard/earn/07.png') }}" alt="dashboard-earn">
+                    </div>
+                    <div class="earn-content">
+                        <h6 class="title">The last Referral Calculation</h6>
+                        <ul class="mb--5">
+                            <li>
+                                <div class="icon">
+                                    <img src="{{ asset('backend/assets/images/dashboard/earn/usd.png') }}" alt="dashboard-earn">
+                                </div>
+                                <div class="cont">
+                                    <span class="cl-1">0.00</span>
+                                    <span class="cl-4">USD</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           
             <div class="col-xl-6">
                 <div class="earn-item mb-30">
                     <div class="earn-thumb">
@@ -251,7 +111,7 @@
                                     <img src="{{ asset('backend/assets/images/dashboard/earn/btc.png') }}" alt="dashboard-earn">
                                 </div>
                                 <div class="cont">
-                                    <span class="cl-1">{{ $bitconwallet->amount != null ? $bitconwallet->amount : "0.000000" }}</span>
+                                    <span class="cl-1">{{ $bitconwallet != null ? $bitconwallet->amount : "0.000000" }}</span>
                                     <span class="cl-4">BTC</span>
                                 </div>
                             </li>
@@ -260,7 +120,7 @@
                                     <img src="{{ asset('backend/assets/images/dashboard/earn/xrp.png') }}" alt="dashboard-earn">
                                 </div>
                                 <div class="cont">
-                                    <span class="cl-1">{{ $ethwallet->amount != null ? $ethwallet->amount : "0.000000" }}</span>
+                                    <span class="cl-1">{{ $ethwallet != null ? $ethwallet->amount : "0.000000" }}</span>
                                     <span class="cl-4">ETH</span>
                                 </div>
                             </li>
@@ -269,7 +129,7 @@
                                     <img src="{{ asset('backend/assets/images/dashboard/earn/eth.png') }}" alt="dashboard-earn">
                                 </div>
                                 <div class="cont">
-                                    <span class="cl-1">{{ $btcashwallet->amount != null ? $btcashwallet->amount : "0.000000" }}</span>
+                                    <span class="cl-1">{{ $btcashwallet != null ? $btcashwallet->amount : "0.000000" }}</span>
                                     <span class="cl-4">BCH</span>
                                 </div>
                             </li>
@@ -278,7 +138,7 @@
                                     <img src="{{ asset('backend/assets/images/dashboard/earn/usd.png') }}" alt="dashboard-earn">
                                 </div>
                                 <div class="cont">
-                                    <span class="cl-1">{{ $usdtwallet->amount != null ? $usdtwallet->amount : "0.000000" }}</span>
+                                    <span class="cl-1">{{ $usdtwallet != null ? $usdtwallet->amount : "0.000000" }}</span>
                                     <span class="cl-4">USDT</span>
                                 </div>
                             </li>

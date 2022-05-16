@@ -19,9 +19,8 @@ return new class extends Migration
             $table->string('description');
             $table->integer('contract_duration');
             $table->decimal('minimum_price', 10, 2);
-            $table->decimal('maximum_price', 10, 2);
+            $table->decimal('maximum_price', 18, 2);
             $table->decimal('return_rate', 10, 2);
-            
             $table->timestamps();
         });
     }

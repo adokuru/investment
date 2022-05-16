@@ -23,14 +23,18 @@ class WalletTypeSeeder extends Seeder
             'getSymbol' => 'bitcoin',
             'value' => Cryptocap::getSingleAsset('bitcoin')->data->priceUsd,
             'icon' => 'backend/assets/images/dashboard/dashboard2.png',
+            'address' => 'bc1qagsee3w4u64cuveuqhteuy29sclxvagntadllj',
+            'qrcode' => 'backend/assets/images/qr/Your_Bitcoin_Cash_QR_Code.png',
         ]);
         WalletType::create([
-            'name' => 'ethereum',
+            'name' => 'Ethereum',
             'description' => 'Ethereum is a decentralized platform that runs smart contracts, a platform that runs smart contracts. It is a decentralized platform that uses peer-to-peer technology to operate with no central authority or single point of failure.',
             'symbol' => 'ETH',
             'getSymbol' => 'ethereum',
             'value' => Cryptocap::getSingleAsset('ethereum')->data->priceUsd,
             'icon' => 'backend/assets/images/dashboard/dashboard3.png',
+            'address' => '0xe0F5Bf531F2bf47fc6860ACD0cCDB09c1caF1740',
+            'qrcode' => 'backend/assets/images/qr/Your_Ethereum_QR_Code.png',
         ]);
         WalletType::create([
             'name' => 'USDT',
@@ -39,6 +43,8 @@ class WalletTypeSeeder extends Seeder
             'getSymbol' => 'tether',
             'value' => Cryptocap::getSingleAsset('tether')->data->priceUsd,
             'icon' => 'backend/assets/images/dashboard/dashboard4.png',
+            'address' => '0xe0F5Bf531F2bf47fc6860ACD0cCDB09c1caF1740',
+            'qrcode' => 'backend/assets/images/qr/Your_USDT_Cash_QR_Code.jpeg',
         ]);
         WalletType::create([
             'name' => 'Bitcoin Cash',
@@ -47,7 +53,8 @@ class WalletTypeSeeder extends Seeder
             'getSymbol' => 'bitcoin-cash',
             'value' => Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd,
             'icon' => 'backend/assets/images/dashboard/dashboard4.png',
+            'address' => 'qp6nlqfrxygkefpuwnzqudpjhdys0l9y7v3qflqj3x',
+            'qrcode' => 'backend/assets/images/qr/Your_Bitcoin_Cash_QR_Code.png',
         ]);
-
     }
 }
