@@ -102,7 +102,7 @@
                     <div class="about-content">
                         <div class="section-title1">
                             <span class="sub-title1">About</span>
-                            <h2>We Are A Trusted Company With <span>25+</span> Years Of Experience</h2>
+                            <h2>We Are A Trusted Company With <span>120+</span> Years Of Experience</h2>
                             <p>Allianz Assets Hub is a UK registered legal international investment company.
                                 The company was created by a group of qualified experts, professional bankers, traders and
                                 analysts who specialized in the stock, bond, futures, currencies, forex and binary trading
@@ -117,7 +117,7 @@
                                         <i class="flaticon-medal-of-award"></i>
                                     </li>
                                     <li>
-                                        <h3>25+ Years Experience</h3>
+                                        <h3>120+ Years Experience</h3>
                                         <p>we are a registered and licensed company authorized to operate in any part of the
                                             world.</p>
                                     </li>
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                         <div class="years">
-                            <h3>25+ <br> <span>Years</span></h3>
+                            <h3>120+ <br> <span>Years</span></h3>
                         </div>
                     </div>
                 </div>
@@ -372,6 +372,22 @@
 
         <section class="testimonials-area ptb-100">
             <div class="container">
+                <div
+                    style="height:433px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
+                    <div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/?theme=light"
+                            width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+                    <div
+                        style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-area ptb-100">
+            <div class="container">
                 <div class="section-title">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
@@ -434,22 +450,6 @@
                                 <i class='bx bxs-star'></i>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials-area ptb-100">
-            <div class="container">
-                <div
-                    style="height:433px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
-                    <div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe
-                            src="https://widget.coinlib.io/?theme=light"
-                            width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
-                            border="0" style="border:0;margin:0;padding:0;"></iframe></div>
-                    <div
-                        style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
-                        
                     </div>
                 </div>
             </div>
