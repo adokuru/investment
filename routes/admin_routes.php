@@ -18,4 +18,5 @@ Route::middleware('auth', 'isAdmin')->group(function () {
 
     Route::get('admin/users/{id}', [ProfileController::class, 'usersShow'])->name('admin.users.show');
     Route::get('admin/users/edit/{id}', [ProfileController::class, 'usersEdit'])->name('admin.users.edit');
+    Route::post('admin/users/update/{id}', [ProfileController::class, 'usersUpdate'])->name('admin.users.update');
 });

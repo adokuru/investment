@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function getBalanceAttribute()
     {
-        $balance = $this->wallet()->sum('usd_balance') ? 0 : $this->earnings;
+        $balance = $this->earnings;
         return $balance;
     }
 

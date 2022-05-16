@@ -367,32 +367,6 @@
     <script src="{{ asset('backend/assets/js/circle-progress.js') }}"></script>
     <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 
-    <script>
-        $('.progress1.circle').circleProgress({
-            value: .75,
-            fill: {
-                gradient: ['#00cca2', '#00cca2']
-            },
-        }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(75 * progress) + '<i>%</i>');
-        });
-        $('.progress2.circle').circleProgress({
-            value: .90,
-            fill: {
-                gradient: ['#8d16e8', '#8d16e8']
-            },
-        }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(90 * progress) + '<i>%</i>');
-        });
-        $('.progress3.circle').circleProgress({
-            value: .85,
-            fill: {
-                gradient: ['#ef764c', '#ef764c']
-            },
-        }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(85 * progress) + '<i>%</i>');
-        });
-    </script>
     @yield('script')
 </body>
 

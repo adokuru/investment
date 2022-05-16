@@ -27,7 +27,8 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+        $investment = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->first();
+        return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
     public function deposit()

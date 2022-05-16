@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
@@ -71,5 +72,25 @@ class ProfileController extends Controller
 
 
         return redirect()->back()->with('success', 'Transaction rejected.');
+    }
+
+    public function usersEdit($id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function usersUpdate($id, Request $request)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        $user->earnings = $request->earnings;
+        $user->update();
+        return redirect()->route('dashboard')->with('success', 'User updated.');
+    }
+
+    public function usersShow($id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        return view('admin.users.show', compact('user'));
     }
 }
