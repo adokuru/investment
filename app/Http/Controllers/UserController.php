@@ -93,6 +93,9 @@ class UserController extends Controller
     public function investmentPlan($id)
     {
         $user = auth()->user();
+        if ($user->wallet == null) {
+            return redirect()->back()->with('error', 'Please add your wallet first');
+        }
         $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
