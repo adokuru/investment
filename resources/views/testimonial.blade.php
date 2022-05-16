@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Welcome')
+@section('title', 'Testimonials')
 @section('content')
 
 

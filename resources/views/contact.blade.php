@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('title', 'Welcome')
+@section('title', 'Contact')
 @section('content')
 
     <div class="page-title-area title-bg-five">
