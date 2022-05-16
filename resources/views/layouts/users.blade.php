@@ -141,19 +141,17 @@
                                                     <div class="thumb">
                                                         <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
                                                     </div>
-                                                    <h6 class="title">John Doe</h6>
-                                                    <a href="#mailto:johndoe@gmail.com"><span class="__cf_email__" data-cfemail="98d2f7f0f6fcf7fdd8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a>
+                                                    <h6 class="title">{{ auth()->user()->name }}</h6>
                                                 </div>
                                                 <div class="author-body">
                                                     <ul>
                                                         <li>
-                                                            <a href="#0"><i class="far fa-user"></i>Profile</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0"><i class="fas fa-user-edit"></i>Edit Profile</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#0"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                                                            <form method="POST" action="{{ route('logout') }}">
+                                                                @csrf
+                                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                                    <i class="fas fa-sign-out-alt"> {{ __('Log out') }}
+                                                                </a>
+                                                            </form>
                                                         </li>
                                                     </ul>
                                                 </div>
