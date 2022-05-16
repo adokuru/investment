@@ -103,7 +103,7 @@
                         <div class="section-title1">
                             <span class="sub-title1">About</span>
                             <h2>We Are A Trusted Company With <span>25+</span> Years Of Experience</h2>
-                            <p>Allianz is a UK registered legal international investment company.
+                            <p>Allianz Assets Hub is a UK registered legal international investment company.
                                 The company was created by a group of qualified experts, professional bankers, traders and
                                 analysts who specialized in the stock, bond, futures, currencies, forex and binary trading
                                 and arbitrage.</p>
@@ -180,6 +180,31 @@
                         </div>
                         <div class="years">
                             <h3>25+ <br> <span>Years</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="page-title-area title-bg-five">
+            <div class="title-shape">
+                ]
+            </div>
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="container">
+                        <div
+                            style="width: 500px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;">
+                            <div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe
+                                    src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250"
+                                    height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                                    border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+                            <div
+                                style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                                <a href="https://coinlib.io" target="_blank"
+                                    style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
+                                    Prices</a>&nbsp;by Coinlib</div>
                         </div>
                     </div>
                 </div>
@@ -292,7 +317,7 @@
                                 <li>40 days contract</li>
                                 <li>Automatic payout in BTC</li>
                             </ul>
-                            <a class="common-btn" href="{{route('register')}}">
+                            <a class="common-btn" href="{{ route('register') }}">
                                 Get Started
                                 <span></span>
                             </a>
@@ -316,7 +341,7 @@
                                 <li>40 days contract</li>
                                 <li>Automatic payout in BTC</li>
                             </ul>
-                            <a class="common-btn two" href="{{route('register')}}">
+                            <a class="common-btn two" href="{{ route('register') }}">
                                 Get Started
                                 <span></span>
                             </a>
@@ -339,7 +364,7 @@
                                 <li>25 days contract</li>
                                 <li>Automatic payout in BTC</li>
                             </ul>
-                            <a class="common-btn" href="{{route('register')}}">
+                            <a class="common-btn" href="{{ route('register') }}">
                                 Get Started
                                 <span></span>
                             </a>
@@ -349,117 +374,89 @@
             </div>
         </section>
 
-        <section class="team-area ptb-100">
+        <section class="testimonials-area ptb-100">
             <div class="container">
                 <div class="section-title">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <span class="sub-title">Team Members</span>
-                            <h2>Meet Our Awesome <span>Team</span> To Whom We Are Dependent</h2>
+                            <span class="sub-title">Testimonials</span>
+                            <h2>See What Our Client's <span>Say</span> About Our Work</h2>
                         </div>
                         <div class="col-lg-6">
-                            <p>To a prospect seeking out a new service provider, the process can be a little overwhelming.
-                                It's easy to wonder: Who are the real people behind all the smoke and mirrors?</p>
+                            <p>These are some testimonials from our happy and dedicated investors on Allianz.
+                                The management is thanking you for your trust and dedication towards this platform</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="team-item">
-                            <div class="top card-overlay">
-                                <img src="{{ asset('frontend-assets/img/team/team1.jpg') }}" alt="Team">
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="team-details.html">David Seek</a>
-                                </h3>
-                                <span>Cheif Executive</span>
-                            </div>
-                        </div>
+                <div class="testimonials-slider owl-theme owl-carousel">
+                    <div class="testimonials-item">
+                        <i class='bx bxs-quote-right icon'></i>
+                        <p>This is a realistic program for anyone looking for a reliable platform to invest their funds.
+                            Paid to me regularly, keep up good work!.</p>
+                        <img src="{{ asset('frontend-assets/img/testimonials1.jpg') }}" alt="testimonial">
+                        <h3>Emily Henry</h3>
+                        <span>Investor</span>
+                        <ul>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="team-item">
-                            <div class="top card-overlay">
-                                <img src="{{ asset('frontend-assets/img/team/team2.jpg') }}" alt="Team">
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="team-details.html">Angela Carter</a>
-                                </h3>
-                                <span>Cheif Marketing Researcher</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
-                        <div class="team-item">
-                            <div class="top card-overlay">
-                                <img src="{{ asset('frontend-assets/img/team/team3.jpg') }}" alt="Team">
-                            </div>
-                            <div class="bottom">
-                                <ul>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-facebook'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-linkedin'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">
-                                            <i class='bx bxl-twitter'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="team-details.html">Moris James</a>
-                                </h3>
-                                <span>Cheif Finance Consultant</span>
-                            </div>
-                        </div>
+                    <div class="testimonials-item">
+                        <i class='bx bxs-quote-right icon'></i>
+                        <p>My family and me want to thank you for helping us find a great opportunity to make money trading
+                            . Very happy with how things are going!.</p>
+                        <img src="{{ asset('frontend-assets/img/testimonials2.jpg') }}" alt="testimonial">
+                        <h3>Jac Jacson</h3>
+                        <span>Investor</span>
+                        <ul>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star'></i>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a class="common-btn" href="/team">
-                        All Members
-                        <span></span>
-                    </a>
+            </div>
+        </section>
+
+        <section class="testimonials-area ptb-100">
+            <div class="container">
+                <div
+                    style="height:433px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
+                    <div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/widget?type=full_v2&theme=light&cnt=6&pref_coin_id=1505&graph=yes"
+                            width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+                    <div
+                        style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                        <a href="https://coinlib.io" target="_blank"
+                            style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
+                            Prices</a>&nbsp;by Coinlib
+                    </div>
                 </div>
             </div>
         </section>

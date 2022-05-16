@@ -102,18 +102,21 @@
                 <div class="col-lg-4">
                     <div class="contact-info">
                         <h3>Contact Info</h3>
-                        
-                                <p><b>Allianz</b></p>
-                                <p>16a invercauld ballater
-                                    Scotland, AL 34246</p>
-                            
-                               <p><b>Contact Number</b></p>
-                               <p>Phone: (+44) 7508 669535</p>
-                            
-                                <p><b>Office Hours</b></p>
-                               <p>Monday - Friday</p>
-                               <p>8:30am - 5:00pm</p>
-                           
+
+                        <p><b>Allianz</b></p>
+                        <p>16a invercauld ballater
+                            Scotland, AL 34246</p>
+
+                        <p><b>Support Email</b></p>
+                        <p>
+                            <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__"
+                                    data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
+                        </p>
+
+                        <p><b>Office Hours</b></p>
+                        <p>Monday - Friday</p>
+                        <p>8:30am - 5:00pm</p>
+
                     </div>
                 </div>
             </div>

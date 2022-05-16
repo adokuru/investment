@@ -35,7 +35,7 @@
                 <div class="col-lg-7">
                     <div class="container">
                         <h2>We Are A Trusted Company With <span>25+</span> Years Of Experience</h2>
-                        <p>Allianz is a UK registered legal international investment company.
+                        <p>Allianz Asset Hub is a UK registered legal international investment company.
                             The company was created by a group of qualified experts, professional bankers, traders and
                             analysts who specialized in the stock, bond, futures, currencies, forex and binary trading
                             and arbitrage.</p>
