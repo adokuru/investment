@@ -189,7 +189,7 @@
 
         <div class="page-title-area title-bg-five">
             <div class="title-shape">
-                ]
+                
             </div>
             <div class="d-table">
                 <div class="d-table-cell">
@@ -200,11 +200,7 @@
                                     src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250"
                                     height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
                                     border="0" style="border:0;margin:0;padding:0;"></iframe></div>
-                            <div
-                                style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
-                                <a href="https://coinlib.io" target="_blank"
-                                    style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
-                                    Prices</a>&nbsp;by Coinlib</div>
+                           
                         </div>
                     </div>
                 </div>
@@ -453,9 +449,7 @@
                             border="0" style="border:0;margin:0;padding:0;"></iframe></div>
                     <div
                         style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
-                        <a href="https://coinlib.io" target="_blank"
-                            style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
-                            Prices</a>&nbsp;by Coinlib
+                        
                     </div>
                 </div>
             </div>
