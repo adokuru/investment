@@ -55,12 +55,12 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#deb6bbb2b2b19eb7b0a8bff0bdb1b3"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email&#160;Protected</span></a>
+                                <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <i class='bx bx-phone-call'></i>
                                 <a href="tel:+99084211703">+990-8421-1703</a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <i class='bx bx-time'></i>
                                 <span>Mon - Sat: 8:00 AM - 7:00 PM</span>
@@ -269,13 +269,16 @@
                                     <i class='bx bxs-location-plus'></i>
                                     <span>16a invercauld ballater Scotland, AL 34246</span>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <i class='bx bxs-phone-call'></i>
                                     <a href="tel:+0015481592491">(+44) 7508 669535<a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>
-                                    <a href="" data-cfemail="">Email&#160;Protected</span></a>
+                                    <li>
+                                        <i class='bx bx-mail-send'></i>
+                                        <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
+                                    </li>
                                 </li>
                             </ul>
                         </div>
@@ -288,7 +291,7 @@
                 <p>Copyright @
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> Allinaz. All rights reserved
+                    </script> Allianz Assets Hub. All rights reserved
                 </p>
                 </p>
             </div>
