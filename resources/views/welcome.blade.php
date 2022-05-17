@@ -392,7 +392,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <span class="sub-title">Testimonials</span>
-                            <h2>See What Our Client's <span>Say</span> About Our Work</h2>
+                            <h2>See What Our Client's <span>Had</span> to Say</h2>
                         </div>
                         <div class="col-lg-6">
                             <p>These are some testimonials from our happy and dedicated investors on Allianz.

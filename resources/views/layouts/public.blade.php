@@ -63,7 +63,7 @@
                             </li> --}}
                             <li>
                                 <i class='bx bx-time'></i>
-                                <span>Mon - Sat: 8:00 AM - 7:00 PM</span>
+                                <span>Mon - Fri: 8:00 AM - 9:00 PM</span>
                             </li>
                         </ul>
                     </div>
@@ -255,7 +255,7 @@
                                 <li>Tuesday <span>8:00 - 21:00</span></li>
                                 <li>Wednesday <span>8:00 - 21:00</span></li>
                                 <li>Thursday <span>8:00 - 21:00</span></li>
-                                <li>Sunday <span>8:00 - 21:00</span></li>
+                                <li>Friday <span>8:00 - 21:00</span></li>
                             </ul>
                         </div>
                     </div>
