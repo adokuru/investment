@@ -8,10 +8,10 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
-require __DIR__.'/admin_routes.php';
-require __DIR__.'/user_routes.php';
-require __DIR__.'/public_routes.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/admin_routes.php';
+require __DIR__ . '/user_routes.php';
+require __DIR__ . '/public_routes.php';
 
 
 Route::get('/test', function () {
@@ -22,3 +22,7 @@ Route::get('/test', function () {
     return 'done';
 });
 
+
+Route::get('/test2', function () {
+    return Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
+});

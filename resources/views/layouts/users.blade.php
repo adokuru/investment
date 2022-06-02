@@ -121,8 +121,6 @@
                                 <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
 
                                     <ul class="dashboard-right-menus">
-
-
                                         <li>
                                             <a href="#0" class="author">
                                                 <div class="thumb">
@@ -149,7 +147,7 @@
                                                             <form method="POST" action="{{ route('logout') }}">
                                                                 @csrf
                                                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                                                                    <i class="fas fa-sign-out-alt"> {{ __('Log out') }}
+                                                                     {{ __('Log out') }}
                                                                 </a>
                                                             </form>
                                                         </li>
