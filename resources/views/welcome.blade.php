@@ -69,7 +69,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3">
                     <div class="logo-text">
-                        <h3>Company Who Trust Us</h3>
+                        <h3>Companies Who Trust Us</h3>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -188,20 +188,17 @@
 
 
         <div class="page-title-area title-bg-five">
-            <div class="title-shape">
-                
-            </div>
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
-                        <div
-                            style="width: 500px; height:335px; background-color: #FAFAFA; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;margin: 0;width: 250px;padding:1px;padding: 0px; margin: 0px;">
-                            <div style="height:315px; padding:0px; margin:0px; width: 100%;"><iframe
-                                    src="https://widget.coinlib.io/widget?type=converter&theme=light" width="250"
-                                    height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
-                                    border="0" style="border:0;margin:0;padding:0;"></iframe></div>
-                           
-                        </div>
+                        
+                        <div style="width: 220px; height:335px; background-color: #232937; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; 
+                        border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; 
+                        box-shadow: inset 0 -20px 0 0 #262B38;margin: 0;width: 220px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; 
+                        width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=dark" width="220" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;">
+                        </iframe></div><div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; 
+                        color: #626B7F; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
+
                     </div>
                 </div>
             </div>
@@ -300,8 +297,9 @@
                         <div class="pricing-item">
                             <h3>LOW YIELD PLAN (Low Profile Investors)</h3>
                             <h4>
+
                                 <span class="one">$</span> 10,000
-                                <span class="two">/Month</span>
+                               
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>
@@ -324,8 +322,9 @@
 
                             <h3>HIGH-YIELD PLAN (High Profile Investors)</h3>
                             <h4>
+
                                 <span class="one">$</span> 500,000
-                                <span class="two">/Month</span>
+                               
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>
@@ -347,8 +346,9 @@
                         <div class="pricing-item">
                             <h3>Crowd-Funding Plan</h3>
                             <h4>
+
                                 <span class="one">$</span> 1,000,000
-                                <span class="two">/Month</span>
+                                
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>

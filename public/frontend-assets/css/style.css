@@ -132,7 +132,7 @@ ul {
     transition: 0.5s all ease;
     opacity: 1;
     font-weight: 600;
-    padding: 12px 25px;
+    padding: 1px 25px;
 }
 
 .common-btn span {
@@ -2063,14 +2063,15 @@ ul {
 }
 
 .footer-area .footer-item .footer-hours ul li {
-    list-style-type: none;
+    
     display: block;
     color: #fff;
     position: relative;
     margin-bottom: 12px;
+    
 }
 
-.footer-area .footer-item .footer-hours ul li:before {
+/* .footer-area .footer-item .footer-hours ul li:before {
     position: absolute;
     content: "";
     width: 30px;
@@ -2080,8 +2081,8 @@ ul {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
-}
+    background-color: #1a3c8b;
+} */
 
 .footer-area .footer-item .footer-hours ul li:last-child {
     margin-bottom: 0;
@@ -2892,7 +2893,7 @@ ul {
 }
 
 .pricing-item ul {
-    max-width: 150px;
+    max-width: 140px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;

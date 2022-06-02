@@ -251,11 +251,14 @@
                         <div class="footer-hours">
                             <h3>Open Hours</h3>
                             <ul>
-                                <li>Monday <span>8:00 - 21:00</span></li>
-                                <li>Tuesday <span>8:00 - 21:00</span></li>
-                                <li>Wednesday <span>8:00 - 21:00</span></li>
-                                <li>Thursday <span>8:00 - 21:00</span></li>
-                                <li>Friday <span>8:00 - 21:00</span></li>
+                                <li>Monday :- 8:00 - 21:00</li>
+                                <li>Tuesday :- 8:00 - 21:00</li>
+                                <li>Wednesday :- 8:00 - 21:00
+                                    element.style {
+                                    }
+                                    .pricing-item.active</li>
+                                <li>Thursday :- 8:00 - 21:00</li>
+                                <li>Friday :- 8:00 - 21:00</li>
                             </ul>
                         </div>
                     </div>
