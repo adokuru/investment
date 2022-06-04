@@ -22,7 +22,6 @@
                             <li>10% Referral Bonus</li>
                             <li>Low Maintenance fee</li>
                             <li>0.70% daily</li>
-                            <li>40% ROI</li>
                             <li>40 days contract</li>
                             <li>Automatic payout in BTC</li>
                         </ul>
@@ -46,7 +45,6 @@
                             <li>10% Referral Bonus</li>
                             <li>Low Maintenance fee</li>
                             <li>6.00% daily</li>
-                            <li>60% ROI</li>
                             <li>40 days contract</li>
                             <li>Automatic payout in BTC</li>
                         </ul>
@@ -69,7 +67,6 @@
                             <li>10% Referral Bonus</li>
                             <li>Low Maintenance fee</li>
                             <li>3.00% daily</li>
-                            <li>50% ROI</li>
                             <li>170 days contract</li>
                             <li>Automatic payout in BTC</li>
                         </ul>
@@ -92,7 +89,6 @@
                             <li>10% Referral Bonus</li>
                             <li>Low Maintenance fee</li>
                             <li>8.50% daily</li>
-                            <li>150% ROI</li>
                             <li>25 days contract</li>
                             <li>Automatic payout in BTC</li>
                         </ul>
@@ -115,7 +111,6 @@
                                 <li>10% Referral Bonus</li>
                                 <li>Low Maintenance fee</li>
                                 <li>8.00% daily</li>
-                                <li>120% ROI</li>
                                 <li>18 days contract</li>
                                 <li>Automatic payout in BTC</li>
                             </ul>
@@ -123,6 +118,28 @@
                                 Get Started
                                 <span></span>
                             </a>
+                    </div>
+                </div>
+				<div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                    <div class="pricing-item">
+                        <h3>Mega investment</h3>
+                        <h4>
+                            <span class="one">$</span> 5,000,000
+                            <span class="two">/Month</span>
+                        </h4>
+                        <ul>
+                            <li>Crypto Investment</li>
+                            <li>Crypto Insurance</li>
+                            <li>10% Referral Bonus</li>
+                            <li>Low Maintenance fee</li>
+                            <li>3.00% daily</li>
+                            <li>170 days contract</li>
+                            <li>Automatic payout in BTC</li>
+                        </ul>
+                        <a class="common-btn" href="{{ route('register') }}">
+                            Get Started
+                            <span></span>
+                        </a>
                     </div>
                 </div>
             </div>

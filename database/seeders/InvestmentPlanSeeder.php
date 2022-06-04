@@ -59,7 +59,7 @@ class InvestmentPlanSeeder extends Seeder
             'name' => 'Mega investment',
             'description' => 'Mega Investment Plan',
             'contract_duration' => 18,
-            'minimum_price' => 4000000,
+            'minimum_price' => 5000000,
             'maximum_price' => 10000000000,
             'return_rate' => 8.00,
         ]);

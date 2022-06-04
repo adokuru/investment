@@ -395,7 +395,7 @@
                         <i class='bx bxs-quote-right icon'></i>
                         <p>This is a realistic program for anyone looking for a reliable platform to invest their funds.
                             Paid to me regularly, keep up good work!.</p>
-                        <img src="{{ asset('frontend-assets/img/testimonials1.jpg') }}" alt="testimonial">
+                        <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0=" alt="testimonial">
                         <h3>Emily Henry</h3>
                         <span>Investor</span>
                         <ul>
@@ -420,7 +420,7 @@
                         <i class='bx bxs-quote-right icon'></i>
                         <p>My family and me want to thank you for helping us find a great opportunity to make money trading
                             . Very happy with how things are going!.</p>
-                        <img src="{{ asset('frontend-assets/img/testimonials2.jpg') }}" alt="testimonial">
+                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI=" alt="testimonial">
                         <h3>Jac Jacson</h3>
                         <span>Investor</span>
                         <ul>

@@ -253,10 +253,7 @@
                             <ul>
                                 <li>Monday :- 8:00 - 21:00</li>
                                 <li>Tuesday :- 8:00 - 21:00</li>
-                                <li>Wednesday :- 8:00 - 21:00
-                                    element.style {
-                                    }
-                                    .pricing-item.active</li>
+                                <li>Wednesday :- 8:00 - 21:00</li>
                                 <li>Thursday :- 8:00 - 21:00</li>
                                 <li>Friday :- 8:00 - 21:00</li>
                             </ul>
