@@ -21,7 +21,7 @@
         <div class="col-12 text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2">
             <form action="{{ route('deposit.addDeposit') }}" method="post">
                 @csrf
-                <input type="hidden" name="amount" value="{{ $amount }}">
+                <input type="hidden" name="amount" value="{{ number_format($amount /  $walletType->value, 6) }}">
                 <input type="hidden" name="type" value="{{ $walletType->id }}">
                 <input type="hidden" name="currency" value="{{ $walletType->symbol }}">
                 <div class="card box-shadow">
@@ -31,12 +31,15 @@
                     <div class="card-body">
                         <div class="acrypto_copy_address" data-original-title="Copy Address" data-placement="top" data-toggle="tooltip"><a href="#a"><img class="acrypto_qrcode_image" style="max-width:200px; height:auto; width:auto\9;" alt="qrcode" data-size="200" src="{{ asset($walletType->qrcode) }}" data-original-title="QR Code - Bitcoin address and sum you can scan with a mobile phone camera. Open Bitcoin Wallet, click on camera icon, point the camera at the code, and you're done"
                                     data-placement="bottom" data-toggle="tooltip"></a></div>
-                        <h1 class="mt-3 mb-4 pb-1 card-title acrypto_copy_amount" data-original-title="Copy Amount" data-placement="bottom" data-toggle="tooltip" style="cursor: pointer;"><span class="acrypto_amount"> {{ $amount }}</span> <small class="text-muted"><span class="acrypto_coinlabel">{{ $walletType->symbol }}</span></small></h1>
+                        <h1 class="mt-3 mb-4 pb-1 card-title acrypto_copy_amount" data-original-title="Copy Amount" data-placement="bottom" data-toggle="tooltip" style="cursor: pointer;">
+						<span class="acrypto_amount"> {{ number_format($amount /  $walletType->value, 6) }}</span> 
+						<small class="text-muted"><span class="acrypto_coinlabel">{{ $walletType->symbol }}</span>
+						</small></h1>
                         <div class="lead acrypto_copy_amount acrypto_texts_send" data-original-title="Copy Amount" data-placement="bottom" data-toggle="tooltip" style="cursor: pointer;">
-                            Send {{ $amount }} {{ $walletType->symbol }} (in ONE payment) to:</div>
+                            Send ${{ $amount }} (in ONE payment) to:</div>
                         <div class="lead acrypto_texts_no_include_fee">don't include transaction fee in this amount</div><br>
                         <h6 class="card-title card-header col-span-6">
-                            <a onclick="myFunction()" class="acrypto_wallet_address" style="line-height:1.5;" href="#">
+                            <a onclick="myFunction()" class="acrypto_wallet_address" style="line-height:1.5; width:100%;" href="#">
                                 <span id="copytext" style="font-size:18px">{{ $walletType->address }}</span>
                             </a>
                         </h6>

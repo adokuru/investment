@@ -36,7 +36,7 @@ class InvestmentPlanSeeder extends Seeder
             'description' => 'High Investment Plan',
             'contract_duration' => 40,
             'minimum_price' => 500000,
-            'maximum_price' => 10000000000,
+            'maximum_price' => 1000000,
             'return_rate' => 6.00,
         ]);
         InvestmentPlan::create([
@@ -44,12 +44,20 @@ class InvestmentPlanSeeder extends Seeder
             'description' => 'High Investment Plan',
             'contract_duration' => 25,
             'minimum_price' => 1000000,
-            'maximum_price' => 10000000000,
+            'maximum_price' => 3000000,
             'return_rate' => 8.50,
         ]);
         InvestmentPlan::create([
             'name' => 'CO Investment',
             'description' => 'High Investment Plan',
+            'contract_duration' => 18,
+            'minimum_price' => 4000000,
+            'maximum_price' => 10000000000,
+            'return_rate' => 8.00,
+        ]);
+		InvestmentPlan::create([
+            'name' => 'Mega investment',
+            'description' => 'Mega Investment Plan',
             'contract_duration' => 18,
             'minimum_price' => 4000000,
             'maximum_price' => 10000000000,

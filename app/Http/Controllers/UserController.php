@@ -119,6 +119,7 @@ class UserController extends Controller
         if ($request->amount < $transaction->minimum_price) {
             return redirect()->back()->with('error', 'Amount lower than Minimum amount');
         }
+		
         DB::transaction(function () use ($request) {
             $user = auth()->user();
             $wallet = $user->wallet->where('id', $request->wallet)->where('status', 1)->first();

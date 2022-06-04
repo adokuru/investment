@@ -32,7 +32,14 @@
                             </div>
                             <div class="item-content">
                                 <h5 class="title">Deposit</h5>
-                                <h5 class="subtitle"><span class="min">${{ number_format($investmentPlan->minimum_price) }}</span><span class="to">to</span><span class="max">${{ number_format($investmentPlan->maximum_price) }}</span></h5>
+                                <h5 class="subtitle"><span class="min">${{ number_format($investmentPlan->minimum_price) }}</span><span class="to">to</span>
+								<span class="max">
+								@if($investmentPlan->maximum_price > 10000000)
+								 Infinite
+								@else
+								${{ number_format($investmentPlan->maximum_price) }}
+								@endif
+								</span></h5>
                             </div>
                         </div>
                         <span class="bal-shape"></span>
