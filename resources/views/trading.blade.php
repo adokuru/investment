@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- component -->
-    <section class="pricing-area section-overlay-two pt-100 pb-25">
+    <section class="pricing-area section-overlay-two pt-100 pb-25" style="margin-top: 100px;">
         <div class="container">
             <div class="section-title two">
                 <h3>TRADING PLANS</h3>
