@@ -95,7 +95,17 @@
                                 @endif
                             </td>
                             <td>
-                                {{ $item->amount }}
+								@if ($item->currency == 'BTC')
+                                    {{ $item->amount * \Cryptocap::getSingleAsset('BTC')->data->priceUsd }}
+                                @elseif ($item->currency == 'ETH')
+                                    {{ $item->amount * \Cryptocap::getSingleAsset('ETH')->data->priceUsd }}
+								@elseif ($item->currency == 'USDT')
+                                    {{ $item->amount * \Cryptocap::getSingleAsset('USDT')->data->priceUsd}}
+								@elseif ($item->currency == 'BCH')
+                                    {{ $item->amount * \Cryptocap::getSingleAsset('BCH')->data->priceUsd}}
+                                @else
+                                    {{ $item->amount }}
+                                @endif
                             </td>
                             <td>
                                 {{ $item->status == 0 ? 'Pending' : ($item->status == 1 ? 'Completed' : 'Cancelled') }}
