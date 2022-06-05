@@ -20,11 +20,12 @@ class RegisteredUserController extends Controller
      */
     public function create(Request $request)
     {
+		$refcode = ''; 
 		if ($request->has('ref')) {
         session(['referrer' => $request->query('ref')]);
+		$refcode = $request->query('ref');
 		}
-		
-        return view('auth.register');
+		return view('auth.register',compact('refcode') );
     }
 
     /**

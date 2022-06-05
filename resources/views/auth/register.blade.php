@@ -27,7 +27,7 @@
                                 <input name="password_confirmation" id="password_confirmation" required type="password" class="form-control" placeholder="Enter your password again">
                             </div>
 							<div class="form-group">
-                                <input name="ref" id="ref" type="text" class="form-control" placeholder="Enter a Refferal Code">
+                                <input name="ref" id="ref" type="text" class="form-control" placeholder="Enter a Refferal Code" value={{$refcode ? $refcode : null}}>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="common-btn">
