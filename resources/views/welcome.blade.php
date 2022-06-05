@@ -13,7 +13,7 @@
                                     <h1>Most Trusted Company For Your Business</h1>
                                     <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
-                                    <a class="common-btn" href="#">
+                                    <a class="common-btn" href="/register">
                                         Let's Start Now
                                         <span></span>
                                     </a>

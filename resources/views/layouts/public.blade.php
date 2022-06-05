@@ -152,20 +152,20 @@
                                 <div id="search-overlay" class="block">
                                     <div class="centered">
                                         <div class="text-center">
-                                            <a href="/login" class="common-btn">
-                                                LOG IN
+                                            <a href="/register" class="common-btn">
+                                                REGISTER
                                                 <span></span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="side-nav">
+							<div class="side-nav">
                                 <div id="search-overlay" class="block">
                                     <div class="centered">
                                         <div class="text-center">
-                                            <a href="/register" class="common-btn">
-                                                REGISTER
+                                            <a href="/login" class="common-btn">
+                                                LOG IN
                                                 <span></span>
                                             </a>
                                         </div>
