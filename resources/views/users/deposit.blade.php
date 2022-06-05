@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="deposit-system">
-            <h4 class="main-subtitle">02. Enter the amount of Deposit in dollars ($):</h4>
+            <h4 class="main-subtitle">02. Enter the amount of Deposit in USD ($):</h4>
             <form class="make-deposit">
                 <div class="form-group">
                     <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount" value="0.00">
@@ -65,7 +65,7 @@
         input.addEventListener('change', updateValue);
 
         function updateValue(e) {
-            log.value = e.target.value;
+            log.value = '$'+e.target.value;
         }
 
         function makeDeposit(e) {
