@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@allianzassetshub.com',
             'password' => Hash::make('investment2022$'),
             'email_verified_at' => now(),
+			'referral_token' => 'david123',
 
         ]);
         $admin->assignRole('Admin');
@@ -32,6 +33,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@allianzassetshub.com',
             'email_verified_at' => now(),
             'password' => Hash::make('investment2022$'),
+			'referral_token' => 'avid123',
         ]);
         $user->assignRole('User');
         $this->call(WalletTypeSeeder::class);

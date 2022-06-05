@@ -22,8 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+		'referrer_id',
+		'referral_token', 
     ];
-
+	protected $appends = ['referral_link'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -73,4 +75,30 @@ class User extends Authenticatable
     {
         return $this->wallet()->where('wallet_type_id', 4)->first();
     }
+	
+	/**
+	 * A user has a referrer.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function referrer()
+	{
+		return $this->belongsTo(User::class, 'referrer_id', 'id');
+	}
+
+	/**
+	 * A user has many referrals.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function referrals()
+	{
+		return $this->hasMany(User::class, 'referrer_id', 'id');
+	}
+	
+	public function getReferralLinkAttribute()
+{
+    return $this->referral_link = route('register', ['ref' => $this->referral_token]);
+}
+	
 }

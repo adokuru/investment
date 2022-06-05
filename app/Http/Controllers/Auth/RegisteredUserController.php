@@ -18,8 +18,12 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
+		if ($request->has('ref')) {
+        session(['referrer' => $request->query('ref')]);
+		}
+		
         return view('auth.register');
     }
 
@@ -33,6 +37,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+	    $referrer = User::where('referral_token',session()->pull('referrer'))->first();
+		if($request->ref){
+			$referrer = User::where('referral_token',$request->ref)->first();
+		}
+		$number = uniqid();
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -43,6 +52,8 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+			'referral_token' => substr($request->name,0,3).substr($number,0,3),
+			'referrer_id' => $referrer ? $referrer->id : null,
         ]);
 
         event(new Registered($user));

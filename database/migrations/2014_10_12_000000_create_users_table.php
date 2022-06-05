@@ -16,10 +16,13 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+			$table->unsignedBigInteger('referrer_id')->nullable();
+			$table->foreign('referrer_id')->references('id')->on('users');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('profile_image')->nullable();
+			$table->string('referral_token')->unique();
             $table->string('btc_address')->nullable();
             $table->string('usdt_address')->nullable();
             $table->string('eth_address')->nullable();

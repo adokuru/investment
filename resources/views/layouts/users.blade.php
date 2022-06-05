@@ -80,6 +80,9 @@
                         <li>
                             <a href="/user/withdraw"><i class="flaticon-atm"></i>Withdraw</a>
                         </li>
+						 <li>
+                            <a href="/user/refferals"><i class="flaticon-deal"></i>Refferals</a>
+                        </li>
                         <li>
                             <a href="/user/setting"><i class="flaticon-gears"></i>Settings</a>
                         </li>
