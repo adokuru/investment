@@ -13,6 +13,18 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+
+    public function generateRandomString($length = 10)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
     /**
      * Display the registration view.
      *
@@ -20,12 +32,12 @@ class RegisteredUserController extends Controller
      */
     public function create(Request $request)
     {
-		$refcode = ''; 
-		if ($request->has('ref')) {
-        session(['referrer' => $request->query('ref')]);
-		$refcode = $request->query('ref');
-		}
-		return view('auth.register',compact('refcode') );
+        $refcode = '';
+        if ($request->has('ref')) {
+            session(['referrer' => $request->query('ref')]);
+            $refcode = $request->query('ref');
+        }
+        return view('auth.register', compact('refcode'));
     }
 
     /**
@@ -38,11 +50,21 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-	    $referrer = User::where('referral_token',session()->pull('referrer'))->first();
-		if($request->ref){
-			$referrer = User::where('referral_token',$request->ref)->first();
-		}
-		$number = uniqid();
+        $referrer = User::where('referral_token', session()->pull('referrer'))->first();
+
+        if ($request->ref) {
+            $referrer = User::where('referral_token', $request->ref)->first();
+        }
+
+        $length = 11;
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        $number = $randomString;
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -53,8 +75,8 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-			'referral_token' => substr($request->name,0,3).substr($number,0,3),
-			'referrer_id' => $referrer ? $referrer->id : null,
+            'referral_token' => substr($request->name, 0, 3) . substr($number, 0, 4),
+            'referrer_id' => $referrer ? $referrer->id : null,
         ]);
 
         event(new Registered($user));

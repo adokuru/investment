@@ -9,7 +9,10 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="user-form-item">
-                        <a class="logo" href="index-2.html">
+                     <x-auth-session-status class="mb-4" :status="session('status')" />
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4 mt-4" :errors="$errors" />
+                        <a class="logo" href="/">
                             <img src="frontend-assets/img/logo2.png" alt="Logo">
                         </a>
                         <form method="POST" action="{{ route('register') }}">
