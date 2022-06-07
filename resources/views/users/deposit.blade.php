@@ -70,7 +70,7 @@
 
         function makeDeposit(e) {
 
-            let amount = document.getElementById('amount').value;
+            let amount = document.getElementById('value-amount').value;
             let type = document.getElementById('type').value;
             let data = {
                 amount: amount,

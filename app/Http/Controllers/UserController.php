@@ -119,7 +119,7 @@ class UserController extends Controller
         if ($request->amount < $transaction->minimum_price) {
             return redirect()->back()->with('error', 'Amount lower than Minimum amount');
         }
-		
+
         DB::transaction(function () use ($request) {
             $user = auth()->user();
             $wallet = $user->wallet->where('id', $request->wallet)->where('status', 1)->first();
@@ -196,15 +196,14 @@ class UserController extends Controller
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         return view('users.payDeposit', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'walletType', 'wallet', 'amount'));
     }
-	public function refferals(Request $request)
-	{
-		$user = auth()->user();
+    public function refferals(Request $request)
+    {
+        $user = auth()->user();
         $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $investment = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->first();
         return view('users.ref', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
-    
-	}	
+    }
 }
