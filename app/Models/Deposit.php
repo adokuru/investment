@@ -10,8 +10,8 @@ class Deposit extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function transactions () {
-        return $this->hasMany(Transaction::class);
+    public function transaction()
+    {
+        return $this->hasOne(Transaction::class);
     }
-
 }

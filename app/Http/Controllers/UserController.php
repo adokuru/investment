@@ -9,8 +9,10 @@ use App\Models\User;
 use App\Models\UserIvestment;
 use App\Models\Wallet;
 use App\Models\WalletType;
+use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use WisdomDiala\Cryptocap\Facades\Cryptocap;
 
 class UserController extends Controller
 {
@@ -49,7 +51,11 @@ class UserController extends Controller
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $transaction = Transaction::where('user_id', $user->id)->paginate(10);
-        return view('users.operations', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'transaction'));
+        $btc = Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
+        $eth = Cryptocap::getSingleAsset('ethereum')->data->priceUsd;
+        $usdt = Cryptocap::getSingleAsset('tether')->data->priceUsd;
+        $bch = Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd;
+        return view('users.operations', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'transaction'));
     }
 
     public function withdraw()
@@ -163,6 +169,27 @@ class UserController extends Controller
 
         return redirect()->route('users.dashboard')->with('success', 'Deposit pending authorization');
     }
+    public function addwithdrawal(Request $request)
+    {
+        $walletType = WalletType::find($request->type);
+        $deposit = new Withdrawal();
+        $deposit->user_id = auth()->user()->id;
+        $deposit->value = $request->amount;
+        $deposit->reference = $walletType->symbol;
+        $deposit->save();
+
+        $transaction = new Transaction();
+        $transaction->user_id = auth()->user()->id;
+        $transaction->withdrawal_id = $deposit->id;
+        $transaction->transaction_type = 'Withdrawal';
+        $transaction->currency = $walletType->symbol;
+        $transaction->amount = $request->amount;
+        $transaction->status = 0;
+        $transaction->save();
+
+
+        return redirect()->route('users.dashboard')->with('success', 'Withdrawal pending authorization');
+    }
     public function createWallet(Request $request)
     {
         $user = auth()->user();
@@ -208,26 +235,57 @@ class UserController extends Controller
     }
     public function WithdrawalMake(Request $request)
     {
-        $user = auth()->user();
-        if ($user->earnings < $request->amount) {
-            return redirect()->back()->with('error', 'Insufficient Balance');
-        }
         $request->validate([
             'amount' => 'required',
             'type' => 'required',
         ]);
-        $amount = $request->amount;
-        $type = $request->type;
-        $walletType = WalletType::find($request->type);
-        $wallet = auth()->user()->wallet->where('wallet_type_id', $request->type)->where('status', 1)->first();
-        if ($wallet == null) {
-            return redirect()->route('users.deposit')->with('error', 'Please activate your ' . $walletType->name . ' wallet');
-        }
         $user = auth()->user();
+        if ($user->earnings < $request->amount) {
+            return redirect()->back()->with('error', 'Insufficient Balance');
+        }
+
+
+        $amount = $request->amount;
+
+        $type = $request->type;
+
+        $walletType = WalletType::find($request->type);
+
+        if ($walletType->id == 1) {
+            $wallet = $user->btc_address;
+        }
+
+        if ($walletType->id == 2) {
+            $wallet = $user->eth_address;
+        }
+
+        if ($walletType->id == 3) {
+            $wallet = $user->usdt_address;
+        }
+
+        if ($walletType->id == 4) {
+            $wallet = $user->bcc_address;
+        }
+
+        if ($wallet == null) {
+            return redirect()->route('users.setting')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+        }
+
         $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         return view('users.paywithdrawal', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'walletType', 'wallet', 'amount'));
+    }
+
+    public function updateAddress(Request $request)
+    {
+        $user = auth()->user();
+        $user->btc_address = $request->btc_address;
+        $user->eth_address = $request->eth_address;
+        $user->usdt_address = $request->usdt_address;
+        $user->bcc_address = $request->bcc_address;
+        $user->save();
+        return redirect()->back()->with('success', 'Address updated successfully');
     }
 }

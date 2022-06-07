@@ -40,7 +40,7 @@
                         <br />
                         <h6 class="card-title card-header col-span-6">
                             <a onclick="myFunction()" class="acrypto_wallet_address" style="line-height:1.5; width:100%;" href="#">
-                                <span id="copytext" style="font-size:18px">{{ $user->address }}</span>
+                                <span id="copytext" style="font-size:18px">{{ $wallet }}</span>
                             </a>
                         </h6>
                         <br>

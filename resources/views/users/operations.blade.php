@@ -96,13 +96,13 @@
                             </td>
                             <td>
 								@if ($item->currency == 'BTC')
-                                    {{ $item->amount * \Cryptocap::getSingleAsset('BTC')->data->priceUsd }}
+                                    {{ number_format($item->amount * $btc, 2) }}
                                 @elseif ($item->currency == 'ETH')
-                                    {{ $item->amount * \Cryptocap::getSingleAsset('ETH')->data->priceUsd }}
+                                    {{ number_format($item->amount * $eth, 2)  }}
 								@elseif ($item->currency == 'USDT')
-                                    {{ $item->amount * \Cryptocap::getSingleAsset('USDT')->data->priceUsd}}
+                                    {{ number_format($item->amount * $usdt, 2) }}
 								@elseif ($item->currency == 'BCH')
-                                    {{ $item->amount * \Cryptocap::getSingleAsset('BCH')->data->priceUsd}}
+                                    {{ number_format($item->amount * $bch, 2) }}
                                 @else
                                     {{ $item->amount }}
                                 @endif
