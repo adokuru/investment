@@ -209,7 +209,7 @@ class UserController extends Controller
     public function WithdrawalMake(Request $request)
     {
         $user = auth()->user();
-        if ($user->balance < $request->amount) {
+        if ($user->earnings < $request->amount) {
             return redirect()->back()->with('error', 'Insufficient Balance');
         }
         $request->validate([
@@ -228,6 +228,6 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        return view('users.payDeposit', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'walletType', 'wallet', 'amount'));
+        return view('users.paywithdrawal', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'walletType', 'wallet', 'amount'));
     }
 }
