@@ -19,7 +19,7 @@
     <div class="partners">
         <h3 class="main-title">Withdrawal in {{ $walletType->symbol }}</h3>
         <div class="col-12 text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-            <form action="{{ route('withdrawal.addwithdrawal') }}" method="post">
+            <form action="{{ route('withdrawal.addDeposit') }}" method="post">
                 @csrf
                 <input type="hidden" name="amount" value="{{ number_format($amount /  $walletType->value, 6) }}">
                 <input type="hidden" name="type" value="{{ $walletType->id }}">
