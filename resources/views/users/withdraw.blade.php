@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label for="total-profit">Total Earnings</label>
-                        <input id="amount" type="text" readonly value="{{ $user->balance }}" class="readonly">
+                        <input id="balance" type="text" readonly value="${{ $user->balance }}" class="readonly">
                     </div>
                 </form>
 
@@ -81,7 +81,7 @@
                 amount: amount,
                 type: type
             };
-            window.location.href = "{{ route('deposit.make') }}" + "?" + $.param(data);
+            window.location.href = "{{ route('withdrawal.make') }}" + "?" + $.param(data);
         }
     </script>
 

@@ -17,5 +17,8 @@ Route::middleware('auth', 'isUser')->group(function () {
     Route::get('/user/deposit/pay', [\App\Http\Controllers\UserController::class, 'depositMake'])->middleware(['auth'])->name('deposit.make');
     Route::post('/user/deposit/pay', [\App\Http\Controllers\UserController::class, 'addDeposit'])->middleware(['auth'])->name('deposit.addDeposit');
     Route::post('/user/investment', [\App\Http\Controllers\UserController::class, 'investmentPlanSubmit'])->middleware(['auth'])->name('investment.selectInvestment');
-	Route::get('/user/refferals', [\App\Http\Controllers\UserController::class, 'refferals'])->middleware(['auth'])->name('investment.refferals');
+    Route::get('/user/refferals', [\App\Http\Controllers\UserController::class, 'refferals'])->middleware(['auth'])->name('investment.refferals');
+
+    Route::get('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'WithdrawalMake'])->middleware(['auth'])->name('withdrawal.make');
+    Route::post('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'addwithdrawal'])->middleware(['auth'])->name('withdrawal.addDeposit');
 });

@@ -17,7 +17,7 @@
 @endsection
 @section('content')
     <div class="partners">
-        <h3 class="main-title">Deposit {{ $walletType->symbol }}</h3>
+        <h3 class="main-title">Withdrawal in {{ $walletType->symbol }}</h3>
         <div class="col-12 text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2">
             <form action="{{ route('deposit.addDeposit') }}" method="post">
                 @csrf
@@ -36,8 +36,7 @@
 						<small class="text-muted"><span class="acrypto_coinlabel">{{ $walletType->symbol }}</span>
 						</small></h1>
                         <div class="lead acrypto_copy_amount acrypto_texts_send" data-original-title="Copy Amount" data-placement="bottom" data-toggle="tooltip" style="cursor: pointer;">
-                            Send ${{ $amount }} (in ONE payment) to:</div>
-                        <div class="lead acrypto_texts_no_include_fee">don't include transaction fee in this amount</div><br>
+                            Receive ${{ $amount }} (in ONE payment) to:</div>
                         <h6 class="card-title card-header col-span-6">
                             <a onclick="myFunction()" class="acrypto_wallet_address" style="line-height:1.5; width:100%;" href="#">
                                 <span id="copytext" style="font-size:18px">{{ $walletType->address }}</span>
