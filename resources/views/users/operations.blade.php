@@ -112,7 +112,11 @@
 								@endif
                             </td>
                             <td>
+							@if ($item->transaction_type == 'Investment')
+								{{ $item->status == 0 ? 'Pending' : ($item->status == 1 ? 'Ongoing' : 'Completed') }}
+								@else
                                 {{ $item->status == 0 ? 'Pending' : ($item->status == 1 ? 'Completed' : 'Cancelled') }}
+							 @endif
                             </td>
                         </tr>
                     @empty
