@@ -24,5 +24,5 @@ Route::get('/test', function () {
 
 
 Route::get('/test2', function () {
-    return Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
+    return Cryptocap::getSingleAsset('bitcoin')->data;
 });

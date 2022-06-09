@@ -125,11 +125,12 @@ class UserController extends Controller
         if ($request->amount < $transaction->minimum_price) {
             return redirect()->back()->with('error', 'Amount lower than Minimum amount');
         }
-
+		
         DB::transaction(function () use ($request) {
             $user = auth()->user();
             $wallet = $user->wallet->where('id', $request->wallet)->where('status', 1)->first();
-            $investment = InvestmentPlan::where('id', $request->investment)->first();
+            
+			$investment = InvestmentPlan::where('id', $request->investment)->first();
             $transaction = new Transaction();
             $transaction->user_id = $user->id;
             $transaction->wallet_id = $wallet->id;
@@ -145,7 +146,14 @@ class UserController extends Controller
             $user_investment->investment_plan_id = $investment->id;
             $user_investment->amount = $request->amount;
             $user_investment->save();
+			
+			$amount_debited = $wallet->usd_balance - $request->amount;
+			$crypto_amount = $amount_debited /  Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->amount = $crypto_amount;
+			$wallet->usd_balance = $crypto_amount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->save();
         });
+		
         return redirect()->route('users.dashboard')->with('success', 'Investment Successfully');
     }
     public function addDeposit(Request $request)
