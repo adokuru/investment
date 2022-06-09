@@ -276,8 +276,8 @@
                                     <div class="dashboard-inner">
                                         <div class="cont">
                                             <span class="title">Balance</span>
-                                            <h5 class="amount">{{ $btcashwallet->amount }} USDT</h5>
-                                            <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
+                                            <h5 class="amount">{{ $usdtwallet->amount }} USDT</h5>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $usdtwallet->usd_balance }} USD</h6>
                                         </div>
                                         <div class="thumb">
                                             <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
