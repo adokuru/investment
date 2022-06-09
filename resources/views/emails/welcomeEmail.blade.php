@@ -7,7 +7,7 @@ Welcome to Allianz Investment Hub, Your trading account has been successfully re
 Check out your dashboard. 
 Click on login to log into your account.
 
-@component('mail::button', ['url' => 'https://allianzassetshub.com/dashboard'])
+@component('mail::button', ['url' => 'https://allianzassetshub.com/user/dashboard'])
 Dashboard
 @endcomponent
 

@@ -45,10 +45,10 @@ class ProfileController extends Controller
                 $transaction->user->update(['earnings' => $transaction->user->earnings - $transaction->amount]);
             } else {
                 $transaction->deposit->update(['status' => 1]);
-                $wallet = Wallet->where('id', $transaction->deposit->wallet_id)->first();
+                $wallet = Wallet::where('id', $transaction->deposit->wallet_id)->first();
                 $wallet->update(['amount' => $wallet->amount + $transaction->amount]);
                 // Update Wallet Amount
-                $wallet = $transaction->user->wallet->where('id', $transaction->deposit->wallet_id)->first();
+                $wallet = Wallet::where('id', $transaction->deposit->wallet_id)->first();
                 $walletType = $wallet->walletType;
                 $wallet->usd_balance = $wallet->amount * $walletType->value;
                 $wallet->update();
