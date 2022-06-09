@@ -15,7 +15,7 @@ Thank you for choosing our platform,<br>
 
 If you did not create an account, no further action is required.
 
-Regards
+Regards.
 <br>
 {{ config('app.name') }}
 @endcomponent

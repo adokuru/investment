@@ -91,7 +91,7 @@
                                         <img src="/backend/assets/images/dashboard/earn/02.png" alt="dashboard-earn">
                                     </div>
                                     <div class="earn-content partner-content d-flex flex-wrap align-items-start justify-content-between">
-                                        <h6 class="title w-100">All partners</h6>
+                                        <h6 class="title w-100">Referral Code: {{Auth::user()->referral_token}}</h6>
                                         <ul class="mb--5">
                                             <li>
                                                 <div class="icon">
