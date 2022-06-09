@@ -8,7 +8,7 @@ Check out your dashboard.
 Click on login to log into your account.
 
 @component('mail::button', ['url' => 'https://allianzassetshub.com/user/dashboard'])
-Dashboard
+Login to Your Dashboard
 @endcomponent
 
 Thank you for choosing our platform,<br>

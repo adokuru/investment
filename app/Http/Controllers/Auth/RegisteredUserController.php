@@ -85,7 +85,7 @@ class RegisteredUserController extends Controller
         $user->assignRole('User');
         Auth::login($user);
 		$mailData = [    
-            'name' =>  $user->first_name,
+            'name' =>  $user->name,
 			'email' => $user->email,
         ];
         Mail::to($user->email)->send(new WelcomeMail($mailData));
