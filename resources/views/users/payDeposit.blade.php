@@ -21,7 +21,7 @@
         <div class="col-12 text-center col-sm-10 offset-sm-1 col-md-8 offset-md-2">
             <form action="{{ route('deposit.addDeposit') }}" method="post">
                 @csrf
-                <input type="hidden" name="amount" value="{{ number_format($amount /  $walletType->value, 6) }}">
+                <input type="hidden" name="amount" value="{{ $amount /  $walletType->value }}">
                 <input type="hidden" name="type" value="{{ $walletType->id }}">
                 <input type="hidden" name="currency" value="{{ $walletType->symbol }}">
                 <div class="card box-shadow">
