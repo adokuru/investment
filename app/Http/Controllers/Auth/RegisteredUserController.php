@@ -86,7 +86,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 		$mailData = [    
             'name' =>  $user->first_name,
-			'property_name' => $property->name,
+			'email' => $user->email,
         ];
         Mail::to($user->email)->send(new WelcomeMail($mailData));
         return redirect(RouteServiceProvider::HOME);
