@@ -150,11 +150,11 @@ class UserController extends Controller
     }
     public function addDeposit(Request $request)
     {
-
+		$wallet = Wallet::where('user_id', auth()->user()->id)->where('wallet_type_id',  $request->type)->first();
         $deposit = new Deposit();
         $deposit->user_id = auth()->user()->id;
         $deposit->value = $request->amount;
-        $deposit->wallet_id = $request->type;
+        $deposit->wallet_id = $wallet->id;
         $deposit->save();
 
         $transaction = new Transaction();

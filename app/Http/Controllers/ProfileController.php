@@ -7,7 +7,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Wallet;
 class ProfileController extends Controller
 {
     public function show()
@@ -45,7 +45,7 @@ class ProfileController extends Controller
                 $transaction->user->update(['earnings' => $transaction->user->earnings - $transaction->amount]);
             } else {
                 $transaction->deposit->update(['status' => 1]);
-                $wallet = $transaction->user->wallet->where('id', $transaction->deposit->wallet_id)->first();
+                $wallet = Wallet->where('id', $transaction->deposit->wallet_id)->first();
                 $wallet->update(['amount' => $wallet->amount + $transaction->amount]);
                 // Update Wallet Amount
                 $wallet = $transaction->user->wallet->where('id', $transaction->deposit->wallet_id)->first();

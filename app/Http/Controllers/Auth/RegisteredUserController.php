@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeMail;
 
 class RegisteredUserController extends Controller
 {
@@ -82,7 +84,11 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         $user->assignRole('User');
         Auth::login($user);
-
+		$mailData = [    
+            'name' =>  $user->first_name,
+			'property_name' => $property->name,
+        ];
+        Mail::to($user->email)->send(new WelcomeMail($mailData));
         return redirect(RouteServiceProvider::HOME);
     }
 }
