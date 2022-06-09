@@ -95,17 +95,21 @@
                                 @endif
                             </td>
                             <td>
-								@if ($item->currency == 'BTC')
-                                    {{ number_format($item->amount * $btc, 2) }}
-                                @elseif ($item->currency == 'ETH')
-                                    {{ number_format($item->amount * $eth, 2)  }}
-								@elseif ($item->currency == 'USDT')
-                                    {{ number_format($item->amount * $usdt, 2) }}
-								@elseif ($item->currency == 'BCH')
-                                    {{ number_format($item->amount * $bch, 2) }}
-                                @else
-                                    {{ $item->amount }}
-                                @endif
+								@if ($item->transaction_type == 'Investment')
+									{{ number_format($item->amount, 2) }}
+								@else
+									@if ($item->currency == 'BTC')
+										{{ number_format($item->amount * $btc, 2) }}
+									@elseif ($item->currency == 'ETH')
+										{{ number_format($item->amount * $eth, 2)  }}
+									@elseif ($item->currency == 'USDT')
+										{{ number_format($item->amount * $usdt, 2) }}
+									@elseif ($item->currency == 'BCH')
+										{{ number_format($item->amount * $bch, 2) }}
+									@else
+										{{ $item->amount }}
+									@endif
+								@endif
                             </td>
                             <td>
                                 {{ $item->status == 0 ? 'Pending' : ($item->status == 1 ? 'Completed' : 'Cancelled') }}
