@@ -8,6 +8,10 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Wallet;
+use App\Models\User;
+use WisdomDiala\Cryptocap\Facades\Cryptocap;
+use App\Models\Deposit;
+
 class ProfileController extends Controller
 {
     public function show()
@@ -93,4 +97,111 @@ class ProfileController extends Controller
         $user = \App\Models\User::findOrFail($id);
         return view('admin.users.show', compact('user'));
     }
+	
+	public function wallets()
+    {
+        $users = User::with('wallet')->paginate(10);
+		//dd($users);
+        return view('admin.users.add', compact('users'));
+    }
+	
+	public function usersAddWallet($id)
+	{
+		$user = \App\Models\User::with('wallet')->findOrFail($id);
+        return view('admin.users.funds', compact('user'));
+	}
+	
+	public function walletUpdate($id, Request $request)
+	{
+		$user = \App\Models\User::findOrFail($id);
+		if($request->BTCamount > 0)
+		{
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  1)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->BTCamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id =$user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'BTC';
+			$transaction->amount = $request->BTCamount;
+			$transaction->status = 1;
+			$transaction->save();
+			$wallet->amount = $request->BTCamount;
+			$wallet->usd_balance = $request->BTCamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->save();
+		}
+		if($request->ETHamount > 0)
+		{
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  2)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->ETHamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'ETH';
+			$transaction->amount = $request->ETHamount;
+			$transaction->status = 1;
+			$transaction->save();
+			$wallet->amount = $request->ETHamount;
+			$wallet->usd_balance = $request->ETHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->save();
+		}
+		if($request->USDTamount > 0)
+		{
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  3)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->USDTamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'USDT';
+			$transaction->amount = $request->USDTamount;
+			$transaction->status = 1;
+			$transaction->save();
+			
+			$wallet->amount = $request->USDTamount;
+			$wallet->usd_balance = $request->USDTamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->save();
+		}
+		
+		if($request->BCHamount > 0)
+		{
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  4)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->BCHamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'BCH';
+			$transaction->amount = $request->BCHamount;
+			$transaction->status = 1;
+			$transaction->save();
+			$wallet->amount = $request->BCHamount;
+			$wallet->usd_balance = $request->BCHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->save();
+		}
+		
+		return redirect()->route('profile.wallets')->with('success', 'User updated.');
+	}
+	
 }

@@ -86,28 +86,29 @@
                                 </td>
                             @endif
                             <td>
-                                @if ($item->currency == 'BTC')
+							{{--@if ($item->currency == 'BTC')
                                     <img src="/backend/assets/images/dashboard/earn/btc2.png" alt="dashboard-earn"> {{ $item->currency }}
                                 @elseif ($item->currency == 'ETH')
                                     <img src="/backend/assets/images/dashboard/earn/eth2.png" alt="dashboard-earn"> {{ $item->currency }}
                                 @else
                                     {{ $item->currency }}
-                                @endif
+                                @endif--}}
+								{{ $item->currency }}
                             </td>
                             <td>
 								@if ($item->transaction_type == 'Investment')
-									{{ number_format($item->amount, 2) }}
+									${{  number_format($item->amount, 2) }}
 								@else
 									@if ($item->currency == 'BTC')
-										{{ number_format($item->amount * $btc, 2) }}
+										${{ number_format($item->amount * $btc, 2) }}
 									@elseif ($item->currency == 'ETH')
-										{{ number_format($item->amount * $eth, 2)  }}
+										${{ number_format($item->amount * $eth, 2)  }}
 									@elseif ($item->currency == 'USDT')
-										{{ number_format($item->amount * $usdt, 2) }}
+										${{ number_format($item->amount * $usdt, 2) }}
 									@elseif ($item->currency == 'BCH')
-										{{ number_format($item->amount * $bch, 2) }}
+										${{ number_format($item->amount * $bch, 2) }}
 									@else
-										{{ $item->amount }}
+										${{ $item->amount }}
 									@endif
 								@endif
                             </td>
