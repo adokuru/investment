@@ -85,7 +85,7 @@
                     @empty
                         <tr>
                             <td colspan="5">
-                                <p>No transactions</p>
+                                <p>No investments</p>
                             </td>
                         </tr>
                     @endforelse
