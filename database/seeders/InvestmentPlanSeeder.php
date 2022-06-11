@@ -58,10 +58,10 @@ class InvestmentPlanSeeder extends Seeder
 		InvestmentPlan::create([
             'name' => 'Mega investment',
             'description' => 'Mega Investment Plan',
-            'contract_duration' => 18,
+            'contract_duration' => 30,
             'minimum_price' => 5000000,
             'maximum_price' => 10000000000,
-            'return_rate' => 8.00,
+            'return_rate' => 8.50,
         ]);
     }
 }
