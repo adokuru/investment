@@ -22,4 +22,6 @@ Route::middleware('auth', 'isUser')->group(function () {
     Route::get('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'WithdrawalMake'])->middleware(['auth'])->name('withdrawal.make');
     Route::post('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'addwithdrawal'])->middleware(['auth'])->name('withdrawal.addDeposit');
     Route::post('/user/setting', [\App\Http\Controllers\UserController::class, 'updateAddress'])->middleware(['auth'])->name('users.updateAddress');
+
+     Route::post('/user/ticket', [\App\Http\Controllers\UserController::class, 'send'])->middleware(['auth'])->name('users.sendticket');
 });

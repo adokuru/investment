@@ -23,7 +23,8 @@
                             <div class="d-flex align-items-center mb-30">
                                 <img src="/backend/assets/images/dashboard/ticket.png" alt="dashboard"><span class="pl-3 sub_subtitle cl-title">Send Ticket:</span>
                             </div>
-                            <form class="create_ticket_form" action="" method="POST">
+                            <form class="create_ticket_form" action="{{ route('users.sendticket') }}" method="POST">
+                                @csrf
                                 <div class="create_form_group">
                                     <label for="topic">Topic:</label>
                                     <input required type="text" id="topic" name="topic" placeholder="Enter your Subject">
