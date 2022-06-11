@@ -131,8 +131,8 @@ class ProfileController extends Controller
 			$transaction->amount = $request->BTCamount;
 			$transaction->status = 1;
 			$transaction->save();
-			$wallet->amount = $request->BTCamount;
-			$wallet->usd_balance = $request->BTCamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->amount = $wallet->amount + $request->BTCamount;
+			$wallet->usd_balance = $wallet->usd_balance + ($request->BTCamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
 			$wallet->save();
 		}
 		if($request->ETHamount > 0)
@@ -152,8 +152,8 @@ class ProfileController extends Controller
 			$transaction->amount = $request->ETHamount;
 			$transaction->status = 1;
 			$transaction->save();
-			$wallet->amount = $request->ETHamount;
-			$wallet->usd_balance = $request->ETHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->amount = $wallet->amount +  $request->ETHamount;
+			$wallet->usd_balance = $wallet->usd_balance +  ($request->ETHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
 			$wallet->save();
 		}
 		if($request->USDTamount > 0)
@@ -174,8 +174,8 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			
-			$wallet->amount = $request->USDTamount;
-			$wallet->usd_balance = $request->USDTamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->amount =  $wallet->amount + $request->USDTamount;
+			$wallet->usd_balance = $wallet->usd_balance + ($request->USDTamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
 			$wallet->save();
 		}
 		
@@ -196,8 +196,8 @@ class ProfileController extends Controller
 			$transaction->amount = $request->BCHamount;
 			$transaction->status = 1;
 			$transaction->save();
-			$wallet->amount = $request->BCHamount;
-			$wallet->usd_balance = $request->BCHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+			$wallet->amount = $wallet->amount + $request->BCHamount;
+			$wallet->usd_balance = $wallet->usd_balance + ($request->BCHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
 			$wallet->save();
 		}
 		
