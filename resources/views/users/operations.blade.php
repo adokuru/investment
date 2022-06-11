@@ -86,14 +86,13 @@
                                 </td>
                             @endif
                             <td>
-							{{--@if ($item->currency == 'BTC')
+								@if ($item->currency == 'BTC')
                                     <img src="/backend/assets/images/dashboard/earn/btc2.png" alt="dashboard-earn"> {{ $item->currency }}
                                 @elseif ($item->currency == 'ETH')
                                     <img src="/backend/assets/images/dashboard/earn/eth2.png" alt="dashboard-earn"> {{ $item->currency }}
                                 @else
                                     {{ $item->currency }}
-                                @endif--}}
-								{{ $item->currency }}
+                                @endif
                             </td>
                             <td>
 								@if ($item->transaction_type == 'Investment')
