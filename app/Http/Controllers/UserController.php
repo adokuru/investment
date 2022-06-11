@@ -78,6 +78,20 @@ class UserController extends Controller
         $investmentPlans = InvestmentPlan::all();
         return view('users.investment', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investmentPlans'));
     }
+    public function investments()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        $btc = Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
+        $eth = Cryptocap::getSingleAsset('ethereum')->data->priceUsd;
+        $usdt = Cryptocap::getSingleAsset('tether')->data->priceUsd;
+        $bch = Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd;
+        $investments = Transaction::where('user_id', $user->id)->where('transaction_type', 'Investment' )->paginate(10);
+        return view('users.investments', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investments'));
+    }
 
     public function setting()
     {

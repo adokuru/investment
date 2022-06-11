@@ -16,7 +16,12 @@
     </div>
 @endsection
 @section('content')
+ <div class="partners">
+        <h3 class="main-title">Investments</h3>
+        <a href="{{ route('users.investments') }}" class="custom-button btn-sm mb-30">View Investments <i class="flaticon-right-arrow"></i></a>
+    </div>
     <div class="deposit-wrapper">
+   
         @forelse ($investmentPlans as $investmentPlan)
             <div class="deposit-item">
                 <div class="deposit-inner">
