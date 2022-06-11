@@ -296,4 +296,24 @@ class UserController extends Controller
         $user->save();
         return redirect()->back()->with('success', 'Address updated successfully');
     }
+
+     public function send(Request $request)
+    {
+        $title = $request->input('topic');
+        $content = $request->input('content');
+        $user = auth()->user();
+        Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message)
+        {
+
+            $message->from($user->email, $user->name);
+
+            $message->to('support@allianzassetshub.com');
+
+            $message->subject($title);
+
+        });
+
+
+        return redirect()->back()->with('success', 'Request sent successfully');
+    }
 }

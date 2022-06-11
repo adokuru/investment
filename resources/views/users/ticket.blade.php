@@ -16,7 +16,28 @@
     </div>
 @endsection
 @section('content')
-
+                    <div class="partners">
+                        <h3 class="main-title">Tickets</h3>
+                        <div class="create_wrapper">
+                            <h5 class="subtitle">New Tickets</h5>
+                            <div class="d-flex align-items-center mb-30">
+                                <img src="/backend/assets/images/dashboard/ticket.png" alt="dashboard"><span class="pl-3 sub_subtitle cl-title">Send Ticket:</span>
+                            </div>
+                            <form class="create_ticket_form" action="" method="POST">
+                                <div class="create_form_group">
+                                    <label for="topic">Topic:</label>
+                                    <input required type="text" id="topic" name="topic" placeholder="Enter your Subject">
+                                </div>
+                                <div class="create_form_group">
+                                    <label for="message">Message:</label>
+                                    <textarea required id="message" name="message" placeholder="Write your Message"></textarea>
+                                </div>
+                                <div class="create_form_group mb-0">
+                                    <button type="submit" class="custom-button border-0">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 @endsection
 
 
