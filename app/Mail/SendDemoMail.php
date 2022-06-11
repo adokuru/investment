@@ -30,7 +30,7 @@ class SendDemoMail extends Mailable
     public function build()
     {
         return $this
-                ->from($this->mailData['email'], $this->mailData['name'])
+                ->reply_to($this->mailData['email'], $this->mailData['name'])
                 ->subject($this->mailData['title'])
                 ->markdown('emails.send')->with('details', $this->mailData);
     }
