@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
 use Illuminate\Support\Facades\Mail;
-
+use App\Mail\SendDemoMail;
 class UserController extends Controller
 {
     public function index()
@@ -300,19 +300,27 @@ class UserController extends Controller
 
      public function send(Request $request)
     {
+        $user = auth()->user();
         $title = $request->input('topic');
         $content = $request->input('content');
-       
-        Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
-        {
-            $user = auth()->user();
-            $message->from($user->email, $user->name);
+        $mailData = [    
+            'title' =>  $title,
+            'content' => $content,
+            'email' => $user->email,
+            'name' => $user->name
+        ];
+        Mail::to('support@allianzassetshub.com')->send(new SendDemoMail($mailData));
 
-            $message->to('support@allianzassetshub.com');
+        // Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
+        // {
+            
+        //     $message->from($user->email, $user->name);
 
-            $message->subject($title);
+        //     $message->to();
 
-        });
+        //     $message->subject($title);
+
+        // });
 
 
         return redirect()->back()->with('success', 'Request sent successfully');

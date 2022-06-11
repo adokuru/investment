@@ -1,8 +1,10 @@
 @component('mail::message')
 
-# {{$title}}, 
+# {{$details['title']}}, 
 
-{{$content}}
+
+{{$details['content']}}
+
 
 <br>
 {{ config('app.name') }}
