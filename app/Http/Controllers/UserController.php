@@ -13,6 +13,7 @@ use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -301,10 +302,10 @@ class UserController extends Controller
     {
         $title = $request->input('topic');
         $content = $request->input('content');
-        $user = auth()->user();
-        Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message)
+       
+        Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
         {
-
+            $user = auth()->user();
             $message->from($user->email, $user->name);
 
             $message->to('support@allianzassetshub.com');
