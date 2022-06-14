@@ -267,7 +267,7 @@
                             <ul>
                                 <li>
                                     <i class='bx bxs-location-plus'></i>
-                                    <span>16a invercauld ballater Scotland, AL 34246</span>
+                                    <span>5 George Square, Glasgow G2 1DY, UK</span>
                                 </li>
                                 {{-- <li>
                                     <i class='bx bxs-phone-call'></i>
