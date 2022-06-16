@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('frontend-assets/css/boxicons.min.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/meanmenu.css') }}">
 
@@ -267,12 +267,8 @@
                             <ul>
                                 <li>
                                     <i class='bx bxs-location-plus'></i>
-                                    <span>5 George Square, Glasgow G2 1DY, UK</span>
+                                    <span>58 Waterloo Street, Glasgow G2 7Da , Scotland.</span>
                                 </li>
-                                {{-- <li>
-                                    <i class='bx bxs-phone-call'></i>
-                                    <a href="tel:+0015481592491">(+44) 7508 669535<a>
-                                </li> --}}
                                 <li>
                                     <i class='bx bxs-paper-plane'></i>
                                     <li>
