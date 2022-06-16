@@ -266,15 +266,12 @@
                             <h3>Contact Info</h3>
                             <ul>
                                 <li>
-                                    <i class='bx bxs-location-plus'></i>
+                                    <i class='bx bxs-location-plus'>Address:</i>
                                     <span>58 Waterloo Street, Glasgow G2 7Da , Scotland.</span>
                                 </li>
                                 <li>
-                                    <i class='bx bxs-paper-plane'></i>
-                                    <li>
-                                        <i class='bx bx-mail-send'></i>
+                                        <i class='bx bx-mail-send'>Email:</i>
                                         <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
-                                    </li>
                                 </li>
                             </ul>
                         </div>
