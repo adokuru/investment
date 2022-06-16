@@ -267,7 +267,7 @@
                             <ul>
                                 <li>
                                     <i class='bx bxs-location-plus'>Address:</i>
-                                    <span>58 Waterloo Street, Glasgow G2 7Da , Scotland.</span>
+                                    <span>58 Waterloo Street, Glasgow G2 7Da, Scotland.</span>
                                 </li>
                                 <li>
                                         <i class='bx bx-mail-send'>Email:</i>
