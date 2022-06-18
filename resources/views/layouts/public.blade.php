@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/css/boxicons.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/animate.min.css') }}">
 
@@ -266,12 +267,14 @@
                             <h3>Contact Info</h3>
                             <ul>
                                 <li>
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <span>Address: 58 Waterloo Street, Glasgow G2 7Da, Scotland.</span>
+                                    
+                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i> Address: 58 Waterloo Street, Glasgow G2 7Da, Scotland.</span>
                                 </li>
                                 <li>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">Email: support@allianzassetshub.com</span></a>
+                                       
+                                        <a href="mailto:support@allianzassetshub.com">
+                                            <span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                        Email: support@allianzassetshub.com</span></a>
                                 </li>
                             </ul>
                         </div>
