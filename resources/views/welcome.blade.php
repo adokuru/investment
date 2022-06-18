@@ -393,6 +393,30 @@
                 <div class="testimonials-slider owl-theme owl-carousel">
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
+                        <p>I turned the majority of my savings and stock holdings into this investment business with Allianz after I figured how incredibly amazing I can grow my finance on this platform, I am forever grateful I took that bold step, can’t take the smile off my face.</p>
+                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI=" alt="testimonial">
+                        <h3>Harry Connor</h3>
+                        <span>Investor</span>
+                        <ul>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star'></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="testimonials-item">
+                        <i class='bx bxs-quote-right icon'></i>
                         <p>This is a realistic program for anyone looking for a reliable platform to invest their funds.
                             Paid to me regularly, keep up good work!.</p>
                         <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0=" alt="testimonial">
@@ -416,6 +440,7 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
                         <p>My family and me want to thank you for helping us find a great opportunity to make money trading
@@ -438,6 +463,30 @@
                             </li>
                             <li>
                                 <i class='bx bxs-star'></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="testimonials-item">
+                        <i class='bx bxs-quote-right icon'></i>
+                        <p>This platform is my success story, Never believed I would become a millionaire before the age of 30, thank you Allianz for this life changing opportunity.</p>
+                        <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0=" alt="testimonial">
+                        <h3>Julia Frederick</h3>
+                        <span>Investor</span>
+                        <ul>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
+                            </li>
+                            <li>
+                                <i class='bx bxs-star checked'></i>
                             </li>
                         </ul>
                     </div>
