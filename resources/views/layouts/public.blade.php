@@ -273,8 +273,7 @@
                                 <li>
                                        
                                         <a href="mailto:support@allianzassetshub.com">
-                                            <span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2"><i class="fa fa-envelope" aria-hidden="true"></i>
-                                        Email: support@allianzassetshub.com</span></a>
+                                            <span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2"><i class="fa fa-envelope" aria-hidden="true"></i>Email: support@allianzassetshub.com</span></a>
                                 </li>
                             </ul>
                         </div>
