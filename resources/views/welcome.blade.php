@@ -469,7 +469,7 @@
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
                         <p>This platform is my success story, Never believed I would become a millionaire before the age of 30, thank you Allianz for this life changing opportunity.</p>
-                        <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0=" alt="testimonial">
+                        <img src="https://static.toiimg.com/photo/82828845.cms" alt="testimonial">
                         <h3>Julia Frederick</h3>
                         <span>Investor</span>
                         <ul>
