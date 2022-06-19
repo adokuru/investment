@@ -394,7 +394,7 @@
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
                         <p>I turned the majority of my savings and stock holdings into this investment business with Allianz after I figured how incredibly amazing I can grow my finance on this platform, I am forever grateful I took that bold step, can’t take the smile off my face.</p>
-                        <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/266/266749/aging-man.jpg?w=1155&h=1537" alt="testimonial">
+                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI=" alt="testimonial">
                         <h3>Harry Connor</h3>
                         <span>Investor</span>
                         <ul>
@@ -445,7 +445,8 @@
                         <i class='bx bxs-quote-right icon'></i>
                         <p>My family and me want to thank you for helping us find a great opportunity to make money trading
                             . Very happy with how things are going!.</p>
-                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI=" alt="testimonial">
+                            <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/266/266749/aging-man.jpg?w=1155&h=1537" alt="testimonial">
+                       
                         <h3>Jac Jacson</h3>
                         <span>Investor</span>
                         <ul>
