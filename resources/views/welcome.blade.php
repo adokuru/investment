@@ -14,7 +14,7 @@
                                     <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
                                     <a class="common-btn" href="/register">
-                                        Let's Start Now
+                                        Sign Up
                                         <span></span>
                                     </a>
                                 </div>
@@ -33,7 +33,7 @@
                                     <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
                                     <a class="common-btn" href="#">
-                                        Let's Start Now
+                                        Sign Up
                                         <span></span>
                                     </a>
                                 </div>
@@ -52,7 +52,7 @@
                                     <p>We trade on forex, cryptocurrencies, stocks, bonds, futures and commodities with the
                                         best financial experts.</p>
                                     <a class="common-btn" href="/register">
-                                        Let's Start Now
+                                        Sign Up
                                         <span></span>
                                     </a>
                                 </div>
