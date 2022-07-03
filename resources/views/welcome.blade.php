@@ -101,8 +101,8 @@
                 <div class="col-lg-7">
                     <div class="about-content">
                         <div class="section-title1">
-                            <span class="sub-title1">About</span>
-                            <h2>We Are A Trusted Company With <span>120+</span> Years Of Experience</h2>
+                            <h2 class="sub-title1">About</h2>
+                            <h3>We Are A Trusted Company With <span>120+</span> Years Of Experience</h3>
                             <p>Allianz Assets Hub is a UK registered legal international investment company.
                                 The company was created by a group of qualified experts, professional bankers, traders and
                                 analysts who specialized in the stock, bond, futures, currencies, forex and binary trading
@@ -202,8 +202,8 @@
                 <div class="section-title">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <span class="sub-title">Our Services</span>
-                            <h2>The <span>Services</span> That We Provide For Our Ultimate Clients</h2>
+                            <h2 class="sub-title">Our Services</h2>
+                            <h3>The <span>Services</span> That We Provide For Our Ultimate Clients</h3>
                         </div>
                         <div class="col-lg-6">
                             <p>This is why we have an edge over other trading platforms and why you should choose Allianz to
