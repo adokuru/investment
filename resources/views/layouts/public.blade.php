@@ -56,7 +56,7 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
+                                <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allnzonlineassets.org</span></a>
                             </li>
                             {{-- <li>
                                 <i class='bx bx-phone-call'></i>
@@ -273,10 +273,10 @@
                                     </span>
                                 </li>
                                 <li>
-                                    <a href="mailto:support@allianzassetshub.com">
+                                    <a href="mailto:support@allnzonlineassets.org">
                                         <span>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            Email: support@allianzassetshub.com
+                                            Email: support@allnzonlineassets.org
                                         </span>
                                     </a>
                                 </li>

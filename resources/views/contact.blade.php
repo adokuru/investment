@@ -109,8 +109,8 @@
 
                         <p><b>Support Email</b></p>
                         <p>
-                            <a href="mailto:support@allianzassetshub.com"><span class="__cf_email__"
-                                    data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allianzassetshub.com</span></a>
+                            <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__"
+                                    data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allnzonlineassets.org</span></a>
                         </p>
 
                         <p><b>Office Hours</b></p>
