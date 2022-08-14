@@ -415,7 +415,7 @@ class UserController extends Controller
             // amount to eth wallet
             $eth_wallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
             $eth_wallet->amount = $eth_wallet->amount + (float)($request->amount / $walletType->value);
-            $eth_wallet->usd_balance = $eth_wallet->usd_balance + (float)($request->amount)
+            $eth_wallet->usd_balance = $eth_wallet->usd_balance + (float)($request->amount);
             $eth_wallet->save();
         }
 
@@ -445,7 +445,7 @@ class UserController extends Controller
             // amount to usdt wallet
             $usdt_wallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
             $usdt_wallet->amount = $usdt_wallet->amount + (float)($request->amount / $walletType->value);
-            $usdt_wallet->usd_balance = $usdt_wallet->usd_balance + (float)($request->amount)
+            $usdt_wallet->usd_balance = $usdt_wallet->usd_balance + (float)($request->amount);
             $usdt_wallet->save();
         }
 
@@ -475,7 +475,7 @@ class UserController extends Controller
             // amount to bcc wallet
             $bcc_wallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
             $bcc_wallet->amount = $bcc_wallet->amount + (float)($request->amount / $walletType->value);
-            $bcc_wallet->usd_balance = $bcc_wallet->usd_balance + (float)($request->amount)
+            $bcc_wallet->usd_balance = $bcc_wallet->usd_balance + (float)($request->amount);
             $bcc_wallet->save();
         }
 
