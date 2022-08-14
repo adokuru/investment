@@ -360,7 +360,7 @@ class UserController extends Controller
         $walletType = WalletType::find($request->type);
 
         if ($walletType->id == 1) {
-            $wallet = $user->btc_address;
+            $wallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
             if ($wallet == null) {
                 return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
             }
@@ -389,7 +389,7 @@ class UserController extends Controller
         }
 
         if ($walletType->id == 2) {
-            $wallet = $user->eth_address;
+            $wallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
             if ($wallet == null) {
                 return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
             }
@@ -418,7 +418,7 @@ class UserController extends Controller
         }
 
         if ($walletType->id == 3) {
-            $wallet = $user->usdt_address;
+            $wallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
             if ($wallet == null) {
                 return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
             }
@@ -447,7 +447,7 @@ class UserController extends Controller
         }
 
         if ($walletType->id == 4) {
-            $wallet = $user->bcc_address;
+            $wallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
             if ($wallet == null) {
                 return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
             }
