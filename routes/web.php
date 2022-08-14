@@ -27,7 +27,7 @@ Route::get('/test', function () {
 Route::get('/test2', function () {
     $wallets = Wallet::all();
     foreach ($wallets as $wallet) {
-        $wallet->usd_balance = $wallet->usd_balance + (float)($wallet->amount * $wallet->walletType->value);
+        $wallet->usd_balance = (float)($wallet->amount * $wallet->walletType->value);
         $wallet->save();
     }
     return 'done';
