@@ -468,4 +468,15 @@ class UserController extends Controller
 
         return redirect()->route('users.dashboard')->with('success', 'Transfer Successful');
     }
+
+
+    public function transfer()
+    {
+        $user = auth()->user();
+        $bitconwallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+        $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+        $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+        $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+        return view('users.withdraw', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+    }
 }
