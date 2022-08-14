@@ -78,7 +78,7 @@
                             <a href="/user/deposit"><i class="flaticon-interest"></i>Deposits</a>
                         </li>
                         <li>
-                            <a href="/user/transfer-earnings"><i class="flaticon-interest"></i>Transfer Earnings</a>
+                            <a href="/user/transfer-earnings"><i class="flaticon-interest"></i>Transfer</a>
                         </li>
                         <li>
                             <a href="/user/withdraw"><i class="flaticon-atm"></i>Withdraw</a>
