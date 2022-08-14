@@ -20,9 +20,11 @@ Route::middleware('auth', 'isUser')->group(function () {
     Route::get('/user/refferals', [\App\Http\Controllers\UserController::class, 'refferals'])->middleware(['auth'])->name('investment.refferals');
 
     Route::get('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'WithdrawalMake'])->middleware(['auth'])->name('withdrawal.make');
+    Route::get('/user/transfer-earnings', [\App\Http\Controllers\UserController::class, 'transferPay'])->middleware(['auth'])->name('transfer.start');
+    Route::get('/user/transfer/pay', [\App\Http\Controllers\UserController::class, 'transferPay'])->middleware(['auth'])->name('transfer.make');
     Route::get('/user/investments', [\App\Http\Controllers\UserController::class, 'investments'])->middleware(['auth'])->name('users.investments');
     Route::post('/user/withdrawal/pay', [\App\Http\Controllers\UserController::class, 'addwithdrawal'])->middleware(['auth'])->name('withdrawal.addDeposit');
     Route::post('/user/setting', [\App\Http\Controllers\UserController::class, 'updateAddress'])->middleware(['auth'])->name('users.updateAddress');
 
-     Route::post('/user/ticket', [\App\Http\Controllers\UserController::class, 'send'])->middleware(['auth'])->name('users.sendticket');
+    Route::post('/user/ticket', [\App\Http\Controllers\UserController::class, 'send'])->middleware(['auth'])->name('users.sendticket');
 });

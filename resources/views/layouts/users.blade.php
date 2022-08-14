@@ -118,7 +118,7 @@
                             <div class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
                                 <ul class="support-area">
                                     <li>
-                                        <a href="#"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{ auth()->user()->balance }}</span> </a>
+                                        <a href="#"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{ auth()->user()->balance }}: Transfer to wallet</span> </a>
                                     </li>
                                 </ul>
                                 <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">

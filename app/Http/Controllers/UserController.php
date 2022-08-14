@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendDemoMail;
+
 class UserController extends Controller
 {
     public function index()
@@ -89,7 +90,7 @@ class UserController extends Controller
         $eth = Cryptocap::getSingleAsset('ethereum')->data->priceUsd;
         $usdt = Cryptocap::getSingleAsset('tether')->data->priceUsd;
         $bch = Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd;
-        $investments = Transaction::where('user_id', $user->id)->where('transaction_type', 'Investment' )->paginate(10);
+        $investments = Transaction::where('user_id', $user->id)->where('transaction_type', 'Investment')->paginate(10);
         return view('users.investments', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investments'));
     }
 
@@ -140,12 +141,12 @@ class UserController extends Controller
         if ($request->amount < $transaction->minimum_price) {
             return redirect()->back()->with('error', 'Amount lower than Minimum amount');
         }
-		
+
         DB::transaction(function () use ($request) {
             $user = auth()->user();
             $wallet = $user->wallet->where('id', $request->wallet)->where('status', 1)->first();
-            
-			$investment = InvestmentPlan::where('id', $request->investment)->first();
+
+            $investment = InvestmentPlan::where('id', $request->investment)->first();
             $transaction = new Transaction();
             $transaction->user_id = $user->id;
             $transaction->wallet_id = $wallet->id;
@@ -161,19 +162,19 @@ class UserController extends Controller
             $user_investment->investment_plan_id = $investment->id;
             $user_investment->amount = $request->amount;
             $user_investment->save();
-			
-			$amount_debited = $wallet->usd_balance - $request->amount;
-			$crypto_amount = $amount_debited /  Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
-			$wallet->amount = $crypto_amount;
-			$wallet->usd_balance = $crypto_amount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
-			$wallet->save();
+
+            $amount_debited = $wallet->usd_balance - $request->amount;
+            $crypto_amount = $amount_debited /  Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+            $wallet->amount = $crypto_amount;
+            $wallet->usd_balance = $crypto_amount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+            $wallet->save();
         });
-		
+
         return redirect()->route('users.dashboard')->with('success', 'Investment Successfully');
     }
     public function addDeposit(Request $request)
     {
-		$wallet = Wallet::where('user_id', auth()->user()->id)->where('wallet_type_id',  $request->type)->first();
+        $wallet = Wallet::where('user_id', auth()->user()->id)->where('wallet_type_id',  $request->type)->first();
         $deposit = new Deposit();
         $deposit->user_id = auth()->user()->id;
         $deposit->value = $request->amount;
@@ -312,12 +313,12 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'Address updated successfully');
     }
 
-     public function send(Request $request)
+    public function send(Request $request)
     {
         $user = auth()->user();
         $title = $request->input('topic');
         $content = $request->input('content');
-        $mailData = [    
+        $mailData = [
             'title' =>  $title,
             'content' => $content,
             'email' => $user->email,
@@ -327,7 +328,7 @@ class UserController extends Controller
 
         // Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
         // {
-            
+
         //     $message->from($user->email, $user->name);
 
         //     $message->to();
@@ -338,5 +339,133 @@ class UserController extends Controller
 
 
         return redirect()->back()->with('success', 'Request sent successfully');
+    }
+
+    public function transferPay(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required',
+            'type' => 'required',
+        ]);
+        $user = auth()->user();
+        if ($user->earnings < $request->amount) {
+            return redirect()->back()->with('error', 'Insufficient Balance');
+        }
+
+        $amount = $request->amount;
+
+        $type = $request->type;
+
+        $walletType = WalletType::find($request->type);
+
+        if ($walletType->id == 1) {
+            $wallet = $user->btc_address;
+            $deposit = new Deposit();
+            $deposit->user_id = auth()->user()->id;
+            $deposit->value = $request->amount;
+            $deposit->wallet_id = $wallet->id;
+            $deposit->save();
+
+            $transaction = new Transaction();
+            $transaction->user_id = auth()->user()->id;
+            $transaction->deposit_id = $deposit->id;
+            $transaction->transaction_type = 'Earnings Transfer';
+            $transaction->currency = $request->currency;
+            $transaction->amount = $request->amount;
+            $transaction->status = 1;
+            $transaction->save();
+
+            $user->earnings = $user->earnings - $request->amount;
+            $user->save();
+
+            // amount to btc wallet
+            $btc_wallet = $user->wallet->where('wallet_type_id', 1)->where('status', 1)->first();
+            $btc_wallet->amount = $btc_wallet->amount + (float)($request->amount / $btc_wallet->usd_balance);
+            $btc_wallet->save();
+        }
+
+        if ($walletType->id == 2) {
+            $wallet = $user->eth_address;
+            $deposit = new Deposit();
+            $deposit->user_id = auth()->user()->id;
+            $deposit->value = $request->amount;
+            $deposit->wallet_id = $wallet->id;
+            $deposit->save();
+
+            $transaction = new Transaction();
+            $transaction->user_id = auth()->user()->id;
+            $transaction->deposit_id = $deposit->id;
+            $transaction->transaction_type = 'Earnings Transfer';
+            $transaction->currency = $request->currency;
+            $transaction->amount = $request->amount;
+            $transaction->status = 1;
+            $transaction->save();
+
+            $user->earnings = $user->earnings - $request->amount;
+            $user->save();
+
+            // amount to eth wallet
+            $eth_wallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
+            $eth_wallet->amount = $eth_wallet->amount + (float)($request->amount / $eth_wallet->usd_balance);
+            $eth_wallet->save();
+        }
+
+        if ($walletType->id == 3) {
+            $wallet = $user->usdt_address;
+            $deposit = new Deposit();
+            $deposit->user_id = auth()->user()->id;
+            $deposit->value = $request->amount;
+            $deposit->wallet_id = $wallet->id;
+            $deposit->save();
+
+            $transaction = new Transaction();
+            $transaction->user_id = auth()->user()->id;
+            $transaction->deposit_id = $deposit->id;
+            $transaction->transaction_type = 'Earnings Transfer';
+            $transaction->currency = $request->currency;
+            $transaction->amount = $request->amount;
+            $transaction->status = 1;
+            $transaction->save();
+
+            $user->earnings = $user->earnings - $request->amount;
+            $user->save();
+
+            // amount to usdt wallet
+            $usdt_wallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
+            $usdt_wallet->amount = $usdt_wallet->amount + (float)($request->amount / $usdt_wallet->usd_balance);
+            $usdt_wallet->save();
+        }
+
+        if ($walletType->id == 4) {
+            $wallet = $user->bcc_address;
+            $deposit = new Deposit();
+            $deposit->user_id = auth()->user()->id;
+            $deposit->value = $request->amount;
+            $deposit->wallet_id = $wallet->id;
+            $deposit->save();
+
+            $transaction = new Transaction();
+            $transaction->user_id = auth()->user()->id;
+            $transaction->deposit_id = $deposit->id;
+            $transaction->transaction_type = 'Earnings Transfer';
+            $transaction->currency = $request->currency;
+            $transaction->amount = $request->amount;
+            $transaction->status = 1;
+            $transaction->save();
+
+            $user->earnings = $user->earnings - $request->amount;
+            $user->save();
+
+            // amount to bcc wallet
+            $bcc_wallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
+            $bcc_wallet->amount = $bcc_wallet->amount + (float)($request->amount / $bcc_wallet->usd_balance);
+            $bcc_wallet->save();
+        }
+
+        if ($wallet == null) {
+            return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+        }
+
+        return redirect()->route('users.dashboard')->with('success', 'Transfer Successful');
     }
 }
