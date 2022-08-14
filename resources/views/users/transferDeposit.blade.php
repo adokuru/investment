@@ -1,6 +1,6 @@
 @extends('layouts.users')
 
-@section('title', 'Withdrawal')
+@section('title', 'Transfer Earnings')
 
 @section('breadcrumbs')
     <div class="dashboard-hero-content text-white">
@@ -43,13 +43,13 @@
             </div>
         </div>
         <div class="deposit-system">
-            <h4 class="main-subtitle">02. Enter the amount of Withdraw:</h4>
+            <h4 class="main-subtitle">02. Enter the amount to transfer:</h4>
             <form class="make-deposit">
                 <div class="form-group">
                     <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount" value="0.00">
                 </div>
                 <div class="form-group">
-                    <label for="total-profit">Total Withdrawal</label>
+                    <label for="total-profit">Total Transfer Amount</label>
                     <input id="amount" type="text" readonly value="0.00" class="readonly">
                 </div>
                 <div class="form-group">
