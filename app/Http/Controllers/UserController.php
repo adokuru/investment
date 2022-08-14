@@ -372,7 +372,7 @@ class UserController extends Controller
 
             $transaction = new Transaction();
             $transaction->user_id = auth()->user()->id;
-            $transaction->deposit_id = $deposit->id;
+
             $transaction->transaction_type = 'Earnings Transfer';
             $transaction->currency = 'BTC';
             $transaction->amount = $request->amount;
@@ -402,7 +402,7 @@ class UserController extends Controller
 
             $transaction = new Transaction();
             $transaction->user_id = auth()->user()->id;
-            $transaction->deposit_id = $deposit->id;
+
             $transaction->transaction_type = 'Earnings Transfer';
             $transaction->currency = 'ETH';
             $transaction->amount = $request->amount;
@@ -432,7 +432,7 @@ class UserController extends Controller
 
             $transaction = new Transaction();
             $transaction->user_id = auth()->user()->id;
-            $transaction->deposit_id = $deposit->id;
+
             $transaction->transaction_type = 'Earnings Transfer';
             $transaction->currency = 'USDT';
             $transaction->amount = $request->amount;
@@ -462,7 +462,7 @@ class UserController extends Controller
 
             $transaction = new Transaction();
             $transaction->user_id = auth()->user()->id;
-            $transaction->deposit_id = $deposit->id;
+
             $transaction->transaction_type = 'Earnings Transfer';
             $transaction->currency = 'BCH';
             $transaction->amount = $request->amount;
