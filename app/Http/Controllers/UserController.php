@@ -324,7 +324,7 @@ class UserController extends Controller
             'email' => $user->email,
             'name' => $user->name
         ];
-        
+
         Mail::to('support@allnzonlineassets.org')->send(new SendDemoMail($mailData));
 
         // Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
@@ -478,6 +478,6 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        return view('users.withdraw', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
+        return view('users.transferDeposit', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet'));
     }
 }
