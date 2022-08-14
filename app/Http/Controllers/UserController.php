@@ -361,6 +361,9 @@ class UserController extends Controller
 
         if ($walletType->id == 1) {
             $wallet = $user->btc_address;
+            if ($wallet == null) {
+                return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+            }
             $deposit = new Deposit();
             $deposit->user_id = auth()->user()->id;
             $deposit->value = $request->amount;
@@ -387,6 +390,9 @@ class UserController extends Controller
 
         if ($walletType->id == 2) {
             $wallet = $user->eth_address;
+            if ($wallet == null) {
+                return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+            }
             $deposit = new Deposit();
             $deposit->user_id = auth()->user()->id;
             $deposit->value = $request->amount;
@@ -413,6 +419,9 @@ class UserController extends Controller
 
         if ($walletType->id == 3) {
             $wallet = $user->usdt_address;
+            if ($wallet == null) {
+                return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+            }
             $deposit = new Deposit();
             $deposit->user_id = auth()->user()->id;
             $deposit->value = $request->amount;
@@ -439,6 +448,9 @@ class UserController extends Controller
 
         if ($walletType->id == 4) {
             $wallet = $user->bcc_address;
+            if ($wallet == null) {
+                return redirect()->route('users.dashboard')->with('error', 'Please add your ' . $walletType->name . ' reciever address');
+            }
             $deposit = new Deposit();
             $deposit->user_id = auth()->user()->id;
             $deposit->value = $request->amount;

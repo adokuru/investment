@@ -4,13 +4,13 @@
 
 @section('breadcrumbs')
     <div class="dashboard-hero-content text-white">
-        <h3 class="title">Transfer Earnings to Wallet</h3>
+        <h3 class="title">Transfer Earnings</h3>
         <ul class="breadcrumb">
             <li>
                 <a href="/user/dashboard">Home</a>
             </li>
             <li>
-                Transfer Earnings to Wallet
+                Transfer Earnings
             </li>
         </ul>
     </div>
@@ -53,7 +53,7 @@
                     <input id="amount" type="text" readonly value="0.00" class="readonly">
                 </div>
                 <div class="form-group">
-                    <button onclick="makeDeposit()" type="button" class="custom-button border-0">Withdraw</button>
+                    <button onclick="makeDeposit()" type="button" class="custom-button border-0">Transfer</button>
                 </div>
             </form>
         </div>
