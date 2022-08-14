@@ -28,7 +28,7 @@
                         <div class="item">
                             <div class="cont">
                                 <h4 class="cl-theme">+.3%</h4>
-                                <span class="month">June Profit</span>
+                                <span class="month">August Profit</span>
                             </div>
                             <div class="thumb">
                                 <img src="{{ asset('backend/assets/images/dashboard/graph1.png') }}" alt="dashboard">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="item">
                             <div class="cont">
-                                <h4 class="cl-1">+.12%</h4>
+                                <h4 class="cl-1">+.15%</h4>
                                 <span class="month">Current Year Profit</span>
                             </div>
                             <div class="thumb">
