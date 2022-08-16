@@ -49,7 +49,7 @@ Route::get('/test3', function () {
     $transactions =  Transaction::where('transaction_type', 'Investment')->get();
     foreach ($transactions as $transaction) {
         $investType = InvestmentPlan::where('id', $transaction->investment_plan_id)->first();
-        if ($investment->contract_duration - Carbon::createFromTimestamp(strtotime($transaction->created_at))->diff(Carbon::now())->days < 0) {
+        if (($investType->contract_duration - Carbon::createFromTimestamp(strtotime($transaction->created_at))->diff(Carbon::now())->days) < 0) {
             $transaction->status = 2;
             $transaction->save();
         }
