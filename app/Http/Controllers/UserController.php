@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendDemoMail;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -38,8 +39,13 @@ class UserController extends Controller
         //find lastest investment 
         $investments->each(
             function ($item, $key) use (&$investment) {
-                if ($item->created_at < now()->subDays($item->investment->contract_duration - 1)->setTime(0, 0, 0)->toDateTimeString()) {
+                $date = $item->created_at;
+                $now = Carbon::now();
+                $diff = $date->diffInDays($now);
+                if ($diff < $item->investment->contract_duration) {
                     $investment = $item;
+                    return;
+                } else {
                     return;
                 }
             }
