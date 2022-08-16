@@ -31,7 +31,20 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        $investment = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->first();
+        //  $investment = UserIvestment::where('user_id', $user->id)->whereDate('created_at', '<=', now()->subDays(30)->setTime(0, 0, 0)->toDateTimeString())->with('user', 'investment')->first();
+        // 
+        $investments = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->get();
+        $investment = null;
+        //find lastest investment 
+        $investments->each(
+            function ($item, $key) use (&$investment) {
+                if ($item->created_at < now()->subDays($item->investment->contract_duration)->setTime(0, 0, 0)->toDateTimeString()) {
+                    $investment = $item;
+                    return;
+                }
+            }
+        );
+
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
