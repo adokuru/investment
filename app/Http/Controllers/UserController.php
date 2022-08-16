@@ -39,6 +39,7 @@ class UserController extends Controller
         $investment = null;
         //find lastest investment 
         $investments->filter(function ($item) {
+            dd($item->days_remaining());
             if ($item->days_remaining() > 0) {
                 $investmentList[] = $item;
                 $investment = $item;
@@ -46,7 +47,6 @@ class UserController extends Controller
             }
             return;
         });
-        dd($investmentList);
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
