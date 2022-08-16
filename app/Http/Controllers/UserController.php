@@ -35,17 +35,16 @@ class UserController extends Controller
         //  $investment = UserIvestment::where('user_id', $user->id)->whereDate('created_at', '<=', now()->subDays(30)->setTime(0, 0, 0)->toDateTimeString())->with('user', 'investment')->first();
         // 
         $investments = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->get();
-        $investmentList = [];
+
         $investment = null;
         //find lastest investment 
-        $investments->filter(function ($item) {
+        $investmentList  = $investments->filter(function ($item) {
             if ($item->days_remaining() > 0) {
-                $investmentList[] = $item;
-                $investment = $item;
+                return $item;
             }
             return;
         });
-        $investment = $investmentList[0];
+        $investment = $investmentList->first();
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
