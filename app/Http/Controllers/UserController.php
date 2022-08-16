@@ -43,7 +43,7 @@ class UserController extends Controller
                 $now = Carbon::now();
                 $diff = $date->diffInDays($now);
                 dd($diff);
-                if ($diff < $item->investment->contract_duration) {
+                if ($item->investment->contract_duration < $diff) {
                     $investment = $item;
                     return;
                 } else {
