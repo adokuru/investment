@@ -38,7 +38,7 @@ class UserController extends Controller
         $investment = null;
         //find lastest investment 
         $investments->filter(function ($item) {
-            return $item->created_at_difference() > 0;
+            return $item->days_remaining() > 0;
         });
 
         if ($investments->count() > 0) {
