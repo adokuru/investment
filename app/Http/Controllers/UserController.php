@@ -37,20 +37,13 @@ class UserController extends Controller
         $investments = UserIvestment::where('user_id', $user->id)->with('user', 'investment')->get();
         $investment = null;
         //find lastest investment 
-        $investments->each(
-            function ($item, $key) use (&$investment) {
-                $date = $item->created_at;
-                $now = Carbon::now();
-                $diff = $date->diffInDays($now);
-                if ($item->investment->contract_duration < $diff) {
-                    $investment = $item;
-                    return;
-                } else {
-                    return;
-                }
-            }
-        );
+        $investments->filter(function ($item) {
+            return $item->created_at_difference() <= $item->investment->contract_duration;
+        });
 
+        if ($investments->count() > 0) {
+            $investment = $investments->last();
+        }
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
