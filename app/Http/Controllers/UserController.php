@@ -38,7 +38,7 @@ class UserController extends Controller
         //find lastest investment 
         $investments->each(
             function ($item, $key) use (&$investment) {
-                if ($item->created_at < now()->subDays($item->investment->contract_duration)->setTime(0, 0, 0)->toDateTimeString()) {
+                if ($item->created_at < now()->subDays($item->investment->contract_duration - 1)->setTime(0, 0, 0)->toDateTimeString()) {
                     $investment = $item;
                     return;
                 }
