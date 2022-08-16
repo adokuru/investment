@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\InvestmentPlan;
+use App\Models\Transaction;
 use App\Models\UserIvestment;
 use App\Models\Wallet;
 use App\Models\WalletType;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
 
@@ -41,6 +44,14 @@ Route::get('/test3', function () {
         if ($invest->days_remaining() < 0) {
             $invest->status = 2;
             $invest->save();
+        }
+    }
+    $transactions =  Transaction::where('transaction_type', 'Investment')->get();
+    foreach ($transactions as $transaction) {
+        $investType = InvestmentPlan::where('id', $transaction->investment_plan_id)->first();
+        if ($investment->contract_duration - Carbon::createFromTimestamp(strtotime($transaction->created_at))->diff(Carbon::now())->days < 0) {
+            $transaction->status = 2;
+            $transaction->save();
         }
     }
     return 'done changing status';
