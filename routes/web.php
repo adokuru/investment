@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserIvestment;
 use App\Models\Wallet;
 use App\Models\WalletType;
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,16 @@ Route::get('/test2', function () {
         $wallet->save();
     }
     return 'done';
+});
+
+
+Route::get('/test3', function () {
+    $investment = UserIvestment::all();
+    foreach ($investment as $invest) {
+        if ($invest->days_remaining() < 0) {
+            $invest->status = 2;
+            $invest->save();
+        }
+    }
+    return 'done changing status';
 });
