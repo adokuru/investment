@@ -46,9 +46,7 @@ class UserController extends Controller
             }
             return;
         });
-
-
-
+        dd($investmentList);
         return view('users.dashboard', compact('user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investment'));
     }
 
