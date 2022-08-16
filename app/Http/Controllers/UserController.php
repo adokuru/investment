@@ -39,11 +39,9 @@ class UserController extends Controller
         $investment = null;
         //find lastest investment 
         $investments->filter(function ($item) {
-            dd($item->days_remaining());
             if ($item->days_remaining() > 0) {
                 $investmentList[] = $item;
                 $investment = $item;
-                return $item;
             }
             return;
         });
