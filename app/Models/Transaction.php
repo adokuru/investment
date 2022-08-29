@@ -22,6 +22,6 @@ class Transaction extends Model
 
     public function withdraw()
     {
-        return $this->belongsTo(Withdraw::class, 'withdrawal_id');
+        return $this->belongsTo(Withdrawal::class, 'withdrawal_id');
     }
 }

@@ -58,7 +58,7 @@ class RegisteredUserController extends Controller
             $referrer = User::where('referral_token', $request->ref)->first();
         }
 
-        $length = 11;
+        $length = 24;
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
@@ -84,9 +84,9 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         $user->assignRole('User');
         Auth::login($user);
-		$mailData = [    
+        $mailData = [
             'name' =>  $user->name,
-			'email' => $user->email,
+            'email' => $user->email,
         ];
         Mail::to($user->email)->send(new WelcomeMail($mailData));
         return redirect(RouteServiceProvider::HOME);
