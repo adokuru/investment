@@ -7,7 +7,8 @@
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/boxicons.min.css') }}">
@@ -172,8 +173,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endif
+                            </div> @endif
                     </div>
                 </nav>
             </div>
@@ -182,123 +182,132 @@
 
     @yield('content')
 
-    <footer class="footer-area pt-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="footer-item">
-                        <div class="footer-logo">
-                            <a class="footer-inva" href="index-2.html">
-                                <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
-                            </a>
-                            <p>Open account for free and start trading now!</p>
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class='bx bxl-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class='bx bxl-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class='bx bxl-linkedin'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class='bx bxl-instagram'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class='bx bxl-youtube'></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+    <footer class="footer-area
+        pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-logo">
+                        <a class="footer-inva" href="index-2.html">
+                            <img src="{{ asset('frontend-assets/img/logo2.png') }}" alt="Logo">
+                        </a>
+                        <p>Open account for free and start trading now!</p>
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class='bx bxl-linkedin'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class='bx bxl-instagram'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class='bx bxl-youtube'></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="footer-item">
-                        <div class="footer-link">
-                            <h3>Important Links</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="/about">About</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="/service">Services</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="/trading">Trading</a>
-                                </li>
-                                <li>
-                                    <i class='bx bx-chevron-right'></i>
-                                    <a href="/faq">FAQ</a>
-                                </li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-link">
+                        <h3>Important Links</h3>
+                        <ul>
+                            <li>
+                                <i class='bx bx-chevron-right'></i>
+                                <a href="/about">About</a>
+                            </li>
+                            <li>
+                                <i class='bx bx-chevron-right'></i>
+                                <a href="/service">Services</a>
+                            </li>
+                            <li>
+                                <i class='bx bx-chevron-right'></i>
+                                <a href="/trading">Trading</a>
+                            </li>
+                            <li>
+                                <i class='bx bx-chevron-right'></i>
+                                <a href="/faq">FAQ</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="footer-item">
-                        <div class="footer-hours">
-                            <h3>Open Hours</h3>
-                            <ul>
-                                <li>Monday :- 8:00 - 21:00</li>
-                                <li>Tuesday :- 8:00 - 21:00</li>
-                                <li>Wednesday :- 8:00 - 21:00</li>
-                                <li>Thursday :- 8:00 - 21:00</li>
-                                <li>Friday :- 8:00 - 21:00</li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-hours">
+                        <h3>Open Hours</h3>
+                        <ul>
+                            <li>Monday :- 8:00 - 21:00</li>
+                            <li>Tuesday :- 8:00 - 21:00</li>
+                            <li>Wednesday :- 8:00 - 21:00</li>
+                            <li>Thursday :- 8:00 - 21:00</li>
+                            <li>Friday :- 8:00 - 21:00</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="footer-item">
-                        <div class="footer-contact">
-                            <h3>Contact Info</h3>
-                            <ul>
-                                <li>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-contact">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    Address: 58 Waterloo Street, Glasgow G2 7Da, Scotland.
+                                </span>
+                            </li>
+                            <li>
+                                <a href="mailto:support@allnzonlineassets.org">
                                     <span>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i> 
-                                        Address: 58 Waterloo Street, Glasgow G2 7Da, Scotland.
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        Email: support@allnzonlineassets.org
                                     </span>
-                                </li>
-                                <li>
-                                    <a href="mailto:support@allnzonlineassets.org">
-                                        <span>
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            Email: support@allnzonlineassets.org
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+447418604460">
+                                    <span>
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        Phone: +44 7418 604460
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright-area">
-            <div class="container">
-                <p>Copyright @
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> Allianz Assets Hub. All rights reserved
-                </p>
-                </p>
-            </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <p>Copyright @
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> Allianz Assets Hub. All rights reserved
+            </p>
+            </p>
         </div>
-        <div class="footer-shape">
-            <img src="assets/img/footer-bg.png" alt="Footer">
-        </div>
+    </div>
+    <div class="footer-shape">
+        <img src="assets/img/footer-bg.png" alt="Footer">
+    </div>
     </footer>
 
 
@@ -331,6 +340,6 @@
     <script src="{{ asset('frontend-assets/js/smoothscroll.min.js') }}"></script>
 
     <script src="{{ asset('frontend-assets/js/custom.js') }}"></script>
-</body>
+    </body>
 
 </html>
