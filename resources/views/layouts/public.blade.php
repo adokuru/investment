@@ -57,7 +57,7 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allnzonlineassets.org</span></a>
+                                <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__" >support@allnzonlineassets.org</span></a>
                             </li>
                             {{-- <li>
                                 <i class='bx bx-phone-call'></i>
