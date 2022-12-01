@@ -1,21 +1,18 @@
 @component('mail::message')
 
-# Hello {{$details['name']}}, 
+# Hello {{ $details['name'] }}
 
 Welcome to Allianz Investment Hub, Your trading account has been successfully registered.
 
-Check out your dashboard. 
-Click on login to log into your account.
+To check out your dashboard, click on the login button below to log into your portfolio.
 
-@component('mail::button', ['url' => 'https://allianzassetshub.com/user/dashboard'])
-Login to Your Dashboard
+@component('mail::button', ['url' => 'https://allnzonlineassets.org/user/dashboard'])
+Click here to login
 @endcomponent
 
-Thank you for choosing our platform,<br>
-
-If you did not create an account, no further action is required.
+Thank you for choosing Allianz.
 
 Regards.
-<br>
 {{ config('app.name') }}
+
 @endcomponent
