@@ -77,8 +77,7 @@
                         <h3>Contact Info</h3>
 
                         <p><b>Allianz</b></p>
-                        <p>16a invercauld ballater
-                            Scotland, AL 34246</p>
+                        <p>58 Waterloo Street, Glasgow G2 7Da, Scotland.</p>
 
                         <p><b>Support Email</b></p>
                         <p>
