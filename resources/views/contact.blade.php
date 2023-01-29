@@ -6,26 +6,6 @@
         <div class="title-shape">
             <img src="assets/img/title/title-bg-shape.png" alt="Shape">
         </div>
-        {{-- <div class="d-table">
-            <div class="d-table-cell">
-                <div class="container">
-                    <div class="title-content">
-                        <h2>Contact</h2>
-                        <ul>
-                            <li>
-                                <a href="index-2.html">Home</a>
-                            </li>
-                            <li>
-                                <i class='bx bx-chevron-right'></i>
-                            </li>
-                            <li>
-                                <span>Contact</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </div>
 
 
@@ -102,12 +82,12 @@
 
                         <p><b>Support Email</b></p>
                         <p>
-                            <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">support@allnzonlineassets.org</span></a>
+                            <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__">support@allnzonlineassets.org</span></a>
                         </p>
                         <p><b>Support Phone Number</b></p>
 
                         <p>
-                            <a href="tel:+447418604460"><span class="__cf_email__" data-cfemail="cfa7aaa3a3a08fa6a1b9aee1aca0a2">+44 7418 604460</span></a>
+                            <a href="tel:+447418604460"><span class="__cf_email__">+44 7418 604460</span></a>
                         </p>
 
                         <p><b>Office Hours</b></p>
