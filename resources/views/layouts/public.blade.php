@@ -57,7 +57,7 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__" >support@allnzonlineassets.org</span></a>
+                                <a href="mailto:support@allnzglobalassets.org"><span class="__cf_email__" >support@allnzglobalassets.org</span></a>
                             </li>
                             {{-- <li>
                                 <i class='bx bx-phone-call'></i>
@@ -274,10 +274,10 @@
                                 </span>
                             </li>
                             <li>
-                                <a href="mailto:support@allnzonlineassets.org">
+                                <a href="mailto:support@allnzglobalassets.org">
                                     <span>
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        Email: support@allnzonlineassets.org
+                                        Email: support@allnzglobalassets.org
                                     </span>
                                 </a>
                             </li>

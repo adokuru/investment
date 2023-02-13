@@ -23,40 +23,47 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Name" required data-error="Please enter your name">
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Name" required data-error="Please enter your name">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email" required data-error="Please enter your email">
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Email" required data-error="Please enter your email">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" name="phone_number" id="phone_number" placeholder="Phone" required data-error="Please enter your number" class="form-control">
+                                    <input type="text" name="phone_number" id="phone_number" placeholder="Phone" required
+                                        data-error="Please enter your number" class="form-control">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" placeholder="Subject" required data-error="Please enter your subject">
+                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control"
+                                        placeholder="Subject" required data-error="Please enter your subject">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Write message" required data-error="Write your message"></textarea>
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="8" placeholder="Write message"
+                                        required data-error="Write your message"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
                                     <div class="form-check agree-label">
-                                        <input name="gridCheck" value="I agree to the terms and privacy policy." class="form-check-input" type="checkbox" id="gridCheck" required>
+                                        <input name="gridCheck" value="I agree to the terms and privacy policy."
+                                            class="form-check-input" type="checkbox" id="gridCheck" required>
                                         <label class="form-check-label" for="gridCheck">
-                                            Accept <a href="terms-conditions.html">Terms of Services</a> and <a href="privacy-policy.html">Privacy Policy</a>
+                                            Accept <a href="terms-conditions.html">Terms of Services</a> and <a
+                                                href="privacy-policy.html">Privacy Policy</a>
                                         </label>
                                         <div class="help-block with-errors gridCheck-error"></div>
                                     </div>
@@ -81,7 +88,8 @@
 
                         <p><b>Support Email</b></p>
                         <p>
-                            <a href="mailto:support@allnzonlineassets.org"><span class="__cf_email__">support@allnzonlineassets.org</span></a>
+                            <a href="mailto:support@allnzglobalassets.org"><span
+                                    class="__cf_email__">support@allnzglobalassets.org</span></a>
                         </p>
                         <p><b>Support Phone Number</b></p>
 

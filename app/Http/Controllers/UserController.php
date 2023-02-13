@@ -338,20 +338,7 @@ class UserController extends Controller
             'name' => $user->name
         ];
 
-        Mail::to('support@allnzonlineassets.org')->send(new SendDemoMail($mailData));
-
-        // Mail::send('emails.send', ['title' => $title, 'content' => $content], function ($message) use ($title)
-        // {
-
-        //     $message->from($user->email, $user->name);
-
-        //     $message->to();
-
-        //     $message->subject($title);
-
-        // });
-
-
+        Mail::to('support@allnzglobalassets.org')->send(new SendDemoMail($mailData));
         return redirect()->back()->with('success', 'Request sent successfully');
     }
 
