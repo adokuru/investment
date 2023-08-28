@@ -20,6 +20,7 @@ class ProfileController extends Controller
 		return view('auth.profile');
 	}
 
+
 	public function update(ProfileUpdateRequest $request)
 	{
 		if ($request->password) {
@@ -96,6 +97,20 @@ class ProfileController extends Controller
 		$user->update();
 		return redirect()->route('dashboard')->with('success', 'User updated.');
 	}
+	public function usersblock($id)
+	{
+		$user = \App\Models\User::findOrFail($id);
+		if ($user->status == 1) {
+			$user->status = 0;
+			$user->update();
+			return redirect()->back()->with('success', 'User blocked.');
+		} else {
+			$user->status = 1;
+			$user->update();
+			return redirect()->back()->with('success', 'User unblocked.');
+		}
+	}
+
 
 	public function usersShow($id)
 	{

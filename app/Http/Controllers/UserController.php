@@ -25,6 +25,21 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
+    public function usersblock($id)
+    {
+        dd($id);
+        $user = \App\Models\User::findOrFail($id);
+        dd($user);
+        if ($user->status == 1) {
+            $user->status = 0;
+            $user->update();
+            return redirect()->back()->with('success', 'User blocked.');
+        } else {
+            $user->status = 1;
+            $user->update();
+            return redirect()->back()->with('success', 'User unblocked.');
+        }
+    }
     public function dashboard()
     {
         $user = auth()->user();

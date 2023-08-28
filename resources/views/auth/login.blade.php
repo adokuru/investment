@@ -60,19 +60,27 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="user-form-item">
-                        <a class="logo" href="index-2.html">
+                        <a class="logo" href="/">
                             <img src="frontend-assets/img/logo2.png" alt="Logo">
                         </a>
                         <x-auth-session-status class="mb-4" :status="session('status')" />
+                        @if (session('error'))
+                            <div class="bg-white border mb-4 border-red-400 text-red-700 px-4 py-3 rounded relative"
+                                role="alert">
+                                {{ session('error') }}
+                            </div>
+                        @endif
                         <!-- Validation Errors -->
                         <x-auth-validation-errors class="mb-4 mt-4" :errors="$errors" />
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">
-                                <input name="email" id="email" value="{{ old('email') }}" required autofocus class="form-control" placeholder="Enter your email">
+                                <input name="email" id="email" value="{{ old('email') }}" required autofocus
+                                    class="form-control" placeholder="Enter your email">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" id="password" required autocomplete="current-password" class="form-control" placeholder="Enter your password">
+                                <input type="password" name="password" id="password" required
+                                    autocomplete="current-password" class="form-control" placeholder="Enter your password">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="common-btn">
@@ -89,7 +97,8 @@
                                 </li>
                                 <li>
                                     @if (Route::has('password.request'))
-                                        <a class="block text-sm fontme text-indigo-700 hover:underline" href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
+                                        <a class="block text-sm fontme text-indigo-700 hover:underline"
+                                            href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
                                     @endif
                                 </li>
                             </ul>

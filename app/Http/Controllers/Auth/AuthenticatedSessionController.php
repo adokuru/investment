@@ -31,8 +31,11 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        if(auth()->user()->hasrole('Admin'))
-        {
+        if (auth()->user()->status == 0) {
+            Auth::logout();
+            return redirect()->route('login')->with('error', 'Sorry your portfolio access is disabled, please contact support.');
+        }
+        if (auth()->user()->hasrole('Admin')) {
             return redirect()->route('dashboard');
         }
         return redirect()->intended(RouteServiceProvider::HOME);
