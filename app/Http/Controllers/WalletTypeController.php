@@ -14,7 +14,9 @@ class WalletTypeController extends Controller
      */
     public function index()
     {
-        //
+        $wallets = WalletType::paginate(10);
+
+        return view('admin.wallets.index', compact('wallets'));
     }
 
     /**

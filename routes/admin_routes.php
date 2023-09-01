@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonalController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WalletTypeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,4 +30,8 @@ Route::middleware('auth', 'isAdmin')->group(function () {
     Route::post('admin/users/update/{id}', [ProfileController::class, 'usersUpdate'])->name('admin.users.update');
 
     Route::get('admin/users/block/{id}', [ProfileController::class, 'usersblock'])->name('admin.users.block');
+
+
+    Route::get('admin/testimonials', [TestimonalController::class, 'testimonials'])->name('profile.testimonials');
+    Route::get('admin/wallets', [WalletTypeController::class, 'index'])->name('profile.wallets');
 });
