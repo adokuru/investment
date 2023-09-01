@@ -33,5 +33,7 @@ Route::middleware('auth', 'isAdmin')->group(function () {
 
 
     Route::get('admin/testimonials', [TestimonalController::class, 'testimonials'])->name('profile.testimonials');
+    Route::get('admin/testimonials/create', [TestimonalController::class, 'add'])->name('admin.testimonials.create');
+    Route::get('admin/testimonials/store', [TestimonalController::class, 'store'])->name('admin.testimonials.store');
     Route::get('admin/wallets', [WalletTypeController::class, 'index'])->name('profile.wallets');
 });

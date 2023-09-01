@@ -3,7 +3,7 @@
         New Testimonial
     </x-slot>
 
-    <form action="{{ route('admin.users.update', $user->id) }}" method="POST"
+    <form action="{{ route('admin.testimonials.store') }}" method="POST"
         class="space-y-8 w-full divide-y divide-gray-200">
         @csrf
         <div class="space-y-8 divide-y divide-gray-200">
@@ -22,7 +22,7 @@
                             Name
                         </label>
                         <div class="mt-1">
-                            <input type="text" disabled value="" name="first_name" id="first_name"
+                            <input type="text" value="" name="first_name" id="first_name"
                                 autocomplete="given-name"
                                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
@@ -34,8 +34,7 @@
                             description
                         </label>
                         <div class="mt-1">
-                            <input id="email" disabled value="" name="email" type="email"
-                                autocomplete="email"
+                            <input id="email" value="" name="email" type="email" autocomplete="email"
                                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -45,7 +44,7 @@
                             Image
                         </label>
                         <div class="mt-1">
-                            <input type="text" value="" name="earnings" id="earnings"
+                            <input type="file" value="" name="earnings" id="earnings"
                                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>
@@ -54,7 +53,7 @@
                             Rating
                         </label>
                         <div class="mt-1">
-                            <input type="text" value="" name="earnings" id="earnings"
+                            <input type="number" max="5" min="0" name="earnings" id="earnings"
                                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>

@@ -3,7 +3,11 @@
         {{ __('Testimonials') }}
     </x-slot>
 
-    <div class="inline-block overflow-hidden min-w-full rounded-lg shadow">
+    <a href="{{ route('admin.testimonials.create') }}"
+        class="px-4 py-2 my-4 font-bold text-white bg-green-500 rounded hover:bg-green-700">Add Testimonial</a>
+
+
+    <div class="inline-block overflow-hidden min-w-full rounded-lg shadow mt-4">
 
         @yield('message')
 
