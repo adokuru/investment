@@ -23,7 +23,11 @@ Route::middleware('auth', 'isAdmin')->group(function () {
 
     Route::get('admin/users/wallet/{id}', [ProfileController::class, 'usersAddWallet'])->name('admin.wallet.update');
 
+    Route::get('admin/users/wallet/pending/{id}', [ProfileController::class, 'usersAddWalletID'])->name('admin.wallet.pending.update');
+
     Route::post('admin/wallets/update/{id}', [ProfileController::class, 'walletUpdate'])->name('profile.wallet.update');
+
+    Route::post('admin/wallets/update/pending/{id}', [ProfileController::class, 'walletPendingUpdate'])->name('profile.wallet.pending.update');
 
     Route::get('admin/wallets', [ProfileController::class, 'wallets'])->name('profile.wallets');
 

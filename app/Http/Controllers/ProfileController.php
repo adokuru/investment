@@ -130,6 +130,11 @@ class ProfileController extends Controller
 		$user = \App\Models\User::with('wallet')->findOrFail($id);
 		return view('admin.users.funds', compact('user'));
 	}
+	public function usersAddWalletID($id)
+	{
+		$user = \App\Models\User::with('wallet')->findOrFail($id);
+		return view('admin.users.funds-copy', compact('user'));
+	}
 
 	public function walletUpdate($id, Request $request)
 	{
@@ -215,6 +220,81 @@ class ProfileController extends Controller
 			$wallet->amount = $wallet->amount + $request->BCHamount;
 			$wallet->usd_balance = $wallet->usd_balance + ($request->BCHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
 			$wallet->save();
+		}
+
+		return redirect()->route('profile.wallets')->with('success', 'User updated.');
+	}
+	public function walletPendingUpdate($id, Request $request)
+	{
+		$user = \App\Models\User::findOrFail($id);
+		if ($request->BTCamount > 0) {
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  1)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->BTCamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'BTC';
+			$transaction->amount = $request->BTCamount;
+			$transaction->status = 0;
+			$transaction->save();
+		}
+		if ($request->ETHamount > 0) {
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  2)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->ETHamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'ETH';
+			$transaction->amount = $request->ETHamount;
+			$transaction->status = 0;
+			$transaction->save();
+		}
+		if ($request->USDTamount > 0) {
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  3)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->USDTamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'USDT';
+			$transaction->amount = $request->USDTamount;
+			$transaction->status = 0;
+			$transaction->save();
+		}
+
+		if ($request->BCHamount > 0) {
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  4)->where('status',  1)->first();
+			$deposit = new Deposit();
+			$deposit->user_id = $user->id;
+			$deposit->value = $request->BCHamount;
+			$deposit->wallet_id = $wallet->id;
+			$deposit->save();
+
+			$transaction = new Transaction();
+			$transaction->user_id = $user->id;
+			$transaction->deposit_id = $deposit->id;
+			$transaction->transaction_type = $request->remark;
+			$transaction->currency = 'BCH';
+			$transaction->amount = $request->BCHamount;
+			$transaction->status = 0;
+			$transaction->save();
 		}
 
 		return redirect()->route('profile.wallets')->with('success', 'User updated.');
