@@ -31,6 +31,6 @@ class SendCodesMail extends Mailable
     public function build()
     {
         return $this->subject('Your 2FA Code')
-            ->view('emails.sendCodes')->with('details', $this->details);
+            ->markdown('emails.sendCodes')->with('details', $this->details);
     }
 }
