@@ -19,6 +19,11 @@ require __DIR__ . '/user_routes.php';
 require __DIR__ . '/public_routes.php';
 
 
+Route::get('2fa', [App\Http\Controllers\TwoFAController::class, 'index'])->name('2fa.index');
+Route::post('2fa', [App\Http\Controllers\TwoFAController::class, 'store'])->name('2fa.post');
+Route::get('2fa/reset', [App\Http\Controllers\TwoFAController::class, 'resend'])->name('2fa.resend')->middleware('auth');
+
+
 Route::get('/test', function () {
     $walletTypes = WalletType::all();
     foreach ($walletTypes as $walletType) {

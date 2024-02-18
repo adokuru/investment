@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
     /**
      * Display the login view.
      *
@@ -38,7 +43,10 @@ class AuthenticatedSessionController extends Controller
         if (auth()->user()->hasrole('Admin')) {
             return redirect()->route('dashboard');
         }
-        return redirect()->intended(RouteServiceProvider::HOME);
+
+        auth()->user()->generateCode();
+
+        return redirect()->route('2fa.index');
     }
 
     /**

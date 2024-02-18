@@ -8,6 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\UserCode;
+use App\Mail\SendCodesMail;
+use Exception;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -22,10 +26,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-		'referrer_id',
-		'referral_token', 
+        'referrer_id',
+        'referral_token',
     ];
-	protected $appends = ['referral_link'];
+    protected $appends = ['referral_link'];
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -75,30 +79,51 @@ class User extends Authenticatable
     {
         return $this->wallet()->where('wallet_type_id', 4)->first();
     }
-	
-	/**
-	 * A user has a referrer.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-	 */
-	public function referrer()
-	{
-		return $this->belongsTo(User::class, 'referrer_id', 'id');
-	}
 
-	/**
-	 * A user has many referrals.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function referrals()
-	{
-		return $this->hasMany(User::class, 'referrer_id', 'id');
-	}
-	
-	public function getReferralLinkAttribute()
-{
-    return $this->referral_link = route('register', ['ref' => $this->referral_token]);
-}
-	
+    /**
+     * A user has a referrer.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function referrer()
+    {
+        return $this->belongsTo(User::class, 'referrer_id', 'id');
+    }
+
+    public function generateCode()
+    {
+        $code = rand(1000, 9999);
+
+        UserCode::updateOrCreate(
+            ['user_id' => auth()->user()->id],
+            ['code' => $code]
+        );
+
+        try {
+
+            $details = [
+                'title' => 'Your 2FA Code',
+                'code' => $code
+            ];
+
+            Mail::to(auth()->user()->email)->send(new SendCodesMail($details));
+        } catch (Exception $e) {
+            info("Error: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * A user has many referrals.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function referrals()
+    {
+        return $this->hasMany(User::class, 'referrer_id', 'id');
+    }
+
+    public function getReferralLinkAttribute()
+    {
+        return $this->referral_link = route('register', ['ref' => $this->referral_token]);
+    }
 }
