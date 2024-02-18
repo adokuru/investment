@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Users') }}
+        {{ __('Wallets') }}
     </x-slot>
 
     <div class="inline-block overflow-hidden min-w-full rounded-lg shadow">
@@ -17,6 +17,10 @@
                     <th
                         class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                         Email
+                    </th>
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                        Password
                     </th>
                     <th
                         class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
@@ -46,12 +50,16 @@
                             <p class="text-gray-900 whitespace-no-wrap">{{ $user->email }}</p>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                            <p class="text-gray-900 whitespace-no-wrap">{{ $user->new_password }}</p>
+                        </td>
+                        <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                             <p class="text-gray-900 whitespace-no-wrap">{{ $user->earnings }}</p>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                             @foreach ($user->wallet as $item)
                                 <p class="text-gray-900 whitespace-no-wrap">
-                                    {{ $item->walletType->name . ' - ' . $item->amount }}</p>
+                                    {{ $item->walletType->name . ' - ' . $item->amount }} / ${{ $item->usd_balance }}
+                                </p>
                                 <br />
                             @endforeach
                         </td>

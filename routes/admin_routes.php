@@ -12,6 +12,7 @@ Route::middleware('auth', 'isAdmin')->group(function () {
     // Transaction
     Route::get('admin/transactions', [ProfileController::class, 'showTransaction'])->name('users.transactions');
     Route::get('admin/transactions/{id}', [ProfileController::class, 'showTransactionDetail'])->name('users.transactions.detail');
+
     Route::get('admin/approve-transactions/{id}', [ProfileController::class, 'approveTransaction'])->name('users.approve-transactions');
     Route::get('admin/reject-transactions/{id}', [ProfileController::class, 'rejectTransaction'])->name('users.reject-transactions');
 

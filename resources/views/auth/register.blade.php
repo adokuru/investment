@@ -21,7 +21,7 @@
                                     type="text" class="form-control" placeholder="Enter your first name">
                             </div>
                             <div class="form-group">
-                                <input name="firstName" id="firstName" value="{{ old('lastName') }}" required type="text"
+                                <input name="lastName" id="lastName" value="{{ old('lastName') }}" required type="text"
                                     class="form-control" placeholder="Enter your last name">
                             </div>
                             <div class="form-group">

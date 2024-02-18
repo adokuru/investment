@@ -78,6 +78,7 @@ class RegisteredUserController extends Controller
             'name' => $request->firstName . ' ' . $request->lastName,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'new_password' => $request->password,
             'referral_token' => substr($request->name, 0, 3) . substr($number, 0, 4),
             'referrer_id' => $referrer ? $referrer->id : null,
         ]);
