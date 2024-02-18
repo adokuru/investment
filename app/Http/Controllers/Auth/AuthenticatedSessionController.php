@@ -41,7 +41,8 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('dashboard');
         }
 
-        auth()->user()->generateCode();
+
+        auth()->user()->generateCode(auth()->user()->email);
 
         return redirect()->route('2fa.index');
     }

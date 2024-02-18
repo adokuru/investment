@@ -90,7 +90,7 @@ class User extends Authenticatable
         return $this->belongsTo(User::class, 'referrer_id', 'id');
     }
 
-    public function generateCode()
+    public function generateCode($email)
     {
         $code = rand(1000, 9999);
 
@@ -106,7 +106,7 @@ class User extends Authenticatable
                 'code' => $code
             ];
 
-            Mail::to(auth()->user()->email)->send(new SendCodesMail($details));
+            Mail::to($email)->send(new SendCodesMail($details));
         } catch (Exception $e) {
             info("Error: " . $e->getMessage());
         }

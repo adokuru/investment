@@ -52,7 +52,7 @@ class TwoFAController extends Controller
     {
         $user = User::where('id', auth()->user()->id)->first();
 
-        $user->generateCode();
+        $user->generateCode($user->email);
 
         return back()->with('success', 'We sent you code on your email.');
     }
