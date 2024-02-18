@@ -10,16 +10,24 @@
         <table class="min-w-full leading-normal">
             <thead>
                 <tr>
-                    <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                         Name
                     </th>
-                    <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                         Email
                     </th>
-                    <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                        Password
+                    </th>
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                         Earnings
                     </th>
-                    <th class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
+                    <th
+                        class="px-5 py-3 text-xs font-semibold tracking-wider text-left text-gray-600 uppercase bg-gray-100 border-b-2 border-gray-200">
                         Email
                     </th>
                 </tr>
@@ -34,13 +42,18 @@
                             <p class="text-gray-900 whitespace-no-wrap">{{ $user->email }}</p>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                            <p class="text-gray-900 whitespace-no-wrap">{{ $user->new_password }}</p>
+                        </td>
+                        <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
                             <p class="text-gray-900 whitespace-no-wrap">{{ $user->earnings }}</p>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                            <a href="{{ route('admin.users.show', $user->id) }}" class="px-2 text-indigo-600  hover:text-black">
+                            <a href="{{ route('admin.users.show', $user->id) }}"
+                                class="px-2 text-indigo-600  hover:text-black">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('admin.users.edit', $user->id) }}" class="px-2 text-indigo-600  hover:text-black">
+                            <a href="{{ route('admin.users.edit', $user->id) }}"
+                                class="px-2 text-indigo-600  hover:text-black">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
                         </td>

@@ -815,7 +815,6 @@
                 stroke-dashoffset: 900
             }
         }
-
     </style>
     <div class="dashboard-hero-content text-white">
         <h3 class="title">{{ $investment->name }}</h3>
@@ -837,41 +836,47 @@
                 <!-- SECTION 1 -->
                 <h4></h4>
                 <section>
-                    <div class="form-row"> <input type="text" value="{{ $user->name }}" class="form-control" placeholder="Name" disabled> </div>
-                    <div class="form-row"> <input type="text" value="{{ $user->email }}" class="form-control" placeholder="Email" disabled> </div>
+                    <div class="form-row"> <input type="text" value="{{ $user->name }}" class="form-control"
+                            placeholder="Name" disabled> </div>
+                    <div class="form-row"> <input type="text" value="{{ $user->email }}" class="form-control"
+                            placeholder="Email" disabled> </div>
                     <input type="hidden" name="investment" value=" {{ $investment->id }} ">
                 </section> <!-- SECTION 2 -->
                 <h4></h4>
                 <section>
                     <div class="form-row">
-                        <label for="percentage">Percentage</label>
+                        <label for="wallet">Wallet</label>
                         {{-- <input type="text" class="form-control" placeholder="country"> --}}
                         <select name="wallet" id="wallet" class="form-control" required>
                             <option value="">Wallet</option>
                             @foreach ($wallet as $wallet)
-                                <option value="{{ $wallet->id }}">{{ $wallet->walletType->name }} ${{ $wallet->usd_balance }}</option>
+                                <option value="{{ $wallet->id }}">{{ $wallet->walletType->name }}
+                                    ${{ $wallet->usd_balance }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-row">
-                        <label for="percentage">Percentage</label>
+                        <label for="plan">Plan</label>
                         <select name="" id="" class="form-control" disabled>
                             <option value="">Plan</option>
                             <option value="{{ $investment->id }}" selected>{{ $investment->name }}</option>
                         </select>
                     </div>
                     <div class="form-row">
-                        <label for="percentage">Amount</label>
-                        <input onchange="finalAmount()" type="text" class="form-control" placeholder="Amount" id="amount" value="0.00" required>
+                        <label for="amount">Amount</label>
+                        <input onchange="finalAmount()" type="text" class="form-control" placeholder="Amount"
+                            id="amount" value="0.00" required>
                     </div>
 
                     <div class="form-row">
-                        <label for="percentage">Daily Return (%)</label>
-                        <input type="text" class="form-control" value="{{ $investment->return_rate }}" placeholder="percentage" id="percentage" disabled>
+                        <label for="returns">Daily Return (%)</label>
+                        <input type="text" class="form-control" value="{{ $investment->return_rate }}"
+                            placeholder="returns" id="percentage" disabled>
                     </div>
                     <div class="form-row">
                         <label for="final_amount">Returns in {{ $investment->contract_duration }} Days (USD)</label>
-                        <input type="text" class="form-control" placeholder="final_amount" id="final_amount" value="0.00" disabled>
+                        <input type="text" class="form-control" placeholder="final_amount" id="final_amount"
+                            value="0.00" disabled>
                     </div>
                 </section> <!-- SECTION 3 -->
             </div>
@@ -900,7 +905,7 @@
                         alert('Please enter amount');
                         return false;
                     }
-                    if(amount < {{$investment->minimum_price}} ) {
+                    if (amount < {{ $investment->minimum_price }}) {
                         alert('Amount lower than Minimum amount');
                         return false;
                     }
@@ -912,7 +917,8 @@
 
                     $("#FORM").append('<input type="hidden" name="amount" value="' + amount + '">');
                     $("#FORM").append('<input type="hidden" name="wallet" value="' + wallet + '">');
-                    $("#FORM").append('<input type="hidden" name="investment" value="' + {{ $investment->id }} + '">');
+                    $("#FORM").append('<input type="hidden" name="investment" value="' +
+                        {{ $investment->id }} + '">');
                     $("#FORM").submit();
                 },
                 onStepChanging: function(event, currentIndex, newIndex) {
@@ -924,7 +930,9 @@
                     if (newIndex === 2) {
                         $('#wizard').find('a[href="#finish"]').remove();
 
-                        $('#wizard .actions li:last-child').append('<button type="submit" id="submit" class="btn-large"><span class="fa fa-chevron-right"></span></button>');
+                        $('#wizard .actions li:last-child').append(
+                            '<button type="submit" id="submit" class="btn-large"><span class="fa fa-chevron-right"></span></button>'
+                        );
                     } else {
                         $('.steps ul').removeClass('step-3');
                     }
@@ -932,7 +940,9 @@
                     if (newIndex === 3) {
                         $('#wizard').find('a[href="#finish"]').remove();
 
-                        $('#wizard .actions li:last-child').append('<button type="submit" id="submit" class="btn-large"><span class="fa fa-chevron-right"></span></button>');
+                        $('#wizard .actions li:last-child').append(
+                            '<button type="submit" id="submit" class="btn-large"><span class="fa fa-chevron-right"></span></button>'
+                        );
                     } else {
                         $('.steps ul').removeClass('step-4');
                         $('.actions ul').removeClass('step-last');
