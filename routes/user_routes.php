@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use WisdomDiala\Cryptocap\Facades\Cryptocap;
 
-Route::middleware('auth', 'isUser', 'Check2FA')->group(function () {
+Route::middleware('auth', 'isUser', '2fa')->group(function () {
     Route::get('/user/dashboard', [\App\Http\Controllers\UserController::class, 'dashboard'])->middleware(['auth'])->name('users.dashboard');
     Route::get('/user/deposit', [\App\Http\Controllers\UserController::class, 'deposit'])->middleware(['auth'])->name('users.deposit');
     Route::get('/user/operations', [\App\Http\Controllers\UserController::class, 'operations'])->middleware(['auth'])->name('users.deposit');
