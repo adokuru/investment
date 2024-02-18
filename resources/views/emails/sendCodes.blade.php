@@ -2,7 +2,7 @@
 
 # 2FA Code
 
-Your 2FA code is: {{ $code }}
+Your 2FA code is: {{ $details['code'] }}
 
 This code will expire in 5 minutes.
 
