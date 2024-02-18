@@ -1,4 +1,3 @@
-
 @extends('layouts.public')
 @section('title', 'Welcome')
 @section('content')
@@ -9,7 +8,7 @@
             <div class="d-table-cell">
                 <div class="container">
                     <div class="user-form-item">
-                     <x-auth-session-status class="mb-4" :status="session('status')" />
+                        <x-auth-session-status class="mb-4" :status="session('status')" />
                         <!-- Validation Errors -->
                         <x-auth-validation-errors class="mb-4 mt-4" :errors="$errors" />
                         <a class="logo" href="/">
@@ -18,19 +17,28 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="form-group">
-                                <input name="name" id="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Enter your name">
+                                <input name="firstName" id="firstName" value="{{ old('firstName') }}" required
+                                    type="text" class="form-control" placeholder="Enter your first name">
                             </div>
                             <div class="form-group">
-                                <input name="email" id="email" value="{{ old('email') }}" required class="form-control" placeholder="Enter your email">
+                                <input name="firstName" id="firstName" value="{{ old('lastName') }}" required type="text"
+                                    class="form-control" placeholder="Enter your last name">
                             </div>
                             <div class="form-group">
-                                <input name="password" id="password_confirmation" required type="password" class="form-control" placeholder="Enter your password">
+                                <input name="email" id="email" value="{{ old('email') }}" required
+                                    class="form-control" placeholder="Enter your email">
                             </div>
                             <div class="form-group">
-                                <input name="password_confirmation" id="password_confirmation" required type="password" class="form-control" placeholder="Enter your password again">
+                                <input name="password" id="password_confirmation" required type="password"
+                                    class="form-control" placeholder="Enter your password">
                             </div>
-							<div class="form-group">
-                                <input name="ref" id="ref" type="text" class="form-control" placeholder="Enter a Referral Code" value={{$refcode ? $refcode : null}}>
+                            <div class="form-group">
+                                <input name="password_confirmation" id="password_confirmation" required type="password"
+                                    class="form-control" placeholder="Enter your password again">
+                            </div>
+                            <div class="form-group">
+                                <input name="ref" id="ref" type="text" class="form-control"
+                                    placeholder="Enter a Referral Code" value={{ $refcode ? $refcode : null }}>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="common-btn">
