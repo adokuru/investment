@@ -38,7 +38,7 @@ class TwoFAController extends Controller
 
         if (!is_null($find)) {
             FacadesSession::put('user_2fa', auth()->user()->id);
-            return redirect()->route('home');
+            return redirect()->route('users.dashboard');
         }
 
         return back()->with('error', 'You entered wrong code.');
