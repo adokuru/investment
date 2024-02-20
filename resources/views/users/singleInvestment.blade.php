@@ -845,7 +845,7 @@
                 <h4></h4>
                 <section>
                     <div class="form-row">
-                        <label for="wallet">Wallet</label>
+                        <label style="font-weight: 500; color:#000" for="wallet">Wallet</label>
                         {{-- <input type="text" class="form-control" placeholder="country"> --}}
                         <select name="wallet" id="wallet" class="form-control" required>
                             <option value="">Wallet</option>
@@ -856,25 +856,26 @@
                         </select>
                     </div>
                     <div class="form-row">
-                        <label for="plan">Plan</label>
+                        <label style="font-weight: 500; color:#000" for="plan">Plan</label>
                         <select name="" id="" class="form-control" disabled>
                             <option value="">Plan</option>
                             <option value="{{ $investment->id }}" selected>{{ $investment->name }}</option>
                         </select>
                     </div>
                     <div class="form-row">
-                        <label for="amount">Amount</label>
+                        <label style="font-weight: 500; color:#000" for="amount">Amount</label>
                         <input onchange="finalAmount()" type="text" class="form-control" placeholder="Amount"
                             id="amount" value="0.00" required>
                     </div>
 
                     <div class="form-row">
-                        <label for="returns">Daily Return (%)</label>
+                        <label style="font-weight: 500; color:#000" for="returns">Daily Return (%)</label>
                         <input type="text" class="form-control" value="{{ $investment->return_rate }}"
                             placeholder="returns" id="percentage" disabled>
                     </div>
                     <div class="form-row">
-                        <label for="final_amount">Returns in {{ $investment->contract_duration }} Days (USD)</label>
+                        <label style="font-weight: 500; color:#000" for="final_amount">Returns in
+                            {{ $investment->contract_duration }} Days (USD)</label>
                         <input type="text" class="form-control" placeholder="final_amount" id="final_amount"
                             value="0.00" disabled>
                     </div>
