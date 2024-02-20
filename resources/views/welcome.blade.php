@@ -188,12 +188,24 @@
 
 
         <div class="page-title-area title-bg-five">
-                        <div style="z-index:99; width: 220px; height:335px; background-color: #232937; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; 
+            <div
+                style="z-index:99; width: 220px; height:335px; background-color: #232937; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; 
                         border-radius: 4px; text-align: right; line-height:14px; block-size:335px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; 
-                        box-shadow: inset 0 -20px 0 0 #262B38;margin: 0;width: 220px;padding:1px;padding: 0px; margin: 0px;"><div style="height:315px; padding:0px; margin:0px; 
-                        width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=converter&theme=dark" width="220" height="310px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;">
-                        </iframe></div><div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; 
-                        color: #626B7F; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div></div>
+                        box-shadow: inset 0 -20px 0 0 #262B38;margin: 0;width: 220px;padding:1px;padding: 0px; margin: 0px;">
+                <div style="height:315px; padding:0px; margin:0px; 
+                        width: 100%;"><iframe
+                        src="https://widget.coinlib.io/widget?type=converter&theme=dark" width="220" height="310px"
+                        scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+                        style="border:0;margin:0;padding:0;">
+                    </iframe></div>
+                <div
+                    style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                    <a href="https://coinlib.io" target="_blank"
+                        style="font-weight: 500; 
+                        color: #626B7F; text-decoration:none; font-size:11px">Cryptocurrency
+                        Prices</a>&nbsp;by Coinlib
+                </div>
+            </div>
 
         </div>
 
@@ -292,7 +304,7 @@
                             <h4>
 
                                 <span class="one">$</span> 10,000
-                               
+
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>
@@ -316,7 +328,7 @@
                             <h4>
 
                                 <span class="one">$</span> 500,000
-                               
+
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>
@@ -339,7 +351,7 @@
                             <h4>
 
                                 <span class="one">$</span> 1,000,000
-                                
+
                             </h4>
                             <ul>
                                 <li>Crypto Investment</li>
@@ -365,12 +377,12 @@
                 <div
                     style="height:433px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
                     <div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe
-                            src="https://widget.coinlib.io/?theme=light"
-                            width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
-                            border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+                            src="https://widget.coinlib.io/?theme=light" width="100%" height="409px" scrolling="auto"
+                            marginwidth="0" marginheight="0" frameborder="0" border="0"
+                            style="border:0;margin:0;padding:0;"></iframe></div>
                     <div
                         style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
-                        
+
                     </div>
                 </div>
             </div>
@@ -383,18 +395,23 @@
                         <div class="col-lg-6">
                             <span class="sub-title">Testimonials</span>
                             <h2>See What Our Client's <span>Had</span> to Say</h2>
+                            <p class="sub-title">These are some testimonials from our happy and dedicated investors on
+                                Allianz.
+                                The management is thanking you for your trust and dedication towards this platform</p>
                         </div>
                         <div class="col-lg-6">
-                            <p>These are some testimonials from our happy and dedicated investors on Allianz.
-                                The management is thanking you for your trust and dedication towards this platform</p>
+
                         </div>
                     </div>
                 </div>
                 <div class="testimonials-slider owl-theme owl-carousel">
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
-                        <p>I turned the majority of my savings and stock holdings into this investment business with Allianz after I figured how incredibly amazing I can grow my finance on this platform, I am forever grateful I took that bold step, can’t take the smile off my face.</p>
-                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI=" alt="testimonial">
+                        <p>I turned the majority of my savings and stock holdings into this investment business with Allianz
+                            after I figured how incredibly amazing I can grow my finance on this platform, I am forever
+                            grateful I took that bold step, can’t take the smile off my face.</p>
+                        <img src="https://media.istockphoto.com/photos/age-is-just-a-number-after-all-picture-id487726388?k=20&m=487726388&s=612x612&w=0&h=-6U6w7XDlGa1D9COT898nFL6oYvdZR0IUO5To1g3dHI="
+                            alt="testimonial">
                         <h3>Harry Connor</h3>
                         <span>Investor</span>
                         <ul>
@@ -419,7 +436,8 @@
                         <i class='bx bxs-quote-right icon'></i>
                         <p>This is a realistic program for anyone looking for a reliable platform to invest their funds.
                             Paid to me regularly, keep up good work!.</p>
-                        <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0=" alt="testimonial">
+                        <img src="https://media.istockphoto.com/photos/happiness-is-all-a-mindset-picture-id1091763896?b=1&k=20&m=1091763896&s=170667a&w=0&h=Qbeemj__i1RnA6RwWsGUzKDWdKfoioOR2aVzFgThPg0="
+                            alt="testimonial">
                         <h3>Emily Henry</h3>
                         <span>Investor</span>
                         <ul>
@@ -445,8 +463,9 @@
                         <i class='bx bxs-quote-right icon'></i>
                         <p>My family and me want to thank you for helping us find a great opportunity to make money trading
                             . Very happy with how things are going!.</p>
-                            <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/266/266749/aging-man.jpg?w=1155&h=1537" alt="testimonial">
-                       
+                        <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/266/266749/aging-man.jpg?w=1155&h=1537"
+                            alt="testimonial">
+
                         <h3>Jac Jacson</h3>
                         <span>Investor</span>
                         <ul>
@@ -469,7 +488,8 @@
                     </div>
                     <div class="testimonials-item">
                         <i class='bx bxs-quote-right icon'></i>
-                        <p>This platform is my success story, Never believed I would become a millionaire before the age of 30, thank you Allianz for this life changing opportunity.</p>
+                        <p>This platform is my success story, Never believed I would become a millionaire before the age of
+                            30, thank you Allianz for this life changing opportunity.</p>
                         <img src="https://static.toiimg.com/photo/82828845.cms" alt="testimonial">
                         <h3>Julia Frederick</h3>
                         <span>Investor</span>
