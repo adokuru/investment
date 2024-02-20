@@ -305,9 +305,9 @@
             </p>
         </div>
     </div>
-    <div class="footer-shape">
+    {{-- <div class="footer-shape">
         <img src="assets/img/footer-bg.png" alt="Footer">
-    </div>
+    </div> --}}
     </footer>
 
 
