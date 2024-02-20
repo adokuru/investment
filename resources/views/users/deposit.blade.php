@@ -19,7 +19,7 @@
     <div class="deposit">
         <h3 class="main-title">Make Deposits</h3>
         <h4 class="main-subtitle">01. Choose Payment System</h4>
-   
+
 
         <div class="deposit-system">
             <div class="text-start ">
@@ -41,7 +41,8 @@
             <h4 class="main-subtitle">02. Enter the amount of Deposit in USD ($):</h4>
             <form class="make-deposit">
                 <div class="form-group">
-                    <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount" value="0.00">
+                    <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount"
+                        value="0.00">
                 </div>
                 <div class="form-group">
                     <label for="total-profit">Total Depoist</label>
@@ -65,7 +66,7 @@
         input.addEventListener('change', updateValue);
 
         function updateValue(e) {
-            log.value = '$'+e.target.value;
+            log.value = '$' + Number(e.target.value).toLocaleString("en-GB");
         }
 
         function makeDeposit(e) {

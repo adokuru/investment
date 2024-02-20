@@ -72,7 +72,7 @@
 
         #wizard {
             min-height: 570px;
-            background: #fff;
+            background: #7c7878;
             margin-right: 60px;
             padding: 107px 75px 65px;
             margin-top: 20px;
