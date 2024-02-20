@@ -83,7 +83,7 @@
                         <li>
                             <a href="/user/withdraw"><i class="flaticon-atm"></i>Withdraw</a>
                         </li>
-						 <li>
+                        <li>
                             <a href="/user/refferals"><i class="flaticon-deal"></i>Refferals</a>
                         </li>
                         <li>
@@ -96,7 +96,8 @@
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">
                                     {{ __('Log out') }}
                                 </a>
                             </form>
@@ -110,7 +111,8 @@
                         <div class="container">
                             <div class="mobile-header d-flex justify-content-between d-lg-none align-items-center">
                                 <div class="author">
-                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
+                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}"
+                                        alt="dashboard">
                                 </div>
                                 <div class="cross-header-bar">
                                     <span></span>
@@ -118,19 +120,25 @@
                                     <span></span>
                                 </div>
                             </div>
-                            <div class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
+                            <div
+                                class="mobile-header-content d-lg-flex flex-wrap justify-content-lg-between align-items-center">
                                 <ul class="support-area">
                                     <li>
-                                        <a href="{{route('transfer.start')}}"><i class="flaticon-coin"></i><span class="__cf_email__">Total Balance: {{ auth()->user()->balance }}: Transfer to wallet</span> </a>
+                                        <a href="{{ route('transfer.start') }}"><i class="flaticon-coin"></i><span
+                                                class="__cf_email__">Total Balance:
+                                                ${{ number_format(auth()->user()->balance) }} Transfer to
+                                                wallet</span> </a>
                                     </li>
                                 </ul>
-                                <div class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
+                                <div
+                                    class="dashboard-header-right d-flex flex-wrap justify-content-center justify-content-sm-between justify-content-lg-end align-items-center">
 
                                     <ul class="dashboard-right-menus">
                                         <li>
                                             <a href="#0" class="author">
                                                 <div class="thumb">
-                                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
+                                                    <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}"
+                                                        alt="dashboard">
                                                     <span class="checked">
                                                         <i class="flaticon-checked"></i>
                                                     </span>
@@ -143,7 +151,8 @@
                                             <div class="notification-area">
                                                 <div class="author-header">
                                                     <div class="thumb">
-                                                        <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}" alt="dashboard">
+                                                        <img src="{{ 'https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' . $user->name }}"
+                                                            alt="dashboard">
                                                     </div>
                                                     <h6 class="title">{{ auth()->user()->name }}</h6>
                                                 </div>
@@ -152,8 +161,9 @@
                                                         <li>
                                                             <form method="POST" action="{{ route('logout') }}">
                                                                 @csrf
-                                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                                                                     {{ __('Log out') }}
+                                                                <a href="{{ route('logout') }}"
+                                                                    onclick="event.preventDefault(); this.closest('form').submit();">
+                                                                    {{ __('Log out') }}
                                                                 </a>
                                                             </form>
                                                         </li>
@@ -178,10 +188,12 @@
                                         <div class="cont">
                                             <span class="title">Balance</span>
                                             <h5 class="amount">{{ $bitconwallet->amount }} BTC</h5>
-                                            <h6 class="amount" style="color:#c2c2c2">{{ $bitconwallet->usd_balance }} USD</h6>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $bitconwallet->usd_balance }}
+                                                USD</h6>
                                         </div>
                                         <div class="thumb">
-                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -194,12 +206,15 @@
                                             <span class="title">Activate Account</span>
                                             <form action="{{ route('activate_wallet') }}" method="post">
                                                 @csrf
-                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="1">
-                                                <button type="submit" class="custom-button border-0">Activate BTC</button>
+                                                <input type="hidden" name="wallet_type_id" id="wallettype"
+                                                    value="1">
+                                                <button type="submit" class="custom-button border-0">Activate
+                                                    BTC</button>
                                             </form>
                                         </div>
                                         <div class="thumb">
-                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}" alt="dasboard">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard2.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -212,10 +227,12 @@
                                         <div class="cont">
                                             <span class="title">Balance</span>
                                             <h5 class="amount">{{ $ethwallet->amount }} ETH</h5>
-                                            <h6 class="amount" style="color:#c2c2c2">{{ $ethwallet->usd_balance }} USD</h6>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $ethwallet->usd_balance }}
+                                                USD</h6>
                                         </div>
                                         <div class="thumb">
-                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -228,12 +245,15 @@
                                             <span class="title">Activate Account</span>
                                             <form action="{{ route('activate_wallet') }}" method="post">
                                                 @csrf
-                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="2">
-                                                <button type="submit" class="custom-button border-0">Activate ETH</button>
+                                                <input type="hidden" name="wallet_type_id" id="wallettype"
+                                                    value="2">
+                                                <button type="submit" class="custom-button border-0">Activate
+                                                    ETH</button>
                                             </form>
                                         </div>
                                         <div class="thumb">
-                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}" alt="dasboard">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard3.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -246,10 +266,12 @@
                                         <div class="cont">
                                             <span class="title">Balance</span>
                                             <h5 class="amount">{{ $btcashwallet->amount }} BCH</h5>
-                                            <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }} USD</h6>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $btcashwallet->usd_balance }}
+                                                USD</h6>
                                         </div>
                                         <div class="thumb">
-                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard4.png') }}" alt="dasboard">
+                                            <img src="{{ asset('backend/assets/images/dashboard/dashboard4.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -262,12 +284,16 @@
                                             <span class="title">Activate Account</span>
                                             <form action="{{ route('activate_wallet') }}" method="post">
                                                 @csrf
-                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="4">
-                                                <button type="submit" class="custom-button border-0">Activate BCH</button>
+                                                <input type="hidden" name="wallet_type_id" id="wallettype"
+                                                    value="4">
+                                                <button type="submit" class="custom-button border-0">Activate
+                                                    BCH</button>
                                             </form>
                                         </div>
                                         <div class="thumb">
-                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard6.png') }}" alt="dasboard">
+                                            <img style="width:42px"
+                                                src="{{ asset('backend/assets/images/dashboard/dashboard6.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -280,10 +306,13 @@
                                         <div class="cont">
                                             <span class="title">Balance</span>
                                             <h5 class="amount">{{ $usdtwallet->amount }} USDT</h5>
-                                            <h6 class="amount" style="color:#c2c2c2">{{ $usdtwallet->usd_balance }} USD</h6>
+                                            <h6 class="amount" style="color:#c2c2c2">{{ $usdtwallet->usd_balance }}
+                                                USD</h6>
                                         </div>
                                         <div class="thumb">
-                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
+                                            <img style="width:42px"
+                                                src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
@@ -296,12 +325,16 @@
                                             <span class="title">Activate Account</span>
                                             <form action="{{ route('activate_wallet') }}" method="post">
                                                 @csrf
-                                                <input type="hidden" name="wallet_type_id" id="wallettype" value="3">
-                                                <button type="submit" class="custom-button border-0">Activate USDT</button>
+                                                <input type="hidden" name="wallet_type_id" id="wallettype"
+                                                    value="3">
+                                                <button type="submit" class="custom-button border-0">Activate
+                                                    USDT</button>
                                             </form>
                                         </div>
                                         <div class="thumb">
-                                            <img style="width:42px" src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}" alt="dasboard">
+                                            <img style="width:42px"
+                                                src="{{ asset('backend/assets/images/dashboard/dashboard5.png') }}"
+                                                alt="dasboard">
                                         </div>
                                     </div>
                                 </div>
