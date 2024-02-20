@@ -269,7 +269,7 @@
                         <ul>
                             <li>
                                 <span>
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    {{-- <i class="fa fa-map-marker" aria-hidden="true"></i> --}}
                                     Address: 58 Waterloo Street, Glasgow G2 7Da, Scotland.
                                 </span>
                             </li>

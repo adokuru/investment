@@ -76,11 +76,11 @@
                             @csrf
                             <div class="form-group">
                                 <input name="email" id="email" value="{{ old('email') }}" required autofocus
-                                    class="form-control" placeholder="Enter your email">
+                                    class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" id="password" required
-                                    autocomplete="current-password" class="form-control" placeholder="Enter your password">
+                                    autocomplete="current-password" class="form-control" placeholder="Password">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="common-btn">

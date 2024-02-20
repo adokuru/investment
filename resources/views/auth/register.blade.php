@@ -18,27 +18,27 @@
                             @csrf
                             <div class="form-group">
                                 <input name="firstName" id="firstName" value="{{ old('firstName') }}" required
-                                    type="text" class="form-control" placeholder="Enter your first name">
+                                    type="text" class="form-control" placeholder="First name">
                             </div>
                             <div class="form-group">
                                 <input name="lastName" id="lastName" value="{{ old('lastName') }}" required type="text"
-                                    class="form-control" placeholder="Enter your last name">
+                                    class="form-control" placeholder="Last name">
                             </div>
                             <div class="form-group">
                                 <input name="email" id="email" value="{{ old('email') }}" required
-                                    class="form-control" placeholder="Enter your email">
+                                    class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <input name="password" id="password_confirmation" required type="password"
-                                    class="form-control" placeholder="Enter your password">
+                                    class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group">
                                 <input name="password_confirmation" id="password_confirmation" required type="password"
-                                    class="form-control" placeholder="Enter your password again">
+                                    class="form-control" placeholder="Password again">
                             </div>
                             <div class="form-group">
                                 <input name="ref" id="ref" type="text" class="form-control"
-                                    placeholder="Enter a Referral Code" value={{ $refcode ? $refcode : null }}>
+                                    placeholder="Referral Code" value={{ $refcode ? $refcode : null }}>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="common-btn">
