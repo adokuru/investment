@@ -41,7 +41,7 @@
             <h4 class="main-subtitle">02. Enter the amount of Deposit in USD ($):</h4>
             <form class="make-deposit">
                 <div class="form-group">
-                    <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount"
+                    <input id="value-amount" type="number" placeholder="Enter your amount" class="make-amount"
                         value="0.00">
                 </div>
                 <div class="form-group">

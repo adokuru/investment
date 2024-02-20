@@ -36,7 +36,8 @@
                     </div>
                     <div class="form-group">
                         <label for="total-profit">Total Earnings</label>
-                        <input id="balance" type="text" readonly value="${{ $user->balance }}" class="readonly">
+                        <input id="balance" type="text" readonly value="${{ number_format($user->balance) }}"
+                            class="readonly">
                     </div>
                 </form>
 
@@ -46,7 +47,8 @@
             <h4 class="main-subtitle">02. Enter the amount of Withdraw:</h4>
             <form class="make-deposit">
                 <div class="form-group">
-                    <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount" value="0.00">
+                    <input id="value-amount" type="text" placeholder="Enter your amount" class="make-amount"
+                        value="0.00">
                 </div>
                 <div class="form-group">
                     <label for="total-profit">Total Withdrawal</label>
@@ -70,7 +72,7 @@
         input.addEventListener('change', updateValue);
 
         function updateValue(e) {
-            log.value = e.target.value;
+            log.value = '$' + Number(e.target.value).toLocaleString("en-GB");
         }
 
         function makeDeposit(e) {
