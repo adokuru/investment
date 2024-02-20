@@ -72,7 +72,7 @@
 
         #wizard {
             min-height: 570px;
-            background: #7c7878;
+            background: #fff;
             margin-right: 60px;
             padding: 107px 75px 65px;
             margin-top: 20px;
@@ -272,7 +272,7 @@
         }
 
         .actions li:first-child a {
-            background: #e6e6e6;
+            background: #555454;
             padding-left: 48px
         }
 
