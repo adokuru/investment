@@ -53,6 +53,7 @@
                 <div class="form-group">
                     <label for="total-profit">Total Withdrawal</label>
                     <input id="amount" type="text" readonly value="0.00" class="readonly">
+                    <input id="amounthidden" type="text" readonly value="0.00" class="readonly" hidden>
                 </div>
                 <div class="form-group">
                     <button onclick="makeDeposit()" type="button" class="custom-button border-0">Withdraw</button>
@@ -69,15 +70,17 @@
     <script>
         const input = document.getElementById('value-amount');
         const log = document.getElementById('amount');
+        const amount = document.getElementById('amounthidden');
         input.addEventListener('change', updateValue);
 
         function updateValue(e) {
             log.value = '$' + Number(e.target.value).toLocaleString("en-GB");
+            amount.value = e.target.value;
         }
 
         function makeDeposit(e) {
 
-            let amount = document.getElementById('amount').value;
+            let amount = document.getElementById('amounthidden').value;
             let type = document.getElementById('type').value;
             let data = {
                 amount: amount,
