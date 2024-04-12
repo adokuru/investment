@@ -97,6 +97,14 @@ class ProfileController extends Controller
 		$user->update();
 		return redirect()->route('dashboard')->with('success', 'User updated.');
 	}
+
+	public function usersDelete($id)
+	{
+		$user = \App\Models\User::findOrFail($id);
+		$user->delete();
+		return redirect()->back()->with('success', 'User deleted.');
+	}
+
 	public function usersblock($id)
 	{
 		$user = \App\Models\User::findOrFail($id);

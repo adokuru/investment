@@ -56,6 +56,10 @@
                                 class="px-2 text-indigo-600  hover:text-black">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
+                            <a href="{{ route('admin.users.delete', $user->id) }}"
+                                class="px-2 text-indigo-600  hover:text-black">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
