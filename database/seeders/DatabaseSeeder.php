@@ -37,8 +37,8 @@ class DatabaseSeeder extends Seeder
             'referral_token' => 'avid123',
         ]);
         $user->assignRole('User');
-        $this->call(WalletTypeSeeder::class);
+        // $this->call(WalletTypeSeeder::class);
 
-        $this->call(InvestmentPlanSeeder::class);
+        // $this->call(InvestmentPlanSeeder::class);
     }
 }
