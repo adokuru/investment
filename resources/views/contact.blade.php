@@ -88,8 +88,8 @@
 
                         <p><b>Support Email</b></p>
                         <p>
-                            <a href="mailto:support@allnzglobalassets.org"><span
-                                    class="__cf_email__">support@allnzglobalassets.org</span></a>
+                            <a href="mailto:support@allnzonlineasset.org"><span
+                                    class="__cf_email__">support@allnzonlineasset.org</span></a>
                         </p>
                         <p><b>Support Phone Number</b></p>
 

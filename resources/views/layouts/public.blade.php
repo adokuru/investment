@@ -57,7 +57,7 @@
                         <ul>
                             <li>
                                 <i class='bx bx-mail-send'></i>
-                                <a href="mailto:support@allnzglobalassets.org"><span class="__cf_email__" >support@allnzglobalassets.org</span></a>
+                                <a href="mailto:support@allnzonlineasset.org"><span class="__cf_email__" >support@allnzonlineasset.org</span></a>
                             </li>
                             {{-- <li>
                                 <i class='bx bx-phone-call'></i>
@@ -182,8 +182,7 @@
 
     @yield('content')
 
-    <footer class="footer-area
-        pt-100">
+    <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-3">
@@ -274,10 +273,10 @@
                                 </span>
                             </li>
                             <li>
-                                <a href="mailto:support@allnzglobalassets.org">
+                                <a href="mailto:support@allnzonlineasset.org">
                                     <span>
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        Email: support@allnzglobalassets.org
+                                        Email: support@allnzonlineasset.org
                                     </span>
                                 </a>
                             </li>

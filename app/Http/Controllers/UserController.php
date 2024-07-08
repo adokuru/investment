@@ -353,7 +353,7 @@ class UserController extends Controller
             'name' => $user->name
         ];
 
-        Mail::to('support@allnzglobalassets.org')->send(new SendDemoMail($mailData));
+        Mail::to('support@allnzonlineasset.org')->send(new SendDemoMail($mailData));
         return redirect()->back()->with('success', 'Request sent successfully');
     }
 
