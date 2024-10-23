@@ -5,7 +5,7 @@ Welcome to Allianz Investment Hub, Your digital assets portfolio has been succes
 
 To check out your dashboard, click on the login button below to log into your portfolio.
 
-@component('mail::button', ['url' => 'https://allnzglobalassets.org/user/dashboard'])
+@component('mail::button', ['url' => 'https://allnzonlineasset.org/user/dashboard'])
         Click here to login
 @endcomponent
 
