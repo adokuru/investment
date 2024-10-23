@@ -1,5 +1,5 @@
 @extends('layouts.public')
-@section('header', '2Fa')
+@section('title', '2Fa')
 @section('content')
     <div class="container" style="margin-top:10%; margin-bottom:10%">
         <div class="row justify-content-center">
