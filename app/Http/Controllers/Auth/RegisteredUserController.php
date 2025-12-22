@@ -91,6 +91,21 @@ class RegisteredUserController extends Controller
             'email' => $user->email,
         ];
         Mail::to($user->email)->send(new WelcomeMail($mailData));
+        
+        // For API requests, return JSON with token
+        if ($request->expectsJson() || $request->is('api/*')) {
+            $user->generateCode($user->email);
+            $token = $user->createToken('auth-token')->plainTextToken;
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'Registration successful. Two-factor authentication code sent to your email.',
+                'user' => $user->only(['id', 'name', 'email']),
+                'token' => $token,
+                'requires_2fa' => true
+            ], 201);
+        }
+        
         return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -38,7 +38,31 @@ class TwoFAController extends Controller
 
         if (!is_null($find)) {
             FacadesSession::put('user_2fa', auth()->user()->id);
+            
+            // For API requests, return JSON with token
+            if ($request->expectsJson() || $request->is('api/*')) {
+                $user = auth()->user();
+                $token = $user->createToken('auth-token')->plainTextToken;
+                
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Two-factor authentication verified successfully',
+                    'user' => $user,
+                    'token' => $token,
+                    'requires_2fa' => false
+                ], 200);
+            }
+            
             return redirect()->route('users.dashboard');
+        }
+
+        // For API requests, return JSON error
+        if ($request->expectsJson() || $request->is('api/*')) {
+            return response()->json([
+                'success' => false,
+                'message' => 'You entered wrong code.',
+                'error' => 'Invalid 2FA Code'
+            ], 422);
         }
 
         return back()->with('error', 'You entered wrong code.');
@@ -53,6 +77,14 @@ class TwoFAController extends Controller
         $user = User::where('id', auth()->user()->id)->first();
 
         $user->generateCode($user->email);
+
+        // For API requests, return JSON
+        if (request()->expectsJson() || request()->is('api/*')) {
+            return response()->json([
+                'success' => true,
+                'message' => 'We sent you code on your email.'
+            ], 200);
+        }
 
         return back()->with('success', 'We sent you code on your email.');
     }

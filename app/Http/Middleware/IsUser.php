@@ -21,6 +21,14 @@ class IsUser
             return $next($request);
         }
 
+        // Return JSON response for API requests
+        if ($request->expectsJson() || $request->is('api/*')) {
+            return response()->json([
+                'message' => 'You are not authorized to access this resource.',
+                'error' => 'Unauthorized'
+            ], 403);
+        }
+
         return redirect('/dashboard')->with('error', 'You are not authorized to access this page.');
     }
 }
