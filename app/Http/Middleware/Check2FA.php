@@ -17,17 +17,30 @@ class Check2FA
      */
     public function handle(Request $request, Closure $next)
     {
-        // For API requests with Sanctum token, skip session check
-        // Token is only issued after 2FA verification, so valid token = 2FA verified
-        if (($request->expectsJson() || $request->is('api/*')) && $request->user()) {
-            // User has valid token, which means 2FA was already verified
-            return $next($request);
+        $isApiRequest = $request->expectsJson() || $request->is('api/*');
+        
+        // For API requests with Sanctum token
+        if ($isApiRequest && $request->user()) {
+            $currentToken = $request->user()->currentAccessToken();
+            
+            // If token exists and is NOT the temporary 2FA pending token, allow access
+            // Regular tokens are only created after 2FA verification
+            if ($currentToken && $currentToken->name !== '2fa-pending-token') {
+                return $next($request);
+            }
+            
+            // Temporary token or no token - require 2FA
+            return response()->json([
+                'message' => 'Two-factor authentication required.',
+                'error' => '2FA Required',
+                'requires_2fa' => true
+            ], 403);
         }
 
         // For web requests, check session
         if (!Session::has('user_2fa')) {
             // Return JSON response for API requests without token
-            if ($request->expectsJson() || $request->is('api/*')) {
+            if ($isApiRequest) {
                 return response()->json([
                     'message' => 'Two-factor authentication required.',
                     'error' => '2FA Required',

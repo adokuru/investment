@@ -52,10 +52,14 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $referrer = User::where('referral_token', session()->pull('referrer'))->first();
-
+        $isApiRequest = $request->expectsJson() || $request->is('api/*');
+        
+        // Handle referrer - check request parameter first, then session (for web only)
+        $referrer = null;
         if ($request->ref) {
             $referrer = User::where('referral_token', $request->ref)->first();
+        } elseif (!$isApiRequest && $request->hasSession()) {
+            $referrer = User::where('referral_token', session()->pull('referrer'))->first();
         }
 
         $length = 24;
@@ -85,7 +89,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
         $user->assignRole('User');
-        Auth::login($user);
+        
+        // Only login via session for web requests
+        if (!$isApiRequest) {
+            Auth::login($user);
+        }
+        
         $mailData = [
             'name' =>  $user->name,
             'email' => $user->email,
@@ -93,7 +102,7 @@ class RegisteredUserController extends Controller
         Mail::to($user->email)->send(new WelcomeMail($mailData));
         
         // For API requests, return JSON with token
-        if ($request->expectsJson() || $request->is('api/*')) {
+        if ($isApiRequest) {
             $user->generateCode($user->email);
             $token = $user->createToken('auth-token')->plainTextToken;
             

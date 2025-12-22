@@ -37,11 +37,21 @@ class TwoFAController extends Controller
             ->first();
 
         if (!is_null($find)) {
-            FacadesSession::put('user_2fa', auth()->user()->id);
+            $isApiRequest = $request->expectsJson() || $request->is('api/*');
+            
+            // Only set session for web requests
+            if (!$isApiRequest && $request->hasSession()) {
+                FacadesSession::put('user_2fa', auth()->user()->id);
+            }
             
             // For API requests, return JSON with token
-            if ($request->expectsJson() || $request->is('api/*')) {
+            if ($isApiRequest) {
                 $user = auth()->user();
+                
+                // Delete any existing temporary 2FA tokens
+                $user->tokens()->where('name', '2fa-pending-token')->delete();
+                
+                // Create new authenticated token
                 $token = $user->createToken('auth-token')->plainTextToken;
                 
                 return response()->json([

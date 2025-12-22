@@ -32,12 +32,17 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        $isApiRequest = $request->expectsJson() || $request->is('api/*');
+        
+        // Only regenerate session for web requests
+        if (!$isApiRequest && $request->hasSession()) {
+            $request->session()->regenerate();
+        }
         
         if (auth()->user()->status == 0) {
             Auth::logout();
             
-            if ($request->expectsJson() || $request->is('api/*')) {
+            if ($isApiRequest) {
                 return response()->json([
                     'success' => false,
                     'message' => 'Sorry your portfolio access is disabled, please contact support.',
@@ -49,7 +54,7 @@ class AuthenticatedSessionController extends Controller
         }
         
         if (auth()->user()->hasrole('Admin')) {
-            if ($request->expectsJson() || $request->is('api/*')) {
+            if ($isApiRequest) {
                 $token = auth()->user()->createToken('auth-token')->plainTextToken;
                 return response()->json([
                     'success' => true,
@@ -64,13 +69,19 @@ class AuthenticatedSessionController extends Controller
 
         auth()->user()->generateCode(auth()->user()->email);
 
-        // For API requests, return JSON with 2FA requirement
-        if ($request->expectsJson() || $request->is('api/*')) {
+        // For API requests, create a temporary token for 2FA verification
+        // This token allows calling the 2FA endpoint but other routes still require 2FA
+        if ($isApiRequest) {
+            $user = auth()->user();
+            // Create token that can be used to verify 2FA
+            $token = $user->createToken('2fa-pending-token')->plainTextToken;
+            
             return response()->json([
                 'success' => true,
                 'message' => 'Two-factor authentication code sent to your email',
                 'requires_2fa' => true,
-                'user' => auth()->user()->only(['id', 'name', 'email'])
+                'user' => $user->only(['id', 'name', 'email']),
+                'token' => $token // Temporary token for 2FA verification
             ], 200);
         }
 
@@ -85,18 +96,24 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+        $isApiRequest = $request->expectsJson() || $request->is('api/*');
+        
         // Revoke Sanctum token if it exists
         if ($request->user()) {
             $request->user()->currentAccessToken()?->delete();
         }
 
-        Auth::guard('web')->logout();
+        // Only use session logout for web requests
+        if (!$isApiRequest) {
+            Auth::guard('web')->logout();
+            
+            if ($request->hasSession()) {
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+            }
+        }
 
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        if ($request->expectsJson() || $request->is('api/*')) {
+        if ($isApiRequest) {
             return response()->json([
                 'success' => true,
                 'message' => 'Logged out successfully'
