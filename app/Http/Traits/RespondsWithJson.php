@@ -15,15 +15,15 @@ trait RespondsWithJson
     protected function apiOrView($data, $view = null, $viewData = [])
     {
         $request = request();
-        
+
         if ($request->expectsJson() || $request->is('api/*')) {
             return response()->json($data);
         }
-        
+
         if ($view) {
             return view($view, $viewData);
         }
-        
+
         return $data;
     }
 
@@ -38,7 +38,7 @@ trait RespondsWithJson
     protected function successResponse($message, $data = null, $redirectRoute = null)
     {
         $request = request();
-        
+
         if ($request->expectsJson() || $request->is('api/*')) {
             $response = ['success' => true, 'message' => $message];
             if ($data !== null) {
@@ -46,11 +46,11 @@ trait RespondsWithJson
             }
             return response()->json($response, 200);
         }
-        
+
         if ($redirectRoute) {
             return redirect()->route($redirectRoute)->with('success', $message);
         }
-        
+
         return redirect()->back()->with('success', $message);
     }
 
@@ -65,7 +65,7 @@ trait RespondsWithJson
     protected function errorResponse($message, $statusCode = 400, $redirectRoute = null)
     {
         $request = request();
-        
+
         if ($request->expectsJson() || $request->is('api/*')) {
             return response()->json([
                 'success' => false,
@@ -73,12 +73,11 @@ trait RespondsWithJson
                 'error' => $message
             ], $statusCode);
         }
-        
+
         if ($redirectRoute) {
             return redirect()->route($redirectRoute)->with('error', $message);
         }
-        
+
         return redirect()->back()->with('error', $message);
     }
 }
-
