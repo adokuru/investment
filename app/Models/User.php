@@ -94,8 +94,16 @@ class User extends Authenticatable
     {
         $code = rand(1000, 9999);
 
+        // Use $this->id since this is called as an instance method
+        // Fallback to auth()->user()->id for backward compatibility
+        $userId = $this->id ?? auth()->user()?->id;
+
+        if (!$userId) {
+            throw new \Exception('User ID is required to generate 2FA code');
+        }
+
         UserCode::updateOrCreate(
-            ['user_id' => auth()->user()->id],
+            ['user_id' => $userId],
             ['code' => $code]
         );
 
