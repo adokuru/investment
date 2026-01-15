@@ -17,14 +17,14 @@ class WalletType extends Model
 
     public function updatePrice()
     {
-        $this->value = $this->getPrice($this->getSymbol);
+        $this->value = $this->getPrice($this->symbol);
         $this->save();
     }
 
     public function getPrice(string $name): float
     {
         try {
-            $price = app(CryptoPriceService::class)->getUsdPrice($this->symbol);
+            $price = app(CryptoPriceService::class)->getUsdPrice($this->name);
 
             return $price > 0 ? $price : (float) $this->value;
         } catch (Throwable $exception) {
