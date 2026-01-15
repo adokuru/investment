@@ -30,7 +30,15 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::paginate(10);
+        $searchEmail = request()->query('email');
+        $usersQuery = User::query();
+
+        if (!empty($searchEmail)) {
+            $usersQuery->where('email', 'like', '%' . $searchEmail . '%');
+        }
+
+        $users = $usersQuery->paginate(10);
+        $users->appends(['email' => $searchEmail]);
 
         return view('admin.users.index', compact('users'));
     }
@@ -91,10 +99,10 @@ class UserController extends Controller
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $transaction = Transaction::where('user_id', $user->id)->paginate(10);
         $prices = $this->cryptoPriceService->getUsdPrices([
-            'bitcoin',
-            'ethereum',
-            'tether',
-            'bitcoin-cash',
+            'BTC',
+            'ETH',
+            'USDT',
+            'BCH',
         ]);
         $btc = $prices['bitcoin'] ?? 0.0;
         $eth = $prices['ethereum'] ?? 0.0;
@@ -130,10 +138,10 @@ class UserController extends Controller
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $prices = $this->cryptoPriceService->getUsdPrices([
-            'bitcoin',
-            'ethereum',
-            'tether',
-            'bitcoin-cash',
+            'BTC',
+            'ETH',
+            'USDT',
+            'BCH',
         ]);
         $btc = $prices['bitcoin'] ?? 0.0;
         $eth = $prices['ethereum'] ?? 0.0;
@@ -213,7 +221,7 @@ class UserController extends Controller
             $user_investment->save();
 
             $amount_debited = $wallet->usd_balance - $request->amount;
-            $price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+            $price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
             if ($price <= 0) {
                 $price = (float) $wallet->walletType->value;
             }

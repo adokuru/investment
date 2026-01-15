@@ -24,7 +24,7 @@ class WalletType extends Model
     public function getPrice(string $name): float
     {
         try {
-            $price = app(CryptoPriceService::class)->getUsdPrice($name);
+            $price = app(CryptoPriceService::class)->getUsdPrice($this->symbol);
 
             return $price > 0 ? $price : (float) $this->value;
         } catch (Throwable $exception) {

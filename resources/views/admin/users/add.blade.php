@@ -7,6 +7,26 @@
 
         @yield('message')
 
+        <form action="{{ route('profile.wallets') }}" method="GET"
+            class="flex flex-col gap-3 px-5 py-4 bg-white border-b border-gray-200 sm:flex-row sm:items-end">
+            <div class="flex-1">
+                <label for="email" class="block text-sm font-medium text-gray-700">Search by email</label>
+                <input id="email" name="email" type="text" value="{{ request('email') }}"
+                    placeholder="user@example.com"
+                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+            <div class="flex gap-2">
+                <button type="submit"
+                    class="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
+                    Search
+                </button>
+                <a href="{{ route('profile.wallets') }}"
+                    class="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200">
+                    Reset
+                </a>
+            </div>
+        </form>
+
         <table class="min-w-full leading-normal">
             <thead>
                 <tr>

@@ -137,7 +137,15 @@ class ProfileController extends Controller
 
 	public function wallets()
 	{
-		$users = User::with('wallet')->paginate(10);
+		$searchEmail = request()->query('email');
+		$usersQuery = User::with('wallet');
+
+		if (!empty($searchEmail)) {
+			$usersQuery->where('email', 'like', '%' . $searchEmail . '%');
+		}
+
+		$users = $usersQuery->paginate(10);
+		$users->appends(['email' => $searchEmail]);
 		//dd($users);
 		return view('admin.users.add', compact('users'));
 	}
@@ -173,7 +181,7 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			$wallet->amount = $wallet->amount + $request->BTCamount;
-			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
 			if ($price <= 0) {
 				$price = (float) $wallet->walletType->value;
 			}
@@ -197,7 +205,7 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			$wallet->amount = $wallet->amount + $request->ETHamount;
-			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
 			if ($price <= 0) {
 				$price = (float) $wallet->walletType->value;
 			}
@@ -222,7 +230,7 @@ class ProfileController extends Controller
 			$transaction->save();
 
 			$wallet->amount = $wallet->amount + $request->USDTamount;
-			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
 			if ($price <= 0) {
 				$price = (float) $wallet->walletType->value;
 			}
@@ -247,7 +255,7 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			$wallet->amount = $wallet->amount + $request->BCHamount;
-			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
 			if ($price <= 0) {
 				$price = (float) $wallet->walletType->value;
 			}
