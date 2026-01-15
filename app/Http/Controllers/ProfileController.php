@@ -1,20 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
+use App\Services\CryptoPriceService;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Wallet;
 use App\Models\User;
-use WisdomDiala\Cryptocap\Facades\Cryptocap;
 use App\Models\Deposit;
 use App\Models\WalletType;
 
 class ProfileController extends Controller
 {
+	private CryptoPriceService $cryptoPriceService;
+
+	public function __construct(CryptoPriceService $cryptoPriceService)
+	{
+		$this->cryptoPriceService = $cryptoPriceService;
+	}
+
 	public function show()
 	{
 		return view('auth.profile');
@@ -148,7 +157,7 @@ class ProfileController extends Controller
 	{
 		$user = \App\Models\User::findOrFail($id);
 		if ($request->BTCamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  1)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 1)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->BTCamount;
@@ -164,11 +173,15 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			$wallet->amount = $wallet->amount + $request->BTCamount;
-			$wallet->usd_balance = $wallet->usd_balance + ($request->BTCamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			if ($price <= 0) {
+				$price = (float) $wallet->walletType->value;
+			}
+			$wallet->usd_balance = $wallet->usd_balance + ($request->BTCamount * $price);
 			$wallet->save();
 		}
 		if ($request->ETHamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  2)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 2)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->ETHamount;
@@ -183,12 +196,16 @@ class ProfileController extends Controller
 			$transaction->amount = $request->ETHamount;
 			$transaction->status = 1;
 			$transaction->save();
-			$wallet->amount = $wallet->amount +  $request->ETHamount;
-			$wallet->usd_balance = $wallet->usd_balance +  ($request->ETHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
+			$wallet->amount = $wallet->amount + $request->ETHamount;
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			if ($price <= 0) {
+				$price = (float) $wallet->walletType->value;
+			}
+			$wallet->usd_balance = $wallet->usd_balance + ($request->ETHamount * $price);
 			$wallet->save();
 		}
 		if ($request->USDTamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  3)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 3)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->USDTamount;
@@ -204,13 +221,17 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 
-			$wallet->amount =  $wallet->amount + $request->USDTamount;
-			$wallet->usd_balance = $wallet->usd_balance + ($request->USDTamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
+			$wallet->amount = $wallet->amount + $request->USDTamount;
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			if ($price <= 0) {
+				$price = (float) $wallet->walletType->value;
+			}
+			$wallet->usd_balance = $wallet->usd_balance + ($request->USDTamount * $price);
 			$wallet->save();
 		}
 
 		if ($request->BCHamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  4)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 4)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->BCHamount;
@@ -226,7 +247,11 @@ class ProfileController extends Controller
 			$transaction->status = 1;
 			$transaction->save();
 			$wallet->amount = $wallet->amount + $request->BCHamount;
-			$wallet->usd_balance = $wallet->usd_balance + ($request->BCHamount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd);
+			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+			if ($price <= 0) {
+				$price = (float) $wallet->walletType->value;
+			}
+			$wallet->usd_balance = $wallet->usd_balance + ($request->BCHamount * $price);
 			$wallet->save();
 		}
 
@@ -236,7 +261,7 @@ class ProfileController extends Controller
 	{
 		$user = \App\Models\User::findOrFail($id);
 		if ($request->BTCamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  1)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 1)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->BTCamount;
@@ -253,7 +278,7 @@ class ProfileController extends Controller
 			$transaction->save();
 		}
 		if ($request->ETHamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  2)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 2)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->ETHamount;
@@ -270,7 +295,7 @@ class ProfileController extends Controller
 			$transaction->save();
 		}
 		if ($request->USDTamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  3)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 3)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->USDTamount;
@@ -288,7 +313,7 @@ class ProfileController extends Controller
 		}
 
 		if ($request->BCHamount > 0) {
-			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id',  4)->where('status',  1)->first();
+			$wallet = Wallet::where('user_id', $user->id)->where('wallet_type_id', 4)->where('status', 1)->first();
 			$deposit = new Deposit();
 			$deposit->user_id = $user->id;
 			$deposit->value = $request->BCHamount;

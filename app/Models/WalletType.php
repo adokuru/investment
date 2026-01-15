@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use WisdomDiala\Cryptocap\Facades\Cryptocap;
+use App\Services\CryptoPriceService;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class WalletType extends Model
 {
@@ -17,8 +21,20 @@ class WalletType extends Model
         $this->save();
     }
 
-    public function getPrice($name)
+    public function getPrice(string $name): float
     {
-        return Cryptocap::getSingleAsset($name)->data->priceUsd;
+        try {
+            $price = app(CryptoPriceService::class)->getUsdPrice($name);
+
+            return $price > 0 ? $price : (float) $this->value;
+        } catch (Throwable $exception) {
+            Log::warning('Failed to fetch crypto price.', [
+                'asset' => $name,
+                'wallet_type_id' => $this->id,
+                'error' => $exception->getMessage(),
+            ]);
+
+            return (float) $this->value;
+        }
     }
 }

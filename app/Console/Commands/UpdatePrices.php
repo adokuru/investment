@@ -29,7 +29,7 @@ class UpdatePrices extends Command
      */
     public function handle()
     {
-    //    Update prices with Cryptocap API
+        //    Update prices with crypto price service
         Log::info('Updating prices...');
         $walletTypes = WalletType::all();
         foreach ($walletTypes as $walletType) {

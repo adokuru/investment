@@ -7,7 +7,6 @@ use App\Models\Wallet;
 use App\Models\WalletType;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
-use WisdomDiala\Cryptocap\Facades\Cryptocap;
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -36,7 +35,7 @@ Route::get('/test', function () {
 Route::get('/test2', function () {
     $wallets = Wallet::all();
     foreach ($wallets as $wallet) {
-        $wallet->usd_balance = (float)($wallet->amount * $wallet->walletType->value);
+        $wallet->usd_balance = (float) ($wallet->amount * $wallet->walletType->value);
         $wallet->save();
     }
     return 'done';
@@ -51,7 +50,7 @@ Route::get('/test3', function () {
             $invest->save();
         }
     }
-    $transactions =  Transaction::where('transaction_type', 'Investment')->get();
+    $transactions = Transaction::where('transaction_type', 'Investment')->get();
     foreach ($transactions as $transaction) {
         $investType = InvestmentPlan::where('id', $transaction->investment_plan_id)->first();
         if (($investType->contract_duration - Carbon::createFromTimestamp(strtotime($transaction->created_at))->diff(Carbon::now())->days) < 0) {

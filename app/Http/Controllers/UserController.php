@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
+use App\Services\CryptoPriceService;
 use App\Models\Deposit;
 use App\Models\InvestmentPlan;
 use App\Models\Transaction;
@@ -12,13 +15,19 @@ use App\Models\WalletType;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use WisdomDiala\Cryptocap\Facades\Cryptocap;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendDemoMail;
 use Carbon\Carbon;
 
 class UserController extends Controller
 {
+    private CryptoPriceService $cryptoPriceService;
+
+    public function __construct(CryptoPriceService $cryptoPriceService)
+    {
+        $this->cryptoPriceService = $cryptoPriceService;
+    }
+
     public function index()
     {
         $users = User::paginate(10);
@@ -53,7 +62,7 @@ class UserController extends Controller
 
         $investment = null;
         //find lastest investment 
-        $investmentList  = $investments->filter(function ($item) {
+        $investmentList = $investments->filter(function ($item) {
             if ($item->days_remaining() > 0) {
                 return $item;
             }
@@ -81,10 +90,16 @@ class UserController extends Controller
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $transaction = Transaction::where('user_id', $user->id)->paginate(10);
-        $btc = Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
-        $eth = Cryptocap::getSingleAsset('ethereum')->data->priceUsd;
-        $usdt = Cryptocap::getSingleAsset('tether')->data->priceUsd;
-        $bch = Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd;
+        $prices = $this->cryptoPriceService->getUsdPrices([
+            'bitcoin',
+            'ethereum',
+            'tether',
+            'bitcoin-cash',
+        ]);
+        $btc = $prices['bitcoin'] ?? 0.0;
+        $eth = $prices['ethereum'] ?? 0.0;
+        $usdt = $prices['tether'] ?? 0.0;
+        $bch = $prices['bitcoin-cash'] ?? 0.0;
         return view('users.operations', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'transaction'));
     }
 
@@ -114,10 +129,16 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        $btc = Cryptocap::getSingleAsset('bitcoin')->data->priceUsd;
-        $eth = Cryptocap::getSingleAsset('ethereum')->data->priceUsd;
-        $usdt = Cryptocap::getSingleAsset('tether')->data->priceUsd;
-        $bch = Cryptocap::getSingleAsset('bitcoin-cash')->data->priceUsd;
+        $prices = $this->cryptoPriceService->getUsdPrices([
+            'bitcoin',
+            'ethereum',
+            'tether',
+            'bitcoin-cash',
+        ]);
+        $btc = $prices['bitcoin'] ?? 0.0;
+        $eth = $prices['ethereum'] ?? 0.0;
+        $usdt = $prices['tether'] ?? 0.0;
+        $bch = $prices['bitcoin-cash'] ?? 0.0;
         $investments = Transaction::where('user_id', $user->id)->where('transaction_type', 'Investment')->paginate(10);
         return view('users.investments', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investments'));
     }
@@ -192,9 +213,13 @@ class UserController extends Controller
             $user_investment->save();
 
             $amount_debited = $wallet->usd_balance - $request->amount;
-            $crypto_amount = $amount_debited /  Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+            $price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->getSymbol);
+            if ($price <= 0) {
+                $price = (float) $wallet->walletType->value;
+            }
+            $crypto_amount = $price > 0 ? $amount_debited / $price : 0.0;
             $wallet->amount = $crypto_amount;
-            $wallet->usd_balance = $crypto_amount * Cryptocap::getSingleAsset($wallet->walletType->getSymbol)->data->priceUsd;
+            $wallet->usd_balance = $crypto_amount * $price;
             $wallet->save();
         });
 
@@ -202,7 +227,7 @@ class UserController extends Controller
     }
     public function addDeposit(Request $request)
     {
-        $wallet = Wallet::where('user_id', auth()->user()->id)->where('wallet_type_id',  $request->type)->first();
+        $wallet = Wallet::where('user_id', auth()->user()->id)->where('wallet_type_id', $request->type)->first();
         $deposit = new Deposit();
         $deposit->user_id = auth()->user()->id;
         $deposit->value = $request->amount;
@@ -347,7 +372,7 @@ class UserController extends Controller
         $title = $request->input('topic');
         $content = $request->input('content');
         $mailData = [
-            'title' =>  $title,
+            'title' => $title,
             'content' => $content,
             'email' => $user->email,
             'name' => $user->name
