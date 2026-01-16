@@ -98,16 +98,11 @@ class UserController extends Controller
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
         $transaction = Transaction::where('user_id', $user->id)->paginate(10);
-        $prices = $this->cryptoPriceService->getUsdPrices([
-            'BTC',
-            'ETH',
-            'USDT',
-            'BCH',
-        ]);
-        $btc = $prices['bitcoin'] ?? 0.0;
-        $eth = $prices['ethereum'] ?? 0.0;
-        $usdt = $prices['tether'] ?? 0.0;
-        $bch = $prices['bitcoin-cash'] ?? 0.0;
+
+        $btc = WalletType::where('symbol', 'BTC')->first()->value;
+        $eth = WalletType::where('symbol', 'ETH')->first()->value;
+        $usdt = WalletType::where('symbol', 'USDT')->first()->value;
+        $bch = WalletType::where('symbol', 'BCH')->first()->value;
         return view('users.operations', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'transaction'));
     }
 
@@ -137,16 +132,10 @@ class UserController extends Controller
         $ethwallet = $user->wallet->where('wallet_type_id', 2)->where('status', 1)->first();
         $btcashwallet = $user->wallet->where('wallet_type_id', 4)->where('status', 1)->first();
         $usdtwallet = $user->wallet->where('wallet_type_id', 3)->where('status', 1)->first();
-        $prices = $this->cryptoPriceService->getUsdPrices([
-            'BTC',
-            'ETH',
-            'USDT',
-            'BCH',
-        ]);
-        $btc = $prices['bitcoin'] ?? 0.0;
-        $eth = $prices['ethereum'] ?? 0.0;
-        $usdt = $prices['tether'] ?? 0.0;
-        $bch = $prices['bitcoin-cash'] ?? 0.0;
+        $btc = WalletType::where('symbol', 'BTC')->first()->value;
+        $eth = WalletType::where('symbol', 'ETH')->first()->value;
+        $usdt = WalletType::where('symbol', 'USDT')->first()->value;
+        $bch = WalletType::where('symbol', 'BCH')->first()->value;
         $investments = Transaction::where('user_id', $user->id)->where('transaction_type', 'Investment')->paginate(10);
         return view('users.investments', compact('btc', 'eth', 'usdt', 'bch', 'user', 'bitconwallet', 'ethwallet', 'btcashwallet', 'usdtwallet', 'investments'));
     }
