@@ -23,14 +23,6 @@ Route::post('2fa', [App\Http\Controllers\TwoFAController::class, 'store'])->name
 Route::get('2fa/reset', [App\Http\Controllers\TwoFAController::class, 'resend'])->name('2fa.resend')->middleware('auth');
 
 
-Route::get('/test', function () {
-    $walletTypes = WalletType::all();
-    foreach ($walletTypes as $walletType) {
-        $walletType->updatePrice();
-    }
-    return 'done';
-});
-
 
 Route::get('/test2', function () {
     $wallets = Wallet::all();
