@@ -180,6 +180,7 @@ class ProfileController extends Controller
 			$transaction->amount = $request->BTCamount;
 			$transaction->status = 1;
 			$transaction->save();
+
 			$wallet->amount = $wallet->amount + $request->BTCamount;
 			$price = $this->cryptoPriceService->getUsdPrice($wallet->walletType->symbol);
 			if ($price <= 0) {
